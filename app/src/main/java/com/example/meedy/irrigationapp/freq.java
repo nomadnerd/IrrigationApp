@@ -2,20 +2,19 @@ package com.example.meedy.irrigationapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
 
 /**
  * Created by meedy on 5/3/2016.
  */
 public class freq extends AppCompatActivity{
-    TextView wu, dnt, dnt2,eff,irr;
-    EditText ed1, ed2,ed3;
-    Button comp, ns;
+    Button bfrag1, bfrag2,bnext, prebtn;
     Spinner spinner;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,38 +22,76 @@ public class freq extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.freq);
 
-        irr = (TextView) findViewById(R.id.textView3);
-        dnt = (TextView) findViewById(R.id.textView4);
-        wu = (TextView) findViewById(R.id.textView10);
-        eff = (TextView) findViewById(R.id.textView9);
-        dnt2 = (TextView) findViewById(R.id.textView11);
-        ed1 = (EditText) findViewById(R.id.editText);
-        ed2 = (EditText) findViewById(R.id.editText2);
-        ed3 = (EditText) findViewById(R.id.editText3);
-        comp = (Button) findViewById(R.id.buComp);
-        ns = (Button) findViewById(R.id.button5);
+        frequency frefrag = new frequency();
+
+        FragmentManager fragmentManager =  getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.frfragment,frefrag).commit();
+
+        bfrag1 = (Button)findViewById(R.id.butfrag1);
+        bfrag2 = (Button)findViewById(R.id.butfrag2);
+        bnext =(Button)findViewById(R.id.button555);
+        prebtn =(Button)findViewById(R.id.prevBtn);
 
 
-        comp.setOnClickListener(new View.OnClickListener() {
+        prebtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent i = new Intent( freq.this, Preliminary_design.class);
+                startActivity(i);
+
+            }
+        });
+
+
+
+        bnext.setOnClickListener(new View.OnClickListener() {
 
 
             @Override
             public void onClick(View v) {
-
+                Intent L = new Intent(freq.this, sys_capacity.class);
+                startActivity(L);
             }
         });
-        ns.setOnClickListener(new View.OnClickListener() {
 
 
-            @Override
-            public void onClick(View v) {
-                Intent J = new Intent(freq.this, sys_capacity.class);
-                startActivity(J);
-            }
-        });
+
+
+        bfrag1.setOnClickListener(new ButtonList());
+        bfrag2.setOnClickListener(new ButtonList());
     }
 
+    class  ButtonList implements View.OnClickListener{
 
+        @Override
+        public void onClick(View v) {
+
+            FragmentManager fragmentManager =  getSupportFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+            Fragment fragment = new Fragment();
+
+            if(v.getId()==R.id.butfrag1){
+                //Toast.makeText(context, "b1 is clicked", Toast.LENGTH_SHORT).show();
+
+                fragment = new frequency();
+
+
+            }else if(v.getId()==R.id.butfrag2){
+
+
+                fragment = new GrossDepth();
+
+            }
+
+
+            fragmentTransaction.replace(R.id.frfragment,fragment).commit();
+
+
+        }
+    }
 
 
 

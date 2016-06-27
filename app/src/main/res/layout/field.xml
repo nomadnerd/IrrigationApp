@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:weightSum="1">
 
     <TextView
         android:layout_width="wrap_content"
@@ -50,12 +51,63 @@
         android:layout_height="wrap_content"
         android:id="@+id/wid" />
 
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/next"
-        android:id="@+id/bnxt"
-       android:layout_marginTop="20dp"
-        android:layout_gravity="center_horizontal" />
+        android:textColor="#2b0909"
+        android:text="compute"
+        android:id="@+id/area_btn" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="77dp"
+        android:layout_weight="0.62">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Farea"
+            android:textColor="#2b0909"
+            android:id="@+id/area"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@+id/answer"
+            android:layout_toStartOf="@+id/answer" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ans"
+            android:textColor="#2b0909"
+            android:id="@+id/answer"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/next"
+            android:textColor="#2b0909"
+            android:id="@+id/bnxt"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_toEndOf="@+id/area"
+            android:layout_toRightOf="@+id/area" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#2b0909"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/bnxt"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/prevBtn"
+            android:text="@string/prebtn" />
+    </RelativeLayout>
+
+
 
 </LinearLayout>

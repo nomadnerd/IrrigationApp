@@ -16,8 +16,8 @@ import android.widget.TextView;
  * A simple {@link Fragment} subclass.
  */
 public class Pdesignfragment1 extends Fragment {
-    TextView pd, dnt;
-    EditText rz, fc, md, ans;
+    TextView pd, dnt, ans;
+    EditText rz, am, md;
     Button comp;
     Spinner spinner;
 
@@ -35,12 +35,11 @@ public class Pdesignfragment1 extends Fragment {
         pd = (TextView) view.findViewById(R.id.pre);
         dnt = (TextView) view.findViewById(R.id.tv2);
 
-        rz = (EditText) view.findViewById(R.id.ed2);
-        fc = (EditText) view.findViewById(R.id.ed1);
-        md = (EditText) view.findViewById(R.id.ed3);
-        ans = (EditText) view.findViewById(R.id.ed4);
-        ans = (EditText) view.findViewById(R.id.ed4);
-        comp = (Button) view.findViewById(R.id.bt4);
+        rz = (EditText) view.findViewById(R.id.RZD);
+        am = (EditText) view.findViewById(R.id.AM);
+        md = (EditText) view.findViewById(R.id.MAD);
+        ans = (TextView) view.findViewById(R.id.answer);
+        comp = (Button) view.findViewById(R.id.btNCOMP);
 
         comp.setOnClickListener(new buttonclick());
 
@@ -51,6 +50,21 @@ public class Pdesignfragment1 extends Fragment {
         @Override
         public void onClick(View v) {
 
+            Float fam =Float.parseFloat(am.getText().toString());
+            Float frzd = Float.parseFloat(rz.getText().toString());
+            Float fmd = Float.parseFloat(md.getText().toString());
+
+
+            form_dnet netdepth = new form_dnet();
+            netdepth.setAllowablemoisture(fmd);
+            netdepth.setAvaiblemoisture(fam);
+            netdepth.setRootzonedepth(frzd);
+
+            float answer = netdepth.ndepth();
+            ans.setText(Float.toString(answer));
+
+            MySingleton mySingleton = MySingleton.getInstance();
+            mySingleton.fdnet = answer;
         }
     }
 }

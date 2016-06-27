@@ -11,7 +11,7 @@ import android.widget.Button;
 
 public class  Preliminary_design extends AppCompatActivity {
 
-Button bfrag1,bfrag2, bnext;
+Button bfrag1,bfrag2, bnext, prebtn;
     @Override
     protected void onCreate(Bundle savedInstanceState){
 
@@ -29,14 +29,25 @@ Button bfrag1,bfrag2, bnext;
         bfrag1 = (Button)findViewById(R.id.butfrag1);
         bfrag2 = (Button)findViewById(R.id.butfrag2);
         bnext =(Button)findViewById(R.id.bt5);
+        prebtn = (Button)findViewById(R.id.prebtn2);
+
+
+        prebtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent k = new Intent(Preliminary_design.this, MyField.class);
+                startActivity(k);
+            }
+        });
+
 
         bnext.setOnClickListener(new View.OnClickListener() {
 
 
             @Override
             public void onClick(View v) {
-                Intent J = new Intent(Preliminary_design.this, freq.class);
-                startActivity(J);
+                Intent M = new Intent(Preliminary_design.this, freq.class);
+                startActivity(M);
             }
         });
 

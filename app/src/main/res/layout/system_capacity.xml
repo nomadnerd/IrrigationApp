@@ -12,10 +12,11 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
-    <EditText
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/editText5"
+        android:id="@+id/area"
+        android:textColor="#2b0909"
         android:hint="@string/area"
         android:layout_below="@+id/textView13"
         android:layout_alignParentLeft="true"
@@ -28,11 +29,11 @@
         android:layout_height="wrap_content"
         android:hint="@string/dgross"
         android:id="@+id/editText6"
-        android:layout_below="@+id/editText5"
+        android:layout_below="@+id/area"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/editText5"
-        android:layout_alignEnd="@+id/editText5" />
+        android:layout_alignRight="@+id/area"
+        android:layout_alignEnd="@+id/area" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -70,8 +71,52 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="#2b0909"
         android:text="@string/comp"
         android:id="@+id/button6"
         android:layout_below="@+id/editText9"
         android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/vol"
+        android:textColor="#2b0909"
+        android:id="@+id/volume"
+        android:layout_below="@+id/button6"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#2b0909"
+        android:text="answer"
+        android:id="@+id/AnsVol"
+        android:layout_below="@+id/button6"
+        android:layout_alignLeft="@+id/button6"
+        android:layout_alignStart="@+id/button6" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/prebtn"
+        android:id="@+id/PREBTN"
+        android:layout_below="@+id/volume"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="43dp"
+        android:layout_toLeftOf="@+id/AnsVol"
+        android:layout_toStartOf="@+id/AnsVol" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/bnext"
+        android:id="@+id/bnext_sys"
+        android:layout_alignTop="@+id/PREBTN"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toRightOf="@+id/AnsVol"
+        android:layout_toEndOf="@+id/AnsVol" />
 </RelativeLayout>

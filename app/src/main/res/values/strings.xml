@@ -38,6 +38,12 @@
     <string name="irrc">Irr. Cycle</string>
     <string name="shift">No. of Shift</string>
     <string name="time">time per shift</string>
+    <string name="IrrFreq">Irr. Freq</string>
+    <string name="prebtn">Previous</string>
+    <string name="GrossDepth">Gross Depth</string>
+    <string name="bnext">NEXT</string>
+    <string name="vol">Volume</string>
+    <string name="Farea">Field Area</string>
     <string name="fra">design with field data</string>
     <string-array name="unit">
         <item>m</item>

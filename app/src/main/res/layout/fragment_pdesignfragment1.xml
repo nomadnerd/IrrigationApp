@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="8dp"
     tools:context="com.example.meedy.irrigationapp.Pdesignfragment1">
 
     <!-- TODO: Update blank fragment layout -->
@@ -22,34 +23,34 @@
         android:textSize="20sp"
         android:textColor="#2b1010"
         android:id="@+id/tv2"
-        android:layout_above="@+id/ed1"
+        android:layout_above="@+id/AM"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
     <EditText
         android:layout_width="103dp"
         android:layout_height="wrap_content"
-        android:id="@+id/ed1"
+        android:id="@+id/AM"
         android:text="@string/fc"
         android:hint="@string/fc"
-        android:layout_above="@+id/ed2"
+        android:layout_above="@+id/RZD"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
     <EditText
         android:layout_width="97dp"
         android:layout_height="wrap_content"
-        android:id="@+id/ed2"
+        android:id="@+id/RZD"
         android:hint="@string/rz"
-        android:layout_above="@+id/ed3"
-        android:layout_alignRight="@+id/ed1"
-        android:layout_alignEnd="@+id/ed1" />
+        android:layout_above="@+id/MAD"
+        android:layout_alignRight="@+id/AM"
+        android:layout_alignEnd="@+id/AM" />
 
     <EditText
         android:layout_width="95dp"
         android:layout_height="wrap_content"
-        android:id="@+id/ed3"
+        android:id="@+id/MAD"
         android:hint="@string/dep"
-        android:layout_above="@+id/bt4"
+        android:layout_above="@+id/btNCOMP"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -58,33 +59,33 @@
         android:layout_height="wrap_content"
         android:text="@string/comp"
         android:textColor="#2b0909"
-        android:id="@+id/bt4"
+        android:id="@+id/btNCOMP"
         android:layout_centerVertical="true"
-        android:layout_toRightOf="@+id/ed3"
-        android:layout_toEndOf="@+id/ed3" />
+        android:layout_toRightOf="@+id/MAD"
+        android:layout_toEndOf="@+id/MAD" />
 
-    <EditText
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/ed4"
+        android:id="@+id/answer"
         android:hint="@string/ans"
         android:textColor="#2b0909"
         android:layout_marginTop="83dp"
-        android:layout_below="@+id/bt4"
+        android:layout_below="@+id/btNCOMP"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
 
-    <Spinner
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/spinner"
-        android:layout_below="@+id/tv2"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/ed1"
-        android:layout_alignEnd="@+id/ed1"
-        android:layout_above="@+id/ed1" />
+   <!--&lt;!&ndash;<Spinner-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:id="@+id/spinner"-->
+        <!--android:layout_below="@+id/tv2"-->
+        <!--android:layout_alignParentLeft="true"-->
+        <!--android:layout_alignParentStart="true"-->
+        <!--android:layout_alignRight="@+id/AM"-->
+        <!--android:layout_alignEnd="@+id/AM"-->
+        <!--android:layout_above="@+id/AM" />&ndash;&gt;-->
 
 
 
