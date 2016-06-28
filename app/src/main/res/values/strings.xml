@@ -4,6 +4,7 @@
     <string name="pre">Preliminary Design</string>
     <string name="dnt">net depth</string>
     <string name="fc">AM</string>
+    <string name="ha">ha</string>
     <string name="rz">RZD</string>
     <string name="dep">MAD</string>
     <string name="comp">Compute</string>
@@ -45,11 +46,11 @@
     <string name="vol">Volume</string>
     <string name="Farea">Field Area</string>
     <string name="fra">design with field data</string>
-    <string-array name="unit">
-        <item>m</item>
-        <item>ft</item>
-        <item>cm</item>
-        <item>mm</item>
+    <string-array name="effciency">
+        <item>0.8</item>
+        <item>0.75</item>
+        <item>0.70</item>
+        <item>0.65</item>
     </string-array>
 
     <!-- TODO: Remove or change this placeholder text -->

@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:weightSum="1">
+    android:weightSum="1"
+    android:background="@color/colorBG2">
 
     <TextView
         android:layout_width="wrap_content"
@@ -39,18 +40,35 @@
         android:id="@+id/textView2"
         android:layout_gravity="center_horizontal" />
 
-    <EditText
-        android:layout_width="150dp"
-        android:hint="length"
-        android:layout_height="wrap_content"
-        android:id="@+id/len" />
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:hint="length in m"
+            android:inputType="numberDecimal"
+            android:layout_height="wrap_content"
+            android:id="@+id/len" />
+
+
+    </android.support.design.widget.TextInputLayout>
+
+
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
     <EditText
-        android:layout_width="150dp"
-        android:hint="width"
+        android:layout_width="match_parent"
+        android:hint="width in m"
+        android:inputType="numberDecimal"
         android:layout_height="wrap_content"
+
         android:id="@+id/wid" />
 
+    </android.support.design.widget.TextInputLayout>
 
     <Button
         android:layout_width="wrap_content"
@@ -79,7 +97,6 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/ans"
             android:textColor="#2b0909"
             android:id="@+id/answer"
             android:layout_alignParentTop="true"
@@ -106,6 +123,16 @@
             android:layout_alignParentStart="true"
             android:id="@+id/prevBtn"
             android:text="@string/prebtn" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#2b0909"
+            android:text="@string/ha"
+            android:id="@+id/ha"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/answer"
+            android:layout_toEndOf="@+id/answer" />
     </RelativeLayout>
 
 

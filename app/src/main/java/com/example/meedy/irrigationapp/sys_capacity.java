@@ -15,8 +15,8 @@ import android.widget.Toast;
  */
 public class sys_capacity extends AppCompatActivity {
 
-    EditText  dg, irrc, sh, tim;
-    TextView sys,area, vol, answr;
+    EditText   irrc, sh, tim;
+    TextView sys,dg,area, vol, answr;
     Button com, nexbtn, prevbtn;
     MySingleton mySingleton = MySingleton.getInstance();
     @Override
@@ -29,7 +29,7 @@ public class sys_capacity extends AppCompatActivity {
         vol = (TextView)findViewById(R.id.volume);
         answr = (TextView)findViewById(R.id.AnsVol);
 
-        dg = (EditText)findViewById(R.id.editText6);
+        dg = (TextView)findViewById(R.id.dgross);
         irrc = (EditText)findViewById(R.id.editText7);
         sh = (EditText)findViewById(R.id.editText8);
         tim = (EditText)findViewById(R.id.editText9);
@@ -40,6 +40,8 @@ public class sys_capacity extends AppCompatActivity {
         prevbtn = (Button)findViewById(R.id.PREBTN);
 
         area.setText(Float.toString(mySingleton.field_area));
+        dg.setText(Float.toString(mySingleton.grossdepth));
+
 
         com.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -25,7 +25,7 @@ public class form_FieldArea {
 
     public float fieldArea(){
 
-        return getLength()*getWidth();
+        return getLength()*getWidth()/10000;
 
     }
 }

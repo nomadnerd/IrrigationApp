@@ -40,7 +40,7 @@
     <Spinner
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/spinner7"
+        android:id="@+id/irrEfficiency"
         android:layout_below="@+id/textView12"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
@@ -52,19 +52,37 @@
         android:layout_height="wrap_content"
         android:text="@string/bcomp"
         android:id="@+id/button4"
-        android:layout_below="@+id/spinner7"
+        android:layout_below="@+id/irrEfficiency"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
-    <EditText
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/editText1111"
+        android:id="@+id/depthnet"
         android:layout_below="@+id/textView11"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_toLeftOf="@+id/textView9"
         android:layout_toStartOf="@+id/textView9" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ans"
+        android:id="@+id/grossDep"
+        android:layout_below="@+id/button4"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/as"
+        android:id="@+id/grossAns"
+        android:layout_alignTop="@+id/grossDep"
+        android:layout_alignLeft="@+id/textView9"
+        android:layout_alignStart="@+id/textView9" />
 
 
 </RelativeLayout>

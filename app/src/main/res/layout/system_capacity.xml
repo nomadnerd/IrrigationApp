@@ -24,11 +24,11 @@
         android:layout_toLeftOf="@+id/textView13"
         android:layout_toStartOf="@+id/textView13" />
 
-    <EditText
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="@string/dgross"
-        android:id="@+id/editText6"
+        android:id="@+id/dgross"
         android:layout_below="@+id/area"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
@@ -39,17 +39,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/editText7"
+        android:inputType="number"
         android:hint="@string/irrc"
-        android:layout_below="@+id/editText6"
+        android:layout_below="@+id/dgross"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/editText6"
-        android:layout_alignEnd="@+id/editText6" />
+        android:layout_alignRight="@+id/dgross"
+        android:layout_alignEnd="@+id/dgross" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/editText8"
+        android:inputType="number"
         android:hint="@string/shift"
         android:layout_below="@+id/editText7"
         android:layout_alignParentLeft="true"
@@ -62,6 +64,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/editText9"
         android:hint="@string/time"
+        android:inputType="number"
         android:layout_below="@+id/editText8"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"

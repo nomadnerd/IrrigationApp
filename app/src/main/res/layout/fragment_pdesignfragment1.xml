@@ -29,8 +29,8 @@
     <EditText
         android:layout_width="103dp"
         android:layout_height="wrap_content"
+        android:inputType="number"
         android:id="@+id/AM"
-        android:text="@string/fc"
         android:hint="@string/fc"
         android:layout_above="@+id/RZD"
         android:layout_alignParentLeft="true"
@@ -40,6 +40,7 @@
         android:layout_width="97dp"
         android:layout_height="wrap_content"
         android:id="@+id/RZD"
+        android:inputType="number"
         android:hint="@string/rz"
         android:layout_above="@+id/MAD"
         android:layout_alignRight="@+id/AM"
@@ -50,6 +51,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/MAD"
         android:hint="@string/dep"
+        android:inputType="number"
         android:layout_above="@+id/btNCOMP"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
