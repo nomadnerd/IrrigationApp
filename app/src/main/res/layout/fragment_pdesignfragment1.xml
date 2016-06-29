@@ -5,17 +5,7 @@
     android:padding="8dp"
     tools:context="com.example.meedy.irrigationapp.Pdesignfragment1">
 
-    <!-- TODO: Update blank fragment layout -->
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="40dp"
-        android:text="@string/fra"
-        android:textSize="20sp"
-        android:layout_marginRight="20dp"
-        android:textColor="#2b0909"
-        android:id="@+id/pre"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -23,38 +13,60 @@
         android:textSize="20sp"
         android:textColor="#2b1010"
         android:id="@+id/tv2"
-        android:layout_above="@+id/AM"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-    <EditText
-        android:layout_width="103dp"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:id="@+id/AM"
-        android:hint="@string/fc"
-        android:layout_above="@+id/RZD"
+        android:layout_above="@+id/frag1"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@id/frag1"
+        android:layout_above="@+id/frag2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
     <EditText
-        android:layout_width="97dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:id="@+id/AM"
+        android:hint="@string/fc"/>
+
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/frag2"
+        android:layout_above="@+id/frag3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" >
+
+    <EditText
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/RZD"
-        android:inputType="number"
-        android:hint="@string/rz"
-        android:layout_above="@+id/MAD"
-        android:layout_alignRight="@+id/AM"
-        android:layout_alignEnd="@+id/AM" />
+        android:inputType="numberDecimal"
+        android:hint="@string/rz"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/frag3"
+        android:layout_above="@+id/btNCOMP"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" >
+
+
 
     <EditText
-        android:layout_width="95dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/MAD"
         android:hint="@string/dep"
-        android:inputType="number"
-        android:layout_above="@+id/btNCOMP"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:inputType="numberDecimal" />
+    </android.support.design.widget.TextInputLayout>
 
     <Button
         android:layout_width="wrap_content"
@@ -63,8 +75,7 @@
         android:textColor="#2b0909"
         android:id="@+id/btNCOMP"
         android:layout_centerVertical="true"
-        android:layout_toRightOf="@+id/MAD"
-        android:layout_toEndOf="@+id/MAD" />
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="match_parent"

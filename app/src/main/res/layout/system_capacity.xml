@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/colorBG2">
 
     <TextView
         android:layout_width="wrap_content"
@@ -8,7 +9,7 @@
         android:text="@string/sys"
         android:textColor="#2b0909"
         android:textSize="20sp"
-        android:id="@+id/textView13"
+        android:id="@+id/sys"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
@@ -18,11 +19,11 @@
         android:id="@+id/area"
         android:textColor="#2b0909"
         android:hint="@string/area"
-        android:layout_below="@+id/textView13"
+        android:layout_below="@+id/sys"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_toLeftOf="@+id/textView13"
-        android:layout_toStartOf="@+id/textView13" />
+        android:layout_toLeftOf="@+id/sys"
+        android:layout_toStartOf="@+id/sys" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -35,49 +36,71 @@
         android:layout_alignRight="@+id/area"
         android:layout_alignEnd="@+id/area" />
 
-    <EditText
-        android:layout_width="wrap_content"
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editText7"
-        android:inputType="number"
-        android:hint="@string/irrc"
+        android:id="@+id/first"
         android:layout_below="@+id/dgross"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/dgross"
-        android:layout_alignEnd="@+id/dgross" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true">
 
     <EditText
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editText8"
-        android:inputType="number"
-        android:hint="@string/shift"
-        android:layout_below="@+id/editText7"
+        android:id="@+id/irrcycle"
+        android:inputType="numberDecimal"
+        android:hint="@string/irrc" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/second"
+        android:layout_below="@+id/first"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/editText7"
-        android:layout_alignEnd="@+id/editText7" />
+        android:layout_alignRight="@+id/first"
+        android:layout_alignEnd="@+id/first">
 
     <EditText
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editText9"
+        android:id="@+id/shift"
+        android:inputType="numberDecimal"
+        android:hint="@string/shift" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/third"
+        android:layout_below="@+id/second"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/second"
+        android:layout_alignEnd="@+id/second">
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/time"
         android:hint="@string/time"
-        android:inputType="number"
-        android:layout_below="@+id/editText8"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/editText8"
-        android:layout_alignEnd="@+id/editText8" />
+        android:inputType="numberDecimal" />
+
+    </android.support.design.widget.TextInputLayout>
+
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="#2b0909"
         android:text="@string/comp"
-        android:id="@+id/button6"
-        android:layout_below="@+id/editText9"
+        android:id="@+id/comp"
+        android:layout_below="@+id/third"
         android:layout_centerHorizontal="true" />
 
     <TextView
@@ -86,7 +109,7 @@
         android:text="@string/vol"
         android:textColor="#2b0909"
         android:id="@+id/volume"
-        android:layout_below="@+id/button6"
+        android:layout_below="@+id/comp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -96,9 +119,9 @@
         android:textColor="#2b0909"
         android:text="answer"
         android:id="@+id/AnsVol"
-        android:layout_below="@+id/button6"
-        android:layout_alignLeft="@+id/button6"
-        android:layout_alignStart="@+id/button6" />
+        android:layout_below="@+id/comp"
+        android:layout_alignLeft="@+id/comp"
+        android:layout_alignStart="@+id/comp" />
 
     <Button
         android:layout_width="wrap_content"

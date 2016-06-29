@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:weightSum="1"
-    android:id="@+id/pfragment1">
+    android:id="@+id/pfragment1"
+    android:background="@color/colorBG2">
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -16,14 +17,14 @@
             android:id="@+id/butfrag1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Field data"
+            android:text="Use Field data"
             android:layout_weight="2"/>
 
         <Button
             android:id="@+id/butfrag2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Lit data"
+            android:text="UseLit data"
             android:layout_weight="2"/>
     </LinearLayout>
     <Button

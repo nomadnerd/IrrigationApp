@@ -65,7 +65,6 @@
         android:hint="width in m"
         android:inputType="numberDecimal"
         android:layout_height="wrap_content"
-
         android:id="@+id/wid" />
 
     </android.support.design.widget.TextInputLayout>

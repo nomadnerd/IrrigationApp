@@ -18,8 +18,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".Preliminary_design"></activity>
+        <activity android:name=".Preliminary_design"></activity>
         <activity android:name=".MyField"></activity>
         <activity android:name=".sys_capacity"></activity>
         <activity android:name=".freq"></activity>

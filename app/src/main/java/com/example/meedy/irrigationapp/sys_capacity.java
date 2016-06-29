@@ -30,12 +30,12 @@ public class sys_capacity extends AppCompatActivity {
         answr = (TextView)findViewById(R.id.AnsVol);
 
         dg = (TextView)findViewById(R.id.dgross);
-        irrc = (EditText)findViewById(R.id.editText7);
-        sh = (EditText)findViewById(R.id.editText8);
-        tim = (EditText)findViewById(R.id.editText9);
-        sys =(TextView)findViewById(R.id.textView13);
+        irrc = (EditText)findViewById(R.id.irrcycle);
+        sh = (EditText)findViewById(R.id.shift);
+        tim = (EditText)findViewById(R.id.time);
+        sys =(TextView)findViewById(R.id.sys);
 
-        com = (Button)findViewById(R.id.button6);
+        com = (Button)findViewById(R.id.comp);
         nexbtn = (Button)findViewById(R.id.bnext_sys);
         prevbtn = (Button)findViewById(R.id.PREBTN);
 

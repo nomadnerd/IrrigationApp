@@ -16,7 +16,7 @@ import android.widget.TextView;
  * A simple {@link Fragment} subclass.
  */
 public class Pdesignfragment1 extends Fragment {
-    TextView pd, dnt, ans;
+    TextView dnt, ans;
     EditText rz, am, md;
     Button comp;
     Spinner spinner;
@@ -32,7 +32,7 @@ public class Pdesignfragment1 extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_pdesignfragment1, container, false);
-        pd = (TextView) view.findViewById(R.id.pre);
+        //pd = (TextView) view.findViewById(R.id.pre);
         dnt = (TextView) view.findViewById(R.id.tv2);
 
         rz = (EditText) view.findViewById(R.id.RZD);
