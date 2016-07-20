@@ -8,6 +8,7 @@ public class MySingleton {
     public float field_area;
     public float irrigationFrequency;
     public float grossdepth;
+    public float netdepth_drip;
 
     private MySingleton() {
 

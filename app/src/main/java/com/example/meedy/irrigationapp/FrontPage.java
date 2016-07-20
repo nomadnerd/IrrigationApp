@@ -39,7 +39,7 @@ public class FrontPage extends AppCompatActivity {
         bdr.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent J = new Intent(FrontPage.this, MyField.class);
+                Intent J = new Intent(FrontPage.this, field_drip.class);
                 startActivity(J);
 
             }

@@ -18,13 +18,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Preliminary_design"></activity>
-        <activity android:name=".MyField"></activity>
-        <activity android:name=".sys_capacity"></activity>
-        <activity android:name=".freq"></activity>
-
-
+        <activity android:name=".Preliminary_design" />
+        <activity android:name=".MyField" />
+        <activity android:name=".sys_capacity" />
+        <activity android:name=".freq" />
+        <activity android:name=".field_drip"/>
+        <activity android:name=".irr_requirement_drip"/>
     </application>
-
 
 </manifest>
