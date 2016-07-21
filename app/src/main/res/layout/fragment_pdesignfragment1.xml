@@ -74,8 +74,9 @@
         android:text="@string/comp"
         android:textColor="#2b0909"
         android:id="@+id/btNCOMP"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="182dp" />
 
     <TextView
         android:layout_width="match_parent"
@@ -83,10 +84,10 @@
         android:id="@+id/answer"
         android:hint="@string/ans"
         android:textColor="#2b0909"
-        android:layout_marginTop="83dp"
-        android:layout_below="@+id/btNCOMP"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="98dp" />
 
 
    <!--&lt;!&ndash;<Spinner-->

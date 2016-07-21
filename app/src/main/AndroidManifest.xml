@@ -24,6 +24,7 @@
         <activity android:name=".freq" />
         <activity android:name=".field_drip"/>
         <activity android:name=".irr_requirement_drip"/>
+        <activity android:name=".Manuals_pdf"/>
     </application>
 
 </manifest>
