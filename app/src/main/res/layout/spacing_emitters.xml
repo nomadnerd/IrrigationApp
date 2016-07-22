@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBG2">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/space"
+        android:textColor="#2b0909"
+        android:textSize="20sp"
+        android:id="@+id/Espacing"
+        android:layout_marginTop="40dp"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/NumOf"
+        android:layout_toEndOf="@+id/NumOf" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/NumOf"
+        android:textSize="15sp"
+        android:textColor="#2b0909"
+        android:id="@+id/NumOf"
+        android:layout_marginTop="56dp"
+        android:layout_below="@+id/Espacing"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ems"
+        android:textColor="#2b0909"
+        android:textSize="15sp"
+        android:id="@+id/ems"
+        android:layout_alignTop="@+id/NumOf"
+        android:layout_toRightOf="@+id/NumOf"
+        android:layout_toEndOf="@+id/NumOf"
+        android:layout_marginLeft="42dp"
+        android:layout_marginStart="42dp" />
+
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spacing"
+        android:layout_above="@+id/ems"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/distanceRow"
+        android:inputType="numberDecimal"
+        android:hint="@string/DBtnPL"/>
+</android.support.design.widget.TextInputLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/comp"
+        android:id="@+id/compspacing"
+        android:layout_below="@+id/NumOf"
+        android:layout_marginTop="56dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ans"
+        android:textSize="18sp"
+        android:textColor="#2b0909"
+        android:id="@+id/answerSpacing"
+        android:layout_marginTop="60dp"
+        android:layout_below="@+id/compspacing"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/metres"
+        android:textSize="18sp"
+        android:textColor="#2b0909"
+        android:id="@+id/meters"
+        android:layout_alignTop="@+id/answerSpacing"
+        android:layout_alignRight="@+id/Espacing"
+        android:layout_alignEnd="@+id/Espacing" />
+
+
+</RelativeLayout>

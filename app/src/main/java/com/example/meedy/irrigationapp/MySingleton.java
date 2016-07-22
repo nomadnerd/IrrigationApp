@@ -9,6 +9,8 @@ public class MySingleton {
     public float irrigationFrequency;
     public float grossdepth;
     public float netdepth_drip;
+    public float EmitterPerPlant;
+    public float Spacing;
 
     private MySingleton() {
 
