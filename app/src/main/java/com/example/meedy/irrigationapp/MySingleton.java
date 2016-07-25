@@ -11,6 +11,7 @@ public class MySingleton {
     public float netdepth_drip;
     public float EmitterPerPlant;
     public float Spacing;
+    public float Wetted_Width;
 
     private MySingleton() {
 

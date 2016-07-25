@@ -40,6 +40,11 @@
     <string name="bcomp">Compute</string>
     <string name="gr">Gross depth</string>
     <string name="eff">Efficiency</string>
+    <string name="adj">Adjusted Percentage Pw</string>
+    <string name="W">wetted Area</string>
+    <string name="ww">Wetted Width</string>
+    <string name="Sp">distance between the plants within a row</string>
+    <string name="Sr">Row spacing</string>
     <string name="dt">Net depth</string>
     <string name="sys">System Capacity</string>
     <string name="area">Area</string>

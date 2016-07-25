@@ -27,6 +27,7 @@
         <activity android:name=".Manuals_pdf"/>
         <activity android:name=".EmittersPerPlant"/>
         <activity android:name=".SpacingEmitter"/>
+        <activity android:name=".Adjusted_Pw"/>
     </application>
 
 </manifest>
