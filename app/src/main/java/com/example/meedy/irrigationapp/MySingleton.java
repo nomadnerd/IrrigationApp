@@ -12,6 +12,12 @@ public class MySingleton {
     public float EmitterPerPlant;
     public float Spacing;
     public float Wetted_Width;
+    public float Pw;
+    public float Sr;
+    public float Sp;
+    public float net_irr_pertree;
+    public float ReadilyMoisture;
+    public float factor;
 
     private MySingleton() {
 

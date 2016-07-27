@@ -36,6 +36,7 @@
         <activity android:name=".EmittersPerPlant"/>
         <activity android:name=".SpacingEmitter"/>
         <activity android:name=".Adjusted_Pw"/>
+        <activity android:name=".drip_irrFrequency"/>
     </application>
 
 </manifest>

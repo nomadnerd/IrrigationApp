@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/freqpeak"
+        android:textColor="#2b0909"
+        android:id="@+id/freq"
+        android:textSize="20sp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="54dp" />
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/frag1"
+        android:layout_below="@+id/freq"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/AM"
+        android:hint="@string/ram"
+        android:inputType="numberDecimal"
+        android:textColor="#2b0909"/>
+
+</android.support.design.widget.TextInputLayout>
+
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/frag2"
+        android:layout_below="@+id/frag1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#2b0909"
+        android:id="@+id/depletion"
+        android:hint="@string/depfactor"
+        android:inputType="numberDecimal"/>
+</android.support.design.widget.TextInputLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/AM"
+        android:id="@+id/AvailableMoisture"
+        android:textColor="#2b0909"
+        android:textSize="15sp"
+        android:layout_below="@+id/frag2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Netper3"
+        android:textSize="15sp"
+        android:textColor="#2b0909"
+        android:id="@+id/netpertree"
+        android:layout_below="@+id/AvailableMoisture"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/comp"
+        android:id="@+id/compbtn"
+        android:textColor="#2b0909"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ans"
+        android:id="@+id/ansFreq"
+        android:layout_below="@+id/compbtn"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/days"
+        android:id="@+id/days"
+        android:layout_below="@+id/compbtn"
+        android:layout_toRightOf="@+id/netpertree"
+        android:layout_toEndOf="@+id/netpertree" />
+
+
+</RelativeLayout>

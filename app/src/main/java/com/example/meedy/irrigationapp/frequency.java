@@ -17,7 +17,7 @@ import android.widget.TextView;
 public class frequency extends Fragment {
 
     TextView irr, dnt,mm,mmd,wu, fetdnt, fetANS;
-    Button copt, sav;
+    Button copt;
     EditText  fetwu;
     MySingleton mySingleton = MySingleton.getInstance();
 
@@ -40,7 +40,7 @@ public class frequency extends Fragment {
         mmd = (TextView)view.findViewById(R.id.WU);
         wu =(TextView)view.findViewById(R.id.textView16);
         copt = (Button)view.findViewById(R.id.buComp);
-        sav = (Button)view.findViewById(R.id.savebtn);
+
 
         fetwu = (EditText)view.findViewById(R.id.editText12);
         fetdnt = (TextView)view.findViewById(R.id.dnet);

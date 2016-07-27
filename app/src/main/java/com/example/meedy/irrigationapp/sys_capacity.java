@@ -59,7 +59,7 @@ public class sys_capacity extends AppCompatActivity {
                 systemcapacity.setNumbofshift(shift);
                 systemcapacity.setTimepershift(time);*/
 
-                float answer = mySingleton.field_area*10*gross/cycle*shift*time;
+                float answer = (mySingleton.field_area*10*gross)/(cycle*shift*time);
                 answr.setText(Float.toString(answer));
 
 

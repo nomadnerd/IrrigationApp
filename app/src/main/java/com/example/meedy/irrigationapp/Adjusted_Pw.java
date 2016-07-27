@@ -1,5 +1,6 @@
 package com.example.meedy.irrigationapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
@@ -20,7 +21,7 @@ public class Adjusted_Pw extends AppCompatActivity {
     TextView numofemitters;
     TextView emspacing;
     EditText wettedArea, Sp, Sr;
-    Button asnwerbtn;
+    Button asnwerbtn, bnext, prev;
     float pi = (float) 3.142;
 
     MySingleton mySingleton = MySingleton.getInstance();
@@ -37,6 +38,8 @@ public class Adjusted_Pw extends AppCompatActivity {
         emspacing =(TextView)findViewById(R.id.SR);
         answer =(TextView)findViewById(R.id.percent);
         asnwerbtn =(Button)findViewById(R.id.adjbtn);
+        bnext =(Button)findViewById(R.id.bnext);
+        prev =(Button)findViewById(R.id.previous);
 
         wettedArea =(EditText)findViewById(R.id.wettedarea);
         Sp = (EditText)findViewById(R.id.distance);
@@ -83,9 +86,28 @@ public class Adjusted_Pw extends AppCompatActivity {
 
                 float ans = (100 * mySingleton.EmitterPerPlant * mySingleton.Spacing * mySingleton.Wetted_Width) / (dis * rowdistance);
                 answer.setText(Float.toString(ans));
+                mySingleton.Pw = ans;
+                mySingleton.Sp = dis;
+                mySingleton.Sr = rowdistance;
             }
         });
 
+
+        bnext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent V = new Intent(Adjusted_Pw.this, drip_irrFrequency.class);
+                startActivity(V);
+            }
+        });
+        prev.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent V = new Intent(Adjusted_Pw.this, SpacingEmitter.class);
+                startActivity(V);
+
+            }
+        });
 
     }
 }
