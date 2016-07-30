@@ -143,5 +143,15 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Per cent"
+        android:textColor="#2b0909"
+        android:id="@+id/textView26"
+        android:layout_below="@+id/adjbtn"
+        android:layout_toLeftOf="@+id/bnext"
+        android:layout_toStartOf="@+id/bnext" />
+
 
 </RelativeLayout>

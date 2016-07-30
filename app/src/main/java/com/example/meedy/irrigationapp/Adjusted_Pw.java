@@ -67,9 +67,9 @@ public class Adjusted_Pw extends AppCompatActivity {
                 try {
                     float ww = Float.parseFloat(wettedArea.getText().toString());
 
-                    float answer = (float) Math.sqrt(4 * ww / pi);
-                    Wettedwidth.setText(Float.toString(answer));
-                    mySingleton.Wetted_Width = answer;
+                    float answer1 = (float) Math.sqrt(4 * ww / pi);
+                    Wettedwidth.setText(Float.toString(answer1));
+                    mySingleton.Wetted_Width = answer1;
 
 
                 } catch (NumberFormatException e) {
@@ -81,11 +81,17 @@ public class Adjusted_Pw extends AppCompatActivity {
         asnwerbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 float dis = Float.parseFloat(Sp.getText().toString());
                 float rowdistance = Float.parseFloat(Sr.getText().toString());
 
                 float ans = (100 * mySingleton.EmitterPerPlant * mySingleton.Spacing * mySingleton.Wetted_Width) / (dis * rowdistance);
                 answer.setText(Float.toString(ans));
+
+                if (ans > 50) {
+
+
+                }
                 mySingleton.Pw = ans;
                 mySingleton.Sp = dis;
                 mySingleton.Sr = rowdistance;

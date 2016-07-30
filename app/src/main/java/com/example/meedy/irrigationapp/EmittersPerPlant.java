@@ -41,6 +41,7 @@ public class EmittersPerPlant extends AppCompatActivity {
                 float wettedArea = Float.parseFloat(Aw.getText().toString());
 
                 float answer = (area*percentage)/(100*wettedArea);
+                answer = (new Float(Math.ceil(answer)));
                 mySingleton.EmitterPerPlant =answer;
                 AsnE.setText(Float.toString(answer));
 

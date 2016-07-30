@@ -119,5 +119,15 @@
         android:layout_toRightOf="@+id/Compemitter"
         android:layout_toEndOf="@+id/Compemitter" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/em"
+        android:textColor="#2b0909"
+        android:id="@+id/textView23"
+        android:layout_below="@+id/Compemitter"
+        android:layout_alignLeft="@+id/Compemitter"
+        android:layout_alignStart="@+id/Compemitter" />
+
 
 </RelativeLayout>

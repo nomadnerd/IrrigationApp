@@ -4,14 +4,13 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-/**
- * Created by meedy on 7/27/2016.
- */
+
 public class drip_irrFrequency extends AppCompatActivity {
 
 
@@ -19,6 +18,7 @@ public class drip_irrFrequency extends AppCompatActivity {
     EditText AvailableMoisture, depfactor;
     Button comp;
     MySingleton mySingleton = MySingleton.getInstance();
+    drip_frequency_formula drip_freq = new drip_frequency_formula();
 
 @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -38,8 +38,17 @@ public class drip_irrFrequency extends AppCompatActivity {
     comp.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            float ans = mySingleton.ReadilyMoisture/(mySingleton.netdepth_drip*(mySingleton.Sp*mySingleton.Sr));
-            freasnwer.setText(Float.toString(ans));
+
+            if(drip_freq.freq_drip() > 0){
+
+                float ans = (drip_freq.freq_drip())/(mySingleton.netdepth_drip * mySingleton.Sp * mySingleton.Sr);
+                Log.d("check", ans +"" );
+                freasnwer.setText(Float.toString(ans));
+            }else{
+
+            }
+
+
         }
     });
 
@@ -58,22 +67,30 @@ public class drip_irrFrequency extends AppCompatActivity {
         @Override
         public void onTextChanged(CharSequence s, int start, int before, int count) {
 
-        }
-
-        @Override
-        public void afterTextChanged(Editable s) {
 
             try {
 
 
                 float AvailableM = Float.parseFloat(AvailableMoisture.getText().toString());
-                float answer = (AvailableM * mySingleton.factor*mySingleton.Sp * mySingleton.Sr * mySingleton.Pw) / 100;
-                Ram.setText(Float.toString(answer));
-                mySingleton.ReadilyMoisture = answer;
+                drip_freq.setAvailablemoisture(AvailableM);
+                //Ram.setText(Float.toString(drip_freq.getAvailablemoisture()));
+
+                if (depfactor.getText().toString().matches("")) {
+                    Log.d("answer 2", Float.toString(drip_freq.getAvailablemoisture()));
+                    Ram.setText("0.0");
+                } else {
+                    Ram.setText(Float.toString(drip_freq.freq_drip()));
+                }
 
 
             } catch (NumberFormatException e) {
             }
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+
+
         }
     });
 
@@ -81,15 +98,6 @@ public class drip_irrFrequency extends AppCompatActivity {
         @Override
         public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
-            try {
-
-
-                float factor = Float.parseFloat(depfactor.getText().toString());
-                float answer = factor;
-                mySingleton.factor = answer;
-            }catch (NumberFormatException e){
-
-            }
 
         }
 
@@ -97,12 +105,33 @@ public class drip_irrFrequency extends AppCompatActivity {
         public void onTextChanged(CharSequence s, int start, int before, int count) {
 
 
-
-
         }
 
         @Override
         public void afterTextChanged(Editable s) {
+
+            //Log.d("deleting" , Float.parseFloat(depfactor.getText().toString())*2 +"ye");
+
+            try {
+
+
+                float factor = Float.parseFloat(depfactor.getText().toString());
+                if (AvailableMoisture.getText().toString().matches("")) {
+                    factor = 0;
+                }
+
+                drip_freq.setDfactor(factor/100);
+
+                if (depfactor.getText().toString().matches("")) {
+                    Ram.setText("0.0");
+                } else {
+                    Ram.setText(Float.toString(drip_freq.freq_drip()));
+                }
+                //float answer = factor;
+                //mySingleton.factor = answer;
+            } catch (NumberFormatException e) {
+
+            }
 
 
         }

@@ -104,5 +104,15 @@
         android:layout_toEndOf="@+id/pre"
         android:layout_toRightOf="@+id/pre" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/metres"
+        android:id="@+id/textView25"
+        android:textColor="#2b0909"
+        android:layout_alignBottom="@+id/answerSpacing"
+        android:layout_alignLeft="@+id/ems"
+        android:layout_alignStart="@+id/ems" />
+
 
 </RelativeLayout>

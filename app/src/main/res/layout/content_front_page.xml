@@ -54,5 +54,16 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="53dp" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/copyryt"
+        android:textColor="#212121"
+        android:id="@+id/copyright"
+        android:layout_marginTop="47dp"
+        android:layout_below="@+id/btn4"
+        android:layout_centerHorizontal="true" />
+
 
 </RelativeLayout>

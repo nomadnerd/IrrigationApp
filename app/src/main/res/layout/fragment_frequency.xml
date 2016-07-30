@@ -18,6 +18,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/Answer"
+        android:textColor="#2b0909"
+        android:text="@string/ans"
         android:layout_below="@+id/buComp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
@@ -40,6 +42,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/dnet"
+        android:textColor="#2b0909"
         android:layout_below="@+id/textView14"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
@@ -93,7 +96,7 @@
         android:layout_alignBottom="@+id/fr1"
         android:layout_toRightOf="@+id/dnet"
         android:layout_toEndOf="@+id/dnet"
-        android:layout_below="@+id/dnet" />
+        android:layout_alignTop="@+id/fr1" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -106,6 +109,18 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/days"
+        android:textColor="#2b0909"
+        android:id="@+id/textView24"
+        android:layout_below="@+id/buComp"
+        android:layout_toRightOf="@+id/buComp"
+        android:layout_toEndOf="@+id/buComp"
+        android:layout_marginLeft="46dp"
+        android:layout_marginStart="46dp" />
 
 
 </RelativeLayout>

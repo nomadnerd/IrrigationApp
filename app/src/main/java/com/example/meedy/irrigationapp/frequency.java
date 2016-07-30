@@ -55,6 +55,8 @@ public class frequency extends Fragment {
 
                 float fwu = Float.parseFloat(fetwu.getText().toString());
                 float ans = mySingleton.fdnet/fwu;
+
+                ans = (new Float(Math.floor(ans)));
                 mySingleton.irrigationFrequency = ans;
                 fetANS.setText(Float.toString(ans));
 

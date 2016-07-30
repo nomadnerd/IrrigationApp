@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/settime"
+        android:textSize="25sp"
+        android:id="@+id/set"
+        android:textColor="#2b0909"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="42dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/gr"
+        android:textColor="#2b0909"
+        android:id="@+id/textView4"
+        android:layout_below="@+id/set"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/NumOf"
+        android:textColor="#2b0909"
+        android:id="@+id/textView10"
+        android:layout_below="@+id/textView4"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/frag1"
+        android:layout_below="@+id/textView10"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/discharge"
+        android:hint="@string/discharge"
+        android:textColor="#2b0909"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#2b0909"
+        android:text="@string/gr1"
+        android:id="@+id/grossy"
+        android:layout_alignTop="@+id/textView4"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#2b0909"
+        android:text="@string/emitters"
+        android:id="@+id/emitters"
+        android:layout_above="@+id/frag1"
+        android:layout_alignLeft="@+id/grossy"
+        android:layout_alignStart="@+id/grossy" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lperday"
+        android:textColor="#2b0909"
+        android:id="@+id/textView18"
+        android:layout_above="@+id/emitters"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/comp"
+        android:id="@+id/compbtn"
+        android:layout_below="@+id/frag1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="44dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ans"
+        android:id="@+id/time"
+        android:layout_below="@+id/compbtn"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="hours"
+        android:id="@+id/textView28"
+        android:layout_below="@+id/compbtn"
+        android:layout_alignRight="@+id/set"
+        android:layout_alignEnd="@+id/set" />
+</RelativeLayout>
