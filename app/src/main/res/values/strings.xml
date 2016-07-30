@@ -72,13 +72,15 @@
     <string name="metres">M</string>
     <string name="space">Emitter Spacing</string>
     <string name="DBtnPL">distance between plants in m</string>
-    <string name="vol">Volume</string>
+    <string name="vol">Capacity</string>
     <string name="Farea">Field Area</string>
     <string name="settime">Set Time (Ts)</string>
     <string name="gr1">Gross 2</string>
     <string name="emitters">Num of Emitters</string>
     <string name="fra">design with field data</string>
     <string name="mm">mm</string>
+
+    <string name="turnoverRate">m<sup>3</sup>/hour:</string>
     <string-array name="effciency">
         <item>0.8</item>
         <item>0.75</item>

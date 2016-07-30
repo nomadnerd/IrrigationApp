@@ -1,5 +1,6 @@
 package com.example.meedy.irrigationapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class drip_irrFrequency extends AppCompatActivity {
@@ -16,7 +18,7 @@ public class drip_irrFrequency extends AppCompatActivity {
 
     TextView freq, Ram, net, freasnwer, days;
     EditText AvailableMoisture, depfactor;
-    Button comp;
+    Button comp, bnext, prev;
     MySingleton mySingleton = MySingleton.getInstance();
     drip_frequency_formula drip_freq = new drip_frequency_formula();
 
@@ -31,23 +33,31 @@ public class drip_irrFrequency extends AppCompatActivity {
     freasnwer =(TextView)findViewById(R.id.ansFreq);
     net =(TextView)findViewById(R.id.netpertree);
     comp =(Button)findViewById(R.id.compbtn);
+    bnext =(Button)findViewById(R.id.bnext);
+    prev=(Button)findViewById(R.id.pre);
 
     AvailableMoisture =(EditText)findViewById(R.id.AM);
     depfactor = (EditText)findViewById(R.id.depletion);
+
+
 
     comp.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
 
-            if(drip_freq.freq_drip() > 0){
+            try {
 
-                float ans = (drip_freq.freq_drip())/(mySingleton.netdepth_drip * mySingleton.Sp * mySingleton.Sr);
-                Log.d("check", ans +"" );
-                freasnwer.setText(Float.toString(ans));
-            }else{
+                if (drip_freq.freq_drip() > 0) {
 
+                    float ans = (drip_freq.freq_drip()) / (mySingleton.netdepth_drip * mySingleton.Sp * mySingleton.Sr);
+                    Log.d("check", ans + "");
+                    freasnwer.setText(Float.toString(ans));
+                } else {
+
+                }
+            }catch (Exception e){
+                Toast.makeText(drip_irrFrequency.this, "Fill the field(s) above", Toast.LENGTH_SHORT).show();
             }
-
 
         }
     });
@@ -136,6 +146,27 @@ public class drip_irrFrequency extends AppCompatActivity {
 
         }
     });
+
+
+
+    bnext.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent J = new Intent(drip_irrFrequency.this, SetTime.class);
+            startActivity(J);
+
+        }
+    });
+    prev.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+
+            Intent J = new Intent(drip_irrFrequency.this, Adjusted_Pw.class);
+            startActivity(J);
+
+        }
+    });
+
 
 
     }

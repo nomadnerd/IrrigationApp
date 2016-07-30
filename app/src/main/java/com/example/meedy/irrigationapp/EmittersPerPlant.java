@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class EmittersPerPlant extends AppCompatActivity {
@@ -35,17 +36,22 @@ public class EmittersPerPlant extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-
-                float area = Float.parseFloat(areaperplant.getText().toString());
-                float percentage = Float.parseFloat(Pw.getText().toString());
-                float wettedArea = Float.parseFloat(Aw.getText().toString());
-
-                float answer = (area*percentage)/(100*wettedArea);
-                answer = (new Float(Math.ceil(answer)));
-                mySingleton.EmitterPerPlant =answer;
-                AsnE.setText(Float.toString(answer));
+                try {
 
 
+                    float area = Float.parseFloat(areaperplant.getText().toString());
+                    float percentage = Float.parseFloat(Pw.getText().toString());
+                    float wettedArea = Float.parseFloat(Aw.getText().toString());
+
+                    float answer = (area * percentage) / (100 * wettedArea);
+                    answer = (new Float(Math.ceil(answer)));
+                    mySingleton.EmitterPerPlant = answer;
+                    AsnE.setText(Float.toString(answer));
+
+                } catch (Exception e){
+
+                    Toast.makeText(EmittersPerPlant.this, "Fill the field(s) above", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 

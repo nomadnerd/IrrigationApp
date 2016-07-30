@@ -9,9 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-
-
-
+import android.widget.Toast;
 
 
 public class Adjusted_Pw extends AppCompatActivity {
@@ -73,6 +71,8 @@ public class Adjusted_Pw extends AppCompatActivity {
 
 
                 } catch (NumberFormatException e) {
+
+
                 }
             }
         });
@@ -82,19 +82,26 @@ public class Adjusted_Pw extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                float dis = Float.parseFloat(Sp.getText().toString());
-                float rowdistance = Float.parseFloat(Sr.getText().toString());
+                try {
 
-                float ans = (100 * mySingleton.EmitterPerPlant * mySingleton.Spacing * mySingleton.Wetted_Width) / (dis * rowdistance);
-                answer.setText(Float.toString(ans));
+                    float dis = Float.parseFloat(Sp.getText().toString());
+                    float rowdistance = Float.parseFloat(Sr.getText().toString());
 
-                if (ans > 50) {
+                    float ans = (100 * mySingleton.EmitterPerPlant * mySingleton.Spacing * mySingleton.Wetted_Width) / (dis * rowdistance);
+                    answer.setText(Float.toString(ans));
+
+                    if (ans > 50) {
 
 
+                    }
+                    mySingleton.Pw = ans;
+                    mySingleton.Sp = dis;
+                    mySingleton.Sr = rowdistance;
+                } catch (Exception e) {
+
+
+                    Toast.makeText(Adjusted_Pw.this, "Fill the field(s) above", Toast.LENGTH_SHORT).show();
                 }
-                mySingleton.Pw = ans;
-                mySingleton.Sp = dis;
-                mySingleton.Sr = rowdistance;
             }
         });
 

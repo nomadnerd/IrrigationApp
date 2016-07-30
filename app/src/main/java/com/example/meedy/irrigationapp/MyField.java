@@ -7,10 +7,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.TextView;
+import android.widget.Toast;
 
-/**
- * Created by meedy on 5/2/2016.
- */
+
 public class MyField extends AppCompatActivity {
     CheckBox Reg, Irr;
     TextView len, wid, area, answe;
@@ -36,19 +35,27 @@ public class MyField extends AppCompatActivity {
         compute.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                float length = Float.parseFloat(len.getText().toString());
-                float width = Float.parseFloat(wid.getText().toString());
 
-                form_FieldArea Area = new form_FieldArea();
+                try {
 
-                Area.setLength(length);
-                Area.setWidth(width);
 
-                float answer = Area.fieldArea();
-                answe.setText(Float.toString(answer));
+                    float length = Float.parseFloat(len.getText().toString());
+                    float width = Float.parseFloat(wid.getText().toString());
 
-                MySingleton mySingleton = MySingleton.getInstance();
-                mySingleton.field_area =answer;
+                    form_FieldArea Area = new form_FieldArea();
+
+                    Area.setLength(length);
+                    Area.setWidth(width);
+
+                    float answer = Area.fieldArea();
+                    answe.setText(Float.toString(answer));
+
+                    MySingleton mySingleton = MySingleton.getInstance();
+                    mySingleton.field_area = answer;
+                }catch(Exception e){
+
+                    Toast.makeText(MyField.this, "Fill the field(s) above", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 

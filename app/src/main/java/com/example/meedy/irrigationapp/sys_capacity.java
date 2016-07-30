@@ -10,9 +10,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-/**
- * Created by meedy on 5/21/2016.
- */
+
 public class sys_capacity extends AppCompatActivity {
 
     EditText   irrc, sh, tim;
@@ -47,10 +45,12 @@ public class sys_capacity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                float gross = Float.parseFloat(dg.getText().toString());
-                float cycle = Float.parseFloat(irrc.getText().toString());
-                float shift =Float.parseFloat(sh.getText().toString());
-                float time = Float.parseFloat(tim.getText().toString());
+                try {
+
+                    float gross = Float.parseFloat(dg.getText().toString());
+                    float cycle = Float.parseFloat(irrc.getText().toString());
+                    float shift = Float.parseFloat(sh.getText().toString());
+                    float time = Float.parseFloat(tim.getText().toString());
 
 
                 /*form_sysCapac systemcapacity = new form_sysCapac();
@@ -59,11 +59,14 @@ public class sys_capacity extends AppCompatActivity {
                 systemcapacity.setNumbofshift(shift);
                 systemcapacity.setTimepershift(time);*/
 
-                float answer = (mySingleton.field_area*10*gross)/(cycle*shift*time);
-                answr.setText(Float.toString(answer));
+                    float answer = (mySingleton.field_area * 10 * gross) / (cycle * shift * time);
+                    answr.setText(Float.toString(answer));
 
 
+                } catch (Exception e) {
 
+                    Toast.makeText(sys_capacity.this, "Fill the field(s) above", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -73,8 +76,8 @@ public class sys_capacity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Toast toast = Toast.makeText(sys_capacity.this, "next step is not ready",Toast.LENGTH_LONG );
-                toast.setGravity(Gravity.CENTER, 0,0);
+                Toast toast = Toast.makeText(sys_capacity.this, "next step is not ready", Toast.LENGTH_LONG);
+                toast.setGravity(Gravity.CENTER, 0, 0);
                 toast.show();
 
             }

@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 /**
@@ -50,21 +51,27 @@ public class Pdesignfragment1 extends Fragment {
         @Override
         public void onClick(View v) {
 
-            Float fam =Float.parseFloat(am.getText().toString());
-            Float frzd = Float.parseFloat(rz.getText().toString());
-            Float fmd = Float.parseFloat(md.getText().toString());
+            try {
+
+                Float fam = Float.parseFloat(am.getText().toString());
+                Float frzd = Float.parseFloat(rz.getText().toString());
+                Float fmd = Float.parseFloat(md.getText().toString());
 
 
-            form_dnet netdepth = new form_dnet();
-            netdepth.setAllowablemoisture(fmd);
-            netdepth.setAvaiblemoisture(fam);
-            netdepth.setRootzonedepth(frzd);
+                form_dnet netdepth = new form_dnet();
+                netdepth.setAllowablemoisture(fmd);
+                netdepth.setAvaiblemoisture(fam);
+                netdepth.setRootzonedepth(frzd);
 
-            float answer = netdepth.ndepth()/10000;
-            ans.setText(Float.toString(answer));
+                float answer = netdepth.ndepth() / 10000;
+                ans.setText(Float.toString(answer));
 
-            MySingleton mySingleton = MySingleton.getInstance();
-            mySingleton.fdnet = answer;
+                MySingleton mySingleton = MySingleton.getInstance();
+                mySingleton.fdnet = answer;
+            } catch (Exception e){
+
+                Toast.makeText(getContext(), "Fill the field(s) above", Toast.LENGTH_SHORT).show();
+            }
         }
     }
 }

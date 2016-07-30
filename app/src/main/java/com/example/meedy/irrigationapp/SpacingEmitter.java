@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class SpacingEmitter extends AppCompatActivity {
@@ -59,12 +60,18 @@ public class SpacingEmitter extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                float dis = Float.parseFloat(distancrR.getText().toString());
-                float EmitterSpacing = dis/mySingleton.EmitterPerPlant;
-                answer.setText(Float.toString(EmitterSpacing));
-                mySingleton.Spacing =EmitterSpacing;
+                try {
+
+                    float dis = Float.parseFloat(distancrR.getText().toString());
+                    float EmitterSpacing = dis / mySingleton.EmitterPerPlant;
+                    answer.setText(Float.toString(EmitterSpacing));
+                    mySingleton.Spacing = EmitterSpacing;
 
 
+                }catch (Exception e){
+
+                    Toast.makeText(SpacingEmitter.this, "Fill the field(s) above", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 

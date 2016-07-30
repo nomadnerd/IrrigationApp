@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * Created by meedy on 7/30/2016.
@@ -37,10 +38,16 @@ public class SetTime extends AppCompatActivity {
         comp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                float Qdisc = Float.parseFloat(discharge.getText().toString());
-                float ans = (mySingleton.grossdepth * mySingleton.Sr * mySingleton.Sp)/(Qdisc*mySingleton.EmitterPerPlant);
-                ans = (new Float(Math.round(ans)));
-                time.setText(Float.toString(ans));
+
+                try {
+                    float Qdisc = Float.parseFloat(discharge.getText().toString());
+                    float ans = (mySingleton.grossdepth * mySingleton.Sr * mySingleton.Sp) / (Qdisc * mySingleton.EmitterPerPlant);
+                    ans = (new Float(Math.round(ans)));
+                    time.setText(Float.toString(ans));
+                } catch (Exception e){
+
+                    Toast.makeText(SetTime.this, "Fill the field(s) above", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 

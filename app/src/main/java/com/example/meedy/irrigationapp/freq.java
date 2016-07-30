@@ -10,9 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Spinner;
 
-/**
- * Created by meedy on 5/3/2016.
- */
+
 public class freq extends AppCompatActivity{
     Button bfrag1, bfrag2,bnext, prebtn;
     Spinner spinner;
@@ -67,6 +65,8 @@ public class freq extends AppCompatActivity{
 
         @Override
         public void onClick(View v) {
+
+
 
             FragmentManager fragmentManager =  getSupportFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();

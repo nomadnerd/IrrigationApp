@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 /**
@@ -53,14 +54,21 @@ public class frequency extends Fragment {
             @Override
             public void onClick(View v) {
 
-                float fwu = Float.parseFloat(fetwu.getText().toString());
-                float ans = mySingleton.fdnet/fwu;
+                try {
 
-                ans = (new Float(Math.floor(ans)));
-                mySingleton.irrigationFrequency = ans;
-                fetANS.setText(Float.toString(ans));
+                    float fwu = Float.parseFloat(fetwu.getText().toString());
+                    float ans = mySingleton.fdnet / fwu;
 
+                    ans = (new Float(Math.floor(ans)));
+                    mySingleton.irrigationFrequency = ans;
+                    fetANS.setText(Float.toString(ans));
+
+                } catch (Exception e) {
+
+                    Toast.makeText(getContext(), "Fill the field(s) above", Toast.LENGTH_SHORT).show();
+                }
             }
+
         });
 
 

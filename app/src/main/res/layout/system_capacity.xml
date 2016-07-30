@@ -128,12 +128,9 @@
         android:layout_height="wrap_content"
         android:text="@string/prebtn"
         android:id="@+id/PREBTN"
-        android:layout_below="@+id/volume"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="43dp"
-        android:layout_toLeftOf="@+id/AnsVol"
-        android:layout_toStartOf="@+id/AnsVol" />
+        android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="wrap_content"
@@ -145,4 +142,14 @@
         android:layout_alignParentEnd="true"
         android:layout_toRightOf="@+id/AnsVol"
         android:layout_toEndOf="@+id/AnsVol" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/turnoverRate"
+        android:textColor="#2b0909"
+        android:id="@+id/textView27"
+        android:layout_alignTop="@+id/AnsVol"
+        android:layout_toRightOf="@+id/sys"
+        android:layout_toEndOf="@+id/sys" />
 </RelativeLayout>

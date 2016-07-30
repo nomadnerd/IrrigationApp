@@ -37,6 +37,7 @@
         <activity android:name=".SpacingEmitter"/>
         <activity android:name=".Adjusted_Pw"/>
         <activity android:name=".drip_irrFrequency"/>
+        <activity android:name=".SetTime"/>
     </application>
 
 </manifest>

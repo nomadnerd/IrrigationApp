@@ -58,12 +58,18 @@ public class GrossDepth extends Fragment implements AdapterView.OnItemSelectedLi
             @Override
             public void onClick(View v) {
 
-                float eff = effeciency;
-                //Toast.makeText(getContext(), "Selected clicks: " +percentage.getSelectedItem().toString() , Toast.LENGTH_LONG).show();
-                float ans = mySingleton.fdnet/eff;
-               mySingleton.grossdepth = ans;
-                grossAs.setText(Float.toString(ans));
+                try {
 
+                    float eff = effeciency;
+                    //Toast.makeText(getContext(), "Selected clicks: " +percentage.getSelectedItem().toString() , Toast.LENGTH_LONG).show();
+                    float ans = mySingleton.fdnet / eff;
+                    mySingleton.grossdepth = ans;
+                    grossAs.setText(Float.toString(ans));
+
+                }catch (Exception e){
+
+                    Toast.makeText(getContext(), "fill the field(s) above ", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
