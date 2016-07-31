@@ -39,7 +39,9 @@
     <string name="rzd">RZD</string>
     <string name="ems">emitters</string>
     <string name="NumOf">No. of emitters</string>
-    <string name="NEP">Number of Emitters Per Plant</string>
+    <string name="NEP">Emitters Per Plant</string>
+    <string name="NP">emitters</string>
+    <string name="adjustTa">Adjust pressure</string>
     <string name="mad">MAD</string>
     <string name="cp">compute</string>
     <string name="as">Answer</string>
@@ -52,6 +54,7 @@
     <string name="gr">Gross depth</string>
     <string name="eff">Efficiency</string>
     <string name="adj">Adjusted Percentage Pw</string>
+    <string name="pressure">Adjust Set Time</string>
     <string name="copyryt">Copyright \u00a9 2016, Ahmed Hassan</string>
     <string name="W">wetted Area</string>
     <string name="ww">Wetted Width</string>
@@ -93,14 +96,14 @@
     </string-array>
 
     <string-array name="Kr">
-        <item>0.10</item>
-        <item>0.20</item>
-        <item>0.30</item>
-        <item>0.40</item>
+        <item>0.1</item>
+        <item>0.2</item>
+        <item>0.3</item>
+        <item>0.4</item>
         <item>0.75</item>
-        <item>0.80</item>
+        <item>0.8</item>
         <item>0.85</item>
-        <item>0.90</item>
+        <item>0.9</item>
         <item>0.95</item>
     </string-array>
 

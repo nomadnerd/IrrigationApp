@@ -39,6 +39,7 @@
         <activity android:name=".drip_irrFrequency"/>
         <activity android:name=".SetTime"/>
         <activity android:name=".adjusting_pw"/>
+        <activity android:name=".adjusting_Ta"/>
     </application>
 
 </manifest>

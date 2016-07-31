@@ -17,6 +17,7 @@ public class MySingleton {
     public float Sp;
     public float percent;
     public float newPw;
+    public float new_num_Emitter;
     public float net_irr_pertree;
     public float ReadilyMoisture;
     public float factor;

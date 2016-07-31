@@ -50,6 +50,8 @@ public class drip_irrFrequency extends AppCompatActivity {
                 if (drip_freq.freq_drip() > 0) {
 
                     float ans = (drip_freq.freq_drip()) / (mySingleton.netdepth_drip * mySingleton.Sp * mySingleton.Sr);
+
+                    ans = new Float(Math.floor(ans));
                     Log.d("check", ans + "");
                     freasnwer.setText(Float.toString(ans));
                 } else {

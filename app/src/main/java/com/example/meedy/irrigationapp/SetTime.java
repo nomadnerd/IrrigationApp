@@ -1,5 +1,6 @@
 package com.example.meedy.irrigationapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -8,13 +9,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-/**
- * Created by meedy on 7/30/2016.
- */
+
 public class SetTime extends AppCompatActivity {
-    TextView gross, numofemitters, time;
-    EditText discharge;
-    Button comp;
+    TextView gross,time;
+    EditText discharge, numofemitters;
+    Button comp, adjTa;
 
     MySingleton mySingleton = MySingleton.getInstance();
 
@@ -25,15 +24,19 @@ public class SetTime extends AppCompatActivity {
         setContentView(R.layout.set_time);
 
         gross = (TextView)findViewById(R.id.grossy);
-        numofemitters =(TextView)findViewById(R.id.emitters);
+        numofemitters =(EditText)findViewById(R.id.NoEm);
         time =(TextView)findViewById(R.id.time);
 
         discharge =(EditText)findViewById(R.id.discharge);
         comp = (Button)findViewById(R.id.compbtn);
+        adjTa = (Button)findViewById(R.id.ta);
+
+        adjTa.setVisibility(View.INVISIBLE);
 
 
         gross.setText(Float.toString(mySingleton.grossdepth * mySingleton.Sr * mySingleton.Sp));
-        numofemitters.setText(Float.toString(mySingleton.EmitterPerPlant));
+
+        //numofemitters.setText(Float.toString(mySingleton.EmitterPerPlant));
 
         comp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,13 +44,31 @@ public class SetTime extends AppCompatActivity {
 
                 try {
                     float Qdisc = Float.parseFloat(discharge.getText().toString());
-                    float ans = (mySingleton.grossdepth * mySingleton.Sr * mySingleton.Sp) / (Qdisc * mySingleton.EmitterPerPlant);
-                    ans = (new Float(Math.round(ans)));
+                    float num = Float.parseFloat(numofemitters.getText().toString());
+                    float ans = (mySingleton.grossdepth * mySingleton.Sr * mySingleton.Sp) / (Qdisc * num);
+                    //ans = (new Float(Math.round(ans)));
                     time.setText(Float.toString(ans));
+
+                 if(ans>=11.0){
+
+                     adjTa.setVisibility(View.VISIBLE);
+                 }
+
+
                 } catch (Exception e){
 
                     Toast.makeText(SetTime.this, "Fill the field(s) above", Toast.LENGTH_SHORT).show();
                 }
+
+
+            }
+        });
+
+        adjTa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent J = new Intent(SetTime.this, adjusting_Ta.class);
+                startActivity(J);
             }
         });
 

@@ -6,7 +6,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/settime"
+        android:text="@string/pressure"
         android:textSize="25sp"
         android:id="@+id/set"
         android:textColor="#2b0909"
@@ -32,13 +32,13 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true">
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/NumOf"
-        android:textColor="#2b0909"
-        android:id="@+id/NoEm"
-        android:inputType="numberDecimal"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/NumOf"
+            android:textColor="#2b0909"
+            android:id="@+id/NoEm"
+            android:inputType="numberDecimal"/>
 
     </android.support.design.widget.TextInputLayout>
 
@@ -51,13 +51,13 @@
         android:layout_alignParentStart="true">
 
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/discharge"
-        android:hint="@string/discharge"
-        android:textColor="#2b0909"
-        android:inputType="numberDecimal"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/discharge"
+            android:hint="@string/time"
+            android:textColor="#2b0909"
+            android:inputType="numberDecimal"/>
 
     </android.support.design.widget.TextInputLayout>
 
@@ -95,6 +95,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/ans"
+        android:textColor="#2b0909"
         android:id="@+id/time"
         android:layout_below="@+id/compbtn"
         android:layout_alignParentLeft="true"
@@ -103,18 +104,11 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="hours"
+        android:text="lph"
+        android:textColor="#2b0909"
         android:id="@+id/textView28"
         android:layout_below="@+id/compbtn"
         android:layout_alignRight="@+id/set"
         android:layout_alignEnd="@+id/set" />
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/adjustTa"
-        android:id="@+id/ta"
-        android:layout_below="@+id/textView28"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="48dp" />
 </RelativeLayout>

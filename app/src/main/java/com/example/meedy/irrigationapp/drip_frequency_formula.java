@@ -12,11 +12,18 @@ public class drip_frequency_formula {
     }
 
     public void setAvailablemoisture(float availablemoisture) {
+        if (mySingleton.Pw >= mySingleton.newPw){
 
        float answer = (availablemoisture*mySingleton.Sp * mySingleton.Sr * mySingleton.Pw) / 100;
         Log.d("answer", ""+answer);
 
         this.availablemoisture = answer;
+        }else {
+            float answer = (availablemoisture*mySingleton.Sp * mySingleton.Sr * mySingleton.newPw) / 100;
+
+            this.availablemoisture = answer;
+        }
+
     }
 
     public float getDfactor() {
