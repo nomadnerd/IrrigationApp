@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/adjust"
+        android:textColor="#2b0909"
+        android:id="@+id/textView29"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/nww"
+        android:textColor="#2b0909"
+        android:id="@+id/textView30"
+        android:layout_below="@+id/textView29"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="40dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ww"
+        android:textColor="#2b0909"
+        android:id="@+id/wwidth"
+        android:layout_above="@+id/emtitter2"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#2b0909"
+        android:text="@string/metres"
+        android:id="@+id/textView32"
+        android:layout_alignTop="@+id/wwidth"
+        android:layout_toRightOf="@+id/wwidth"
+        android:layout_toEndOf="@+id/wwidth"
+        android:layout_marginLeft="40dp"
+        android:layout_marginStart="40dp" />
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/emtitter2"
+        android:layout_below="@+id/textView30"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/specing"
+        android:hint="@string/newEm"
+        android:inputType="numberDecimal"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/emtitter3"
+        android:layout_below="@+id/emtitter2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ems"
+        android:hint="@string/newnumofem"
+        android:inputType="numberDecimal"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/comp"
+        android:id="@+id/Combutton"
+        android:layout_centerVertical="true"
+        android:layout_alignRight="@+id/wwidth"
+        android:layout_alignEnd="@+id/wwidth" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ans"
+        android:id="@+id/percent"
+        android:textColor="#2b0909"
+        android:layout_below="@+id/Combutton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Percecnt"
+        android:textColor="#2b0909"
+        android:id="@+id/textView33"
+        android:layout_below="@+id/Combutton"
+        android:layout_alignLeft="@+id/Combutton"
+        android:layout_alignStart="@+id/Combutton" />
+
+</RelativeLayout>

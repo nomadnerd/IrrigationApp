@@ -47,6 +47,7 @@ public class EmittersPerPlant extends AppCompatActivity {
                     answer = (new Float(Math.ceil(answer)));
                     mySingleton.EmitterPerPlant = answer;
                     AsnE.setText(Float.toString(answer));
+                    mySingleton.percent = percentage;
 
                 } catch (Exception e){
 

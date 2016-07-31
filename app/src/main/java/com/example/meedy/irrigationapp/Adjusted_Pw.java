@@ -19,7 +19,7 @@ public class Adjusted_Pw extends AppCompatActivity {
     TextView numofemitters;
     TextView emspacing;
     EditText wettedArea, Sp, Sr;
-    Button asnwerbtn, bnext, prev;
+    Button asnwerbtn, bnext, prev, adj;
     float pi = (float) 3.142;
 
     MySingleton mySingleton = MySingleton.getInstance();
@@ -38,6 +38,9 @@ public class Adjusted_Pw extends AppCompatActivity {
         asnwerbtn =(Button)findViewById(R.id.adjbtn);
         bnext =(Button)findViewById(R.id.bnext);
         prev =(Button)findViewById(R.id.previous);
+        adj = (Button)findViewById(R.id.adjbutton);
+
+        adj.setVisibility(View.INVISIBLE);
 
         wettedArea =(EditText)findViewById(R.id.wettedarea);
         Sp = (EditText)findViewById(R.id.distance);
@@ -90,10 +93,14 @@ public class Adjusted_Pw extends AppCompatActivity {
                     float ans = (100 * mySingleton.EmitterPerPlant * mySingleton.Spacing * mySingleton.Wetted_Width) / (dis * rowdistance);
                     answer.setText(Float.toString(ans));
 
-                    if (ans > 50) {
 
+                    if (ans < mySingleton.percent) {
+
+                        adj.setVisibility(View.VISIBLE);
+                    } else {
 
                     }
+
                     mySingleton.Pw = ans;
                     mySingleton.Sp = dis;
                     mySingleton.Sr = rowdistance;
@@ -104,6 +111,19 @@ public class Adjusted_Pw extends AppCompatActivity {
                 }
             }
         });
+
+
+        adj.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent J = new Intent(Adjusted_Pw.this, adjusting_pw.class);
+                startActivity(J);
+
+            }
+        });
+
+
 
 
         bnext.setOnClickListener(new View.OnClickListener() {

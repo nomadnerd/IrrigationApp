@@ -79,6 +79,10 @@
     <string name="emitters">Num of Emitters</string>
     <string name="fra">design with field data</string>
     <string name="mm">mm</string>
+    <string name="adjust">Adjust the Pw to the desired Pw</string>
+    <string name="newEm">New emitter spacing</string>
+    <string name="nww">New wetted width</string>
+    <string name="newnumofem">New numbers of emitters</string>
 
     <string name="turnoverRate">m<sup>3</sup>/hour:</string>
     <string-array name="effciency">

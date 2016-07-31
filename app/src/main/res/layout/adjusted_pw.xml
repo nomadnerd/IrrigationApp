@@ -153,5 +153,16 @@
         android:layout_toLeftOf="@+id/bnext"
         android:layout_toStartOf="@+id/bnext" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/adjust"
+        android:id="@+id/adjbutton"
+        android:layout_above="@+id/bnext"
+        android:layout_marginBottom="42dp"
+        android:layout_toRightOf="@+id/previous"
+        android:layout_toLeftOf="@+id/bnext"
+        android:layout_toStartOf="@+id/bnext" />
+
 
 </RelativeLayout>
