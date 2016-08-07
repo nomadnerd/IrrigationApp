@@ -13,7 +13,7 @@ import android.widget.Toast;
 public class SetTime extends AppCompatActivity {
     TextView gross,time;
     EditText discharge, numofemitters;
-    Button comp, adjTa;
+    Button comp, adjTa, pre, next;
 
     MySingleton mySingleton = MySingleton.getInstance();
 
@@ -30,6 +30,9 @@ public class SetTime extends AppCompatActivity {
         discharge =(EditText)findViewById(R.id.discharge);
         comp = (Button)findViewById(R.id.compbtn);
         adjTa = (Button)findViewById(R.id.ta);
+        pre = (Button)findViewById(R.id.Prebutton);
+        next = (Button)findViewById(R.id.Nxtbutton);
+
 
         adjTa.setVisibility(View.INVISIBLE);
 
@@ -72,6 +75,25 @@ public class SetTime extends AppCompatActivity {
             }
         });
 
+
+
+        pre.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent J = new Intent(SetTime.this, drip_irrFrequency.class);
+                startActivity(J);
+
+            }
+        });
+
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent J = new Intent(SetTime.this,PressureVariation.class);
+                startActivity(J);
+            }
+        });
 
 
 

@@ -85,8 +85,22 @@
     <string name="adjust">Adjust the Pw to the desired Pw</string>
     <string name="newEm">New emitter spacing</string>
     <string name="nww">New wetted width</string>
+    <string name="PV">Pressure Variation</string>7
+    <string name="EU">Emission Uniformity EU</string>
+    <string name="CV">Coefficient of Variation CV </string>
     <string name="newnumofem">New numbers of emitters</string>
-
+    <string name="AV">Average Discharge</string>
+    <string name="disch">qa</string>
+    <string name="mini">Min Discharge</string>
+    <string name="qm">qm</string>
+    <string name="headm"> Minimum Head</string>
+    <string name="expo">Emitter Exponent, x</string>
+    <string name="head">Pressure Head, Ha in Metres</string>
+    <string name="miniH">Min Head</string>
+    <string name="allowable"> Allowable Variation</string>
+    <string name="Phead">Pressre Head</string>
+    <string name="Hm">Hm</string>
+    <string name="delta"><![CDATA[&Delta;]]></string>
     <string name="turnoverRate">m<sup>3</sup>/hour:</string>
     <string-array name="effciency">
         <item>0.8</item>

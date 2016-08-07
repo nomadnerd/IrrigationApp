@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/allowable"
+        android:textColor="#2b0909"
+        android:id="@+id/textView50"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Phead"
+        android:textColor="#2b0909"
+        android:id="@+id/textView51"
+        android:layout_below="@+id/textView50"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ha"
+        android:textColor="#2b0909"
+        android:id="@+id/ha"
+        android:layout_alignTop="@+id/textView51"
+        android:layout_alignLeft="@+id/textView50"
+        android:layout_alignStart="@+id/textView50" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="M"
+        android:id="@+id/textView53"
+        android:layout_alignTop="@+id/ha"
+        android:layout_alignParentRight="true"
+        android:textColor="#2b0909"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="50dp"
+        android:layout_marginEnd="50dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/headm"
+        android:textColor="#2b0909"
+        android:id="@+id/textView54"
+        android:layout_below="@+id/textView51"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Hm"
+        android:id="@+id/Hm"
+        android:textColor="#2b0909"
+        android:layout_below="@+id/ha"
+        android:layout_alignLeft="@+id/ha"
+        android:layout_alignStart="@+id/ha" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="M"
+        android:id="@+id/textView56"
+        android:layout_below="@+id/textView53"
+        android:layout_alignLeft="@+id/textView53"
+        android:layout_alignStart="@+id/textView53" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/comp"
+        android:id="@+id/compbtn"
+        android:layout_below="@+id/textView54"
+        android:textColor="#2b0909"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/allowable"
+        android:id="@+id/allowable"
+        android:textColor="#2b0909"
+        android:layout_below="@+id/compbtn"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/delta"
+        android:textColor="#2b0909"
+        android:id="@+id/delta"
+        android:layout_alignTop="@+id/allowable"
+        android:layout_toRightOf="@+id/ha"
+        android:layout_toEndOf="@+id/ha" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#2b0909"
+        android:text="M"
+        android:id="@+id/textView57"
+        android:layout_alignTop="@+id/delta"
+        android:layout_alignLeft="@+id/textView56"
+        android:layout_alignStart="@+id/textView56" />
+</RelativeLayout>

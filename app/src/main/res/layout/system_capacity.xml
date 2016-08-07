@@ -150,6 +150,6 @@
         android:textColor="#2b0909"
         android:id="@+id/textView27"
         android:layout_alignTop="@+id/AnsVol"
-        android:layout_toRightOf="@+id/sys"
-        android:layout_toEndOf="@+id/sys" />
+        android:layout_alignRight="@+id/bnext_sys"
+        android:layout_alignEnd="@+id/bnext_sys" />
 </RelativeLayout>

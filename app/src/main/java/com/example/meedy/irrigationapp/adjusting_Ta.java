@@ -1,5 +1,6 @@
 package com.example.meedy.irrigationapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -12,7 +13,7 @@ public class adjusting_Ta extends AppCompatActivity{
 
     TextView gr2, qAns;
     EditText emt, time;
-    Button comp;
+    Button comp, pre, next;
 
     MySingleton mySingleton = MySingleton.getInstance();
 
@@ -29,6 +30,9 @@ public class adjusting_Ta extends AppCompatActivity{
         emt = (EditText)findViewById(R.id.NoEm);
         time = (EditText)findViewById(R.id.discharge);
         comp = (Button)findViewById(R.id.compbtn);
+        pre = (Button)findViewById(R.id.pre);
+        next = (Button)findViewById(R.id.next);
+
 
         gr2.setText(Float.toString(mySingleton.grossdepth * mySingleton.Sr * mySingleton.Sp));
 
@@ -45,15 +49,31 @@ public class adjusting_Ta extends AppCompatActivity{
                     float ans = mySingleton.grossdepth * mySingleton.Sr * mySingleton.Sp / (emitters * tim);
 
                     qAns.setText(Float.toString(ans));
+                    mySingleton.adj_lph = ans;
 
-                }catch (Exception e){
+                } catch (Exception e) {
 
                 }
 
             }
         });
 
+        pre.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+                Intent J = new Intent(adjusting_Ta.this, irr_requirement_drip.class);
+                startActivity(J);
+            }
+        });
+
+    next.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent J = new Intent(adjusting_Ta.this, PressureVariation.class);
+            startActivity(J);
+        }
+    });
 
     }
 }

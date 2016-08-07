@@ -40,6 +40,8 @@
         <activity android:name=".SetTime"/>
         <activity android:name=".adjusting_pw"/>
         <activity android:name=".adjusting_Ta"/>
+        <activity android:name=".PressureVariation"/>
+        <activity android:name=".Allowable_Variation"/>
     </application>
 
 </manifest>

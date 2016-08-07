@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/PV"
+        android:textColor="#2b0909"
+        android:id="@+id/pv"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/fr1"
+        android:layout_below="@+id/pv"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/EU"
+        android:textColor="#2b0909"
+        android:id="@+id/EU"
+        android:inputType="numberDecimal"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/fr2"
+        android:layout_below="@+id/fr1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#2b0909"
+        android:hint="@string/CV"
+        android:id="@+id/cv"
+        android:inputType="numberDecimal"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/AV"
+        android:id="@+id/avdischarge"
+        android:textColor="#2b0909"
+        android:layout_below="@+id/fr2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/disch"
+        android:textColor="#2b0909"
+        android:id="@+id/qac"
+        android:layout_below="@+id/fr2"
+        android:layout_alignLeft="@+id/pv"
+        android:layout_alignStart="@+id/pv" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/NEP"
+        android:textColor="#2b0909"
+        android:id="@+id/textView10"
+        android:layout_below="@+id/avdischarge"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/NEP"
+        android:textColor="#2b0909"
+        android:id="@+id/NoEm"
+        android:layout_below="@+id/qac"
+        android:layout_alignLeft="@+id/qac"
+        android:layout_alignStart="@+id/qac" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="lph"
+        android:textColor="#2b0909"
+        android:id="@+id/textView38"
+        android:layout_below="@+id/fr2"
+        android:layout_alignLeft="@+id/button5"
+        android:layout_alignStart="@+id/button5" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/comp"
+        android:id="@+id/compbtn"
+        android:textColor="#2b0909"
+        android:layout_below="@+id/textView10"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/mini"
+        android:textColor="#2b0909"
+        android:id="@+id/textView39"
+        android:layout_below="@+id/compbtn"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/qm"
+        android:textColor="#2b0909"
+        android:id="@+id/qm"
+        android:layout_below="@+id/compbtn"
+        android:layout_alignLeft="@+id/NoEm"
+        android:layout_alignStart="@+id/NoEm" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="lph"
+        android:textColor="#2b0909"
+        android:id="@+id/textView41"
+        android:layout_below="@+id/compbtn"
+        android:layout_alignLeft="@+id/textView38"
+        android:layout_alignStart="@+id/textView38" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/headm"
+        android:textColor="#2b0909"
+        android:id="@+id/textView40"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/textView10"
+        android:layout_toEndOf="@+id/textView10" />
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/fr3"
+        android:layout_below="@+id/textView40"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#2b0909"
+        android:id="@+id/X"
+        android:hint="@string/expo"
+        android:inputType="numberDecimal"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/fr4"
+        android:layout_below="@+id/fr3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/head"
+        android:textColor="#2b0909"
+        android:inputType="numberDecimal"
+        android:hint="@string/head"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/AV"
+        android:textColor="#2b0909"
+        android:id="@+id/textView42"
+        android:layout_below="@+id/fr4"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/disch"
+        android:textColor="#2b0909"
+        android:id="@+id/textView43"
+        android:layout_alignTop="@+id/textView42"
+        android:layout_toRightOf="@+id/qm"
+        android:layout_toEndOf="@+id/qm" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="lph"
+        android:textColor="#2b0909"
+        android:id="@+id/textView44"
+        android:layout_below="@+id/fr4"
+        android:layout_toRightOf="@+id/textView38"
+        android:layout_toEndOf="@+id/textView38" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/mini"
+        android:id="@+id/textView45"
+        android:textColor="#2b0909"
+        android:layout_below="@+id/textView42"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/qm"
+        android:id="@+id/qmi"
+        android:textColor="#2b0909"
+        android:layout_alignTop="@+id/textView45"
+        android:layout_alignLeft="@+id/textView43"
+        android:layout_alignStart="@+id/textView43" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="lph"
+        android:id="@+id/textView47"
+        android:textColor="#2b0909"
+        android:layout_above="@+id/Combutton2"
+        android:layout_alignLeft="@+id/textView44"
+        android:layout_alignStart="@+id/textView44" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#2b0909"
+        android:text="@string/comp"
+        android:id="@+id/Combutton2"
+        android:layout_below="@+id/textView45"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/miniH"
+        android:id="@+id/textView48"
+        android:layout_below="@+id/Combutton2"
+        android:layout_alignParentLeft="true"
+        android:textColor="#2b0909"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#2b0909"
+        android:text="Hm"
+        android:id="@+id/Hm"
+        android:layout_alignBottom="@+id/textView48"
+        android:layout_toRightOf="@+id/textView42"
+        android:layout_toEndOf="@+id/textView42" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#2b0909"
+        android:text="M"
+        android:id="@+id/textView49"
+        android:layout_below="@+id/Combutton2"
+        android:layout_alignRight="@+id/textView40"
+        android:layout_alignEnd="@+id/textView40" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#2b0909"
+        android:text="@string/prebtn"
+        android:id="@+id/pre"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#2b0909"
+        android:text="@string/bnext"
+        android:id="@+id/button5"
+        android:layout_alignTop="@+id/pre"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+
+</RelativeLayout>

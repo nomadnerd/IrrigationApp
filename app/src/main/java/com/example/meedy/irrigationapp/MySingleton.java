@@ -18,6 +18,10 @@ public class MySingleton {
     public float percent;
     public float newPw;
     public float new_num_Emitter;
+    public float adj_lph;
+    public float miniDischarge;
+    public float head;
+    public float miniHead;
     public float net_irr_pertree;
     public float ReadilyMoisture;
     public float factor;
