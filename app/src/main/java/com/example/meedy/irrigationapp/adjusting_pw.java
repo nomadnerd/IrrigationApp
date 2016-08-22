@@ -47,6 +47,8 @@ public class adjusting_pw extends AppCompatActivity {
                 float spac = Float.parseFloat(emsapcing.getText().toString());
                 float num = Float.parseFloat(numEmitters.getText().toString());
 
+                mySingleton.newEmitterSpacing = spac;
+
                 float ans = (float) (100 * spac * num * mySingleton.Wetted_Width * 0.8 / (mySingleton.Sp * mySingleton.Sr));
                 ans = new Float(Math.round(ans));
                 percent.setText(Float.toString(ans));

@@ -100,6 +100,15 @@
     <string name="allowable"> Allowable Variation</string>
     <string name="Phead">Pressre Head</string>
     <string name="Hm">Hm</string>
+    <string name="selecting">Select the appropriate diameter</string>
+    <string name="dia">Enter the candidate diameters</string>
+    <string name="compHf">Compute Head losses</string>
+    <string name="EL">Enter the Length</string>
+    <string name="numOfPlant">Number of Plant per row</string>
+    <string name="plants">plants</string>
+    <string name="laterals">Number of emitters per laterals</string>
+    <string name="dischperlateral">Discharge per lateral</string>
+    <string name="Dis">Enter Discharge per Lateral</string>
     <string name="delta"><![CDATA[&Delta;]]></string>
     <string name="turnoverRate">m<sup>3</sup>/hour:</string>
     <string-array name="effciency">
