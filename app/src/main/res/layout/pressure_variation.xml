@@ -94,8 +94,8 @@
         android:textColor="#2b0909"
         android:id="@+id/textView38"
         android:layout_below="@+id/fr2"
-        android:layout_alignLeft="@+id/button5"
-        android:layout_alignStart="@+id/button5" />
+        android:layout_alignLeft="@+id/bnext"
+        android:layout_alignStart="@+id/bnext" />
 
     <Button
         android:layout_width="match_parent"
@@ -299,7 +299,7 @@
         android:layout_height="wrap_content"
         android:textColor="#2b0909"
         android:text="@string/bnext"
-        android:id="@+id/button5"
+        android:id="@+id/bnext"
         android:layout_alignTop="@+id/pre"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />

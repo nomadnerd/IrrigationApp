@@ -90,8 +90,8 @@ public class SetTime extends AppCompatActivity {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent J = new Intent(SetTime.this,PressureVariation.class);
-                startActivity(J);
+                Intent k = new Intent(SetTime.this,PressureVariation.class);
+                startActivity(k);
             }
         });
 

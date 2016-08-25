@@ -42,7 +42,7 @@ public class PressureVariation extends AppCompatActivity {
 
         comp1 = (Button)findViewById(R.id.compbtn);
         comp2 = (Button)findViewById(R.id.Combutton2);
-        next = (Button)findViewById(R.id.next);
+        next = (Button)findViewById(R.id.bnext);
         pre = (Button)findViewById(R.id.pre);
 
         qa.setText(Float.toString(mySingleton.adj_lph));

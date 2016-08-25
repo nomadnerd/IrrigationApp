@@ -21,7 +21,9 @@
     <string name="Netper3"> Net irrigation per tree</string>
     <string name="freqpeak">Irrigation frequency at peak demand</string>
     <string name="days">days</string>
+    <string name="diameter">Enter available diameters e.g. 5, 15, 20, etc</string>
     <string name="manual">Select Manual</string>
+    <string name="submit">Submit</string>
     <string name="dripm">Drip Manual</string>
     <string name="FD">Enter Field Dimensions</string>
     <string name="discharge">Discharge of Emitter Per Hour</string>

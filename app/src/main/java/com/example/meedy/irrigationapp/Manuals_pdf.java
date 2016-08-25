@@ -44,7 +44,7 @@ public class Manuals_pdf extends AppCompatActivity{
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.fao.org/3/a-ai598e.pdf"));
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.fao.org/3/a-ai597e.pdf"));
 
 
                 if(intent.resolveActivity(getPackageManager())!=null){

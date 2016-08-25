@@ -65,14 +65,5 @@
         android:layout_below="@+id/btn4"
         android:layout_centerHorizontal="true" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/delta"
-        android:id="@+id/textView55"
-        android:layout_below="@+id/tv"
-        android:layout_alignRight="@+id/tv"
-        android:layout_alignEnd="@+id/tv" />
-
 
 </RelativeLayout>

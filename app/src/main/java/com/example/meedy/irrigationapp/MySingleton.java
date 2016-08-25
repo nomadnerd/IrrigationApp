@@ -23,6 +23,9 @@ public class MySingleton {
     public float head;
     public float miniHead;
     public float length;
+    public float volume;
+    public float outlet;
+    public float allowableVariation;
     public float newEmitterSpacing;
     public float net_irr_pertree;
     public float ReadilyMoisture;

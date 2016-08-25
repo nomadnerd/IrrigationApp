@@ -42,6 +42,7 @@
         <activity android:name=".adjusting_Ta"/>
         <activity android:name=".PressureVariation"/>
         <activity android:name=".Allowable_Variation"/>
+        <activity android:name=".LateralDiameter"/>
     </application>
 
 </manifest>
