@@ -65,7 +65,7 @@ public class Allowable_Variation extends AppCompatActivity{
         bnext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent J = new Intent(Allowable_Variation.this, LateralDiameter.class);
+                Intent J = new Intent(Allowable_Variation.this, LateralDiameter2.class);
                 startActivity(J);
 
 

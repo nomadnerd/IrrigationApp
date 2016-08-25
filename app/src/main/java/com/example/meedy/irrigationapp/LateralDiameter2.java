@@ -116,34 +116,44 @@ public class LateralDiameter2 extends AppCompatActivity{
 
             TextView dia = new TextView(this);
             dia.setText(Float.toString(diameter[i]));
+            row2.addView(dia);
+
 
             TextView hf = new TextView(this);
             float Head = Ahf[i];
             hf.setText(Float.toString(Head));
+            row2.addView(hf);
 
 
             TextView Fn2 = new TextView(this);
             float factor =ChristiansenF(mySingleton.outlet);
             Fn2.setText(Float.toString(factor));
+            row2.addView(Fn2);
 
             TextView ActualHf2 = new TextView(this);
             float Act_Hf = factor*Head;
             ActualHf2.setText(Float.toString(Act_Hf));
+            row2.addView(ActualHf2);
 
             TextView Remark2 = new TextView(this);
+
             String remarks;
             if(Act_Hf>mySingleton.allowableVariation){
                 remarks = "Reject";
 
                 Remark2.setText(remarks);
+                row2.addView(Remark2);
             }else if (Act_Hf<mySingleton.allowableVariation){
 
                  remarks = "Accept";
                 Remark2.setText(remarks);
+                row2.addView(Remark2);
 
             }else{
 
             }
+
+            Tl.addView(row2, i+1);
 
 
 
@@ -156,14 +166,13 @@ public class LateralDiameter2 extends AppCompatActivity{
 
 
     public float ChristiansenF(float outlet){
-
-        int m = 2;
-        float a = 1/(m-1);
-        float b = 1/(2*outlet);
+        float m = 2;
+        float a = 1/(m+1);
+        double b = 1.00/(2*outlet);
         float c = (float) Math.pow((m-1),0.5);
         float d = (float) (Math.pow(outlet,2)*6);
         float e = c/d;
-        float Fn = a+b+e;
+        float Fn = a+e+(float)b;
         return  Fn;
 
 
