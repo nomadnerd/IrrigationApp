@@ -42,9 +42,15 @@ public class Allowable_Variation extends AppCompatActivity{
         hm.setText(Float.toString(mySingleton.miniHead));
 
 
-        plants.setText(Float.toString(mySingleton.length/mySingleton.Sp));
-        emitter.setText(Float.toString((mySingleton.length/mySingleton.Sp)*mySingleton.newEmitterSpacing));
-        vol.setText(Float.toString((mySingleton.length/mySingleton.Sp)*mySingleton.newEmitterSpacing*mySingleton.adj_lph));
+        float plant = Math.round(mySingleton.length/mySingleton.Sp);
+        plants.setText(Float.toString(plant));
+
+        float emittersperplant = Math.round(mySingleton.length / mySingleton.Sp)*mySingleton.newEmitterSpacing;
+        emitter.setText(Float.toString(emittersperplant));
+
+        float volume = Math.round(mySingleton.length / mySingleton.Sp)*mySingleton.newEmitterSpacing*mySingleton.adj_lph;
+
+        vol.setText(Float.toString(volume));
 
         mySingleton.volume = ((mySingleton.length/mySingleton.Sp)*mySingleton.newEmitterSpacing*mySingleton.adj_lph);
         mySingleton.outlet = (int) ((mySingleton.length/mySingleton.Sp)*mySingleton.newEmitterSpacing);

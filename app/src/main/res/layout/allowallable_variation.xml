@@ -119,10 +119,10 @@
         android:text="@string/selecting"
         android:textColor="#2b0909"
         android:id="@+id/textView52"
-        android:layout_below="@+id/delta"
-        android:layout_toRightOf="@+id/allowable"
-        android:layout_toEndOf="@+id/allowable"
-        android:layout_marginTop="40dp" />
+        android:layout_marginTop="42dp"
+        android:layout_below="@+id/allowable"
+        android:layout_alignRight="@+id/vol"
+        android:layout_alignEnd="@+id/vol" />
 
     <Button
         android:layout_width="match_parent"

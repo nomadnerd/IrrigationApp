@@ -54,6 +54,7 @@ public class drip_irrFrequency extends AppCompatActivity {
                     ans = new Float(Math.floor(ans));
                     Log.d("check", ans + "");
                     freasnwer.setText(Float.toString(ans));
+                    mySingleton.frequency = ans;
                 } else {
 
                 }

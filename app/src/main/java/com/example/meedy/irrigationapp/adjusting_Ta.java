@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 public class adjusting_Ta extends AppCompatActivity{
 
-    TextView gr2, qAns;
+    TextView gross2, Adjusted_discharge;
     EditText emt, time;
     Button comp, pre, next;
 
@@ -25,8 +25,8 @@ public class adjusting_Ta extends AppCompatActivity{
         super.onCreate(saveInstanceState);
         setContentView(R.layout.adjusting_ta);
 
-        gr2 = (TextView)findViewById(R.id.grossy);
-        qAns = (TextView)findViewById(R.id.time);
+        gross2 = (TextView)findViewById(R.id.grossy);
+        Adjusted_discharge = (TextView)findViewById(R.id.time);
         emt = (EditText)findViewById(R.id.NoEm);
         time = (EditText)findViewById(R.id.discharge);
         comp = (Button)findViewById(R.id.compbtn);
@@ -34,7 +34,7 @@ public class adjusting_Ta extends AppCompatActivity{
         next = (Button)findViewById(R.id.next);
 
 
-        gr2.setText(Float.toString(mySingleton.grossdepth * mySingleton.Sr * mySingleton.Sp));
+        gross2.setText(Float.toString(mySingleton.grossdepth * mySingleton.Sr * mySingleton.Sp));
 
 
         comp.setOnClickListener(new View.OnClickListener() {
@@ -48,7 +48,7 @@ public class adjusting_Ta extends AppCompatActivity{
 
                     float ans = mySingleton.grossdepth * mySingleton.Sr * mySingleton.Sp / (emitters * tim);
 
-                    qAns.setText(Float.toString(ans));
+                    Adjusted_discharge.setText(Float.toString(ans));
                     mySingleton.adj_lph = ans;
 
                 } catch (Exception e) {

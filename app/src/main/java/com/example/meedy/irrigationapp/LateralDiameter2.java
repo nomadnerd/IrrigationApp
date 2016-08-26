@@ -36,15 +36,14 @@ public class LateralDiameter2 extends AppCompatActivity{
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 String mystring = Dia.getText().toString();
                 int size = mystring.split("\\,", -1).length;
                 float [] diameter = new float[size];
 
                 float [] ArrayHf = new float[size];
-
                 int i =0;
-                 for (String item: mystring.split("\\,", -1)){
+
+                for (String item: mystring.split("\\,", -1)){
 
 
                      if(i<size) {
