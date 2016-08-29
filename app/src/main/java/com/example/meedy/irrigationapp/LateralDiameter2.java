@@ -1,7 +1,9 @@
 package com.example.meedy.irrigationapp;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -73,7 +75,9 @@ public class LateralDiameter2 extends AppCompatActivity{
         TableLayout Tl = (TableLayout) findViewById(R.id.ftable);
         TableRow row= new TableRow(this);
         TableRow.LayoutParams lp = new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT);
+        lp.setMargins(30,20,30,0);
         row.setLayoutParams(lp);
+
 
         TextView Dia = new TextView(this);
         TextView Hf = new TextView(this);
@@ -84,22 +88,31 @@ public class LateralDiameter2 extends AppCompatActivity{
         //This generates the caption row
         Dia.setText("Diameter");
         Dia.setPadding(3, 3, 3, 3);
+        Dia.setTextColor(Color.parseColor("#424242"));
         row.addView(Dia);
 
         Hf.setText("Hf");
         Hf.setPadding(3, 3, 3, 3);
+        Hf.setGravity(Gravity.CENTER_VERTICAL);
+        Hf.setTextColor(Color.parseColor("#424242"));
         row.addView(Hf);
 
         Fn.setText("Fn");
         Fn.setPadding(3, 3, 3, 3);
+        Fn.setTextColor(Color.parseColor("#424242"));
+        Fn.setGravity(Gravity.CENTER);
         row.addView(Fn);
 
         ActualHf.setText("Hfactual");
         ActualHf.setPadding(3, 3, 3, 3);
+        ActualHf.setTextColor(Color.parseColor("#424242"));
+        ActualHf.setGravity(Gravity.CENTER_HORIZONTAL);
         row.addView(ActualHf);
 
         Remark.setText("Remark");
-        Dia.setPadding(3, 3, 3, 3);
+        Remark.setPadding(0,3,3,0);
+        Remark.setTextColor(Color.parseColor("#424242"));
+        Remark.setGravity(Gravity.LEFT);
         row.addView(Remark);
 
         Tl.addView(row,0);
@@ -110,42 +123,60 @@ public class LateralDiameter2 extends AppCompatActivity{
 
             TableRow row2= new TableRow(this);
             TableRow.LayoutParams  lp2 = new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT);
+            lp2.setMargins(30,20,30,0);
             row2.setLayoutParams(lp2);
+
+
+            /*View v = new View(this);
+            v.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, 1));
+            v.setBackgroundColor(Color.rgb(51, 51, 51));*/
+
 
 
             TextView dia = new TextView(this);
             dia.setText(Float.toString(diameter[i]));
+            dia.setTextColor(Color.parseColor("#9E9E9E"));
             row2.addView(dia);
 
 
             TextView hf = new TextView(this);
             float Head = Ahf[i];
             hf.setText(Float.toString(Head));
+            hf.setTextColor(Color.parseColor("#9E9E9E"));
+            hf.setGravity(Gravity.CENTER);
             row2.addView(hf);
 
 
             TextView Fn2 = new TextView(this);
             float factor =ChristiansenF(mySingleton.outlet);
             Fn2.setText(Float.toString(factor));
+            Fn2.setTextColor(Color.parseColor("#9E9E9E"));
+            Fn2.setGravity(Gravity.CENTER);
             row2.addView(Fn2);
 
+
             TextView ActualHf2 = new TextView(this);
-            float Act_Hf = factor*Head;
+            float Act_Hf = (float) (Math.round((factor*Head)*100)/100.0);
             ActualHf2.setText(Float.toString(Act_Hf));
+            ActualHf2.setTextColor(Color.parseColor("#9E9E9E"));
+            ActualHf2.setGravity(Gravity.CENTER);
             row2.addView(ActualHf2);
 
             TextView Remark2 = new TextView(this);
+            Remark2.setGravity(Gravity.LEFT);
 
             String remarks;
             if(Act_Hf>mySingleton.allowableVariation){
                 remarks = "Reject";
 
                 Remark2.setText(remarks);
+                Remark2.setTextColor(Color.parseColor("#9E9E9E"));
                 row2.addView(Remark2);
             }else if (Act_Hf<mySingleton.allowableVariation){
 
                  remarks = "Accept";
                 Remark2.setText(remarks);
+                Remark2.setTextColor(Color.parseColor("#9E9E9E"));
                 row2.addView(Remark2);
 
             }else{
@@ -171,7 +202,8 @@ public class LateralDiameter2 extends AppCompatActivity{
         float c = (float) Math.pow((m-1),0.5);
         float d = (float) (Math.pow(outlet,2)*6);
         float e = c/d;
-        float Fn = a+e+(float)b;
+        float Fn = (float) (Math.round((a + e + (float) b)*1000)/1000.0);
+
         return  Fn;
 
 
@@ -179,9 +211,12 @@ public class LateralDiameter2 extends AppCompatActivity{
 
     public  float HeadLoss_HF(float volume, float length, float diameter){
 
-        float a= (float) Math.pow((volume/150),1.852);
+
+        double c = (volume/150);
+        float a= (float) Math.pow((c),1.852);
         float  b = (float) Math.pow(diameter, -4.58);
-        float hf = 3163*length*a*b;
+        float hf = (float) (Math.round((3163 * length * a * b)*100)/100.0);
+
 
         return  hf;
 
