@@ -20,7 +20,7 @@ public class FrontPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_front_page);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+       // setSupportActionBar(toolbar);
 //Button initialization and setting listeners
         bsp = (Button)findViewById(R.id.btn1);
 
