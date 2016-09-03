@@ -1,5 +1,6 @@
 package com.example.meedy.irrigationapp;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -18,7 +19,7 @@ public class LateralDiameter2 extends AppCompatActivity{
 
     EditText Dia;
     TableLayout ftable;
-    Button submit;
+    Button submit, next,previous;
     MySingleton mySingleton = MySingleton.getInstance();
 
     @Override
@@ -33,6 +34,26 @@ public class LateralDiameter2 extends AppCompatActivity{
         Dia = (EditText)findViewById(R.id.diameter);
         ftable = (TableLayout)findViewById( R.id.ftable);
         submit = (Button)findViewById(R.id.submit);
+        next = (Button)findViewById(R.id.bnext);
+        previous = (Button)findViewById(R.id.previous);
+
+
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent J = new Intent(LateralDiameter2.this, Manifold.class);
+                startActivity(J);
+            }
+        });
+
+        previous.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent J = new Intent(LateralDiameter2.this, Allowable_Variation.class);
+                startActivity(J);
+            }
+        });
 
 
         submit.setOnClickListener(new View.OnClickListener() {

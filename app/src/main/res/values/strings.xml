@@ -112,6 +112,15 @@
     <string name="dischperlateral">Discharge per lateral</string>
     <string name="Dis">Enter Discharge per Lateral</string>
     <string name="delta"><![CDATA[&Delta;]]></string>
+    <string name="info">About</string>
+    <string name="about">
+        The irrigation design application is a tool that is meant to simplify the design procedures of
+        irrigation system. You can do your design calculation whether you’re in office or in the field. The app has input
+        and output futures. The design steps and equations required are also embedded in the app and
+        therefore you don’t need to struggle in remembering all the formulas. Similarly, the tables for
+        constants are also put in a database and you can easily retrieve.
+
+    </string>
     <string name="turnoverRate">m<sup>3</sup>/hour:</string>
     <string-array name="effciency">
         <item>0.8</item>
