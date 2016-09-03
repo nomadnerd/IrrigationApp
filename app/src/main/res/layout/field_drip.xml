@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/FT"
+        android:layout_marginTop="10dp"
+        android:textSize="20sp"
+        android:textColor="#2b0909"
+        android:id="@+id/textView"
+        android:layout_gravity="center_horizontal" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/reg"
+        android:textSize="15sp"
+        android:id="@+id/CB1" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/irr"
+        android:textSize="15sp"
+        android:id="@+id/CB2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/FD"
+        android:textColor="#2b0909"
+        android:textSize="20sp"
+        android:id="@+id/textView2"
+        android:layout_gravity="center_horizontal" />
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:hint="length in m"
+            android:inputType="numberDecimal"
+            android:layout_height="wrap_content"
+            android:id="@+id/len" />
+
+
+    </android.support.design.widget.TextInputLayout>
+
+
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:hint="width in m"
+            android:inputType="numberDecimal"
+            android:layout_height="wrap_content"
+            android:id="@+id/wid" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#2b0909"
+        android:text="compute"
+        android:id="@+id/area_btn" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="77dp"
+        android:layout_weight="0.62">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Farea"
+            android:textColor="#2b0909"
+            android:id="@+id/area"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@+id/answer"
+            android:layout_toStartOf="@+id/answer" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#2b0909"
+            android:id="@+id/answer"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/next"
+            android:textColor="#2b0909"
+            android:id="@+id/bnxt"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_toEndOf="@+id/area"
+            android:layout_toRightOf="@+id/area" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#2b0909"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/bnxt"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/prevBtn"
+            android:text="@string/prebtn" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#2b0909"
+            android:text="@string/ha"
+            android:id="@+id/ha"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/answer"
+            android:layout_toEndOf="@+id/answer"
+            android:layout_marginLeft="44dp"
+            android:layout_marginStart="44dp" />
+    </RelativeLayout>
+
+
+
+</LinearLayout>
