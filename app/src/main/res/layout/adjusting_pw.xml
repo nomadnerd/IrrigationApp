@@ -109,7 +109,8 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/prebtn"
+
+        android:background="@drawable/ic_arrow_back_black_24dp"
         android:id="@+id/pre"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
@@ -118,7 +119,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/bnext"
+        android:background="@drawable/ic_arrow_forward_black_24dp"
         android:id="@+id/bnext"
         android:layout_alignParentBottom="true"
         android:layout_toRightOf="@+id/textView32"

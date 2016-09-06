@@ -30,7 +30,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/ns"
+        android:background="@drawable/ic_arrow_forward_black_24dp"
         android:id="@+id/button555"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
@@ -39,7 +39,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/prebtn"
+        android:background="@drawable/ic_arrow_back_black_24dp"
         android:id="@+id/prevBtn"
         android:layout_alignTop="@+id/button555"
         android:layout_alignParentLeft="true"

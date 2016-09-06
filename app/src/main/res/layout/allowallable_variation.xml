@@ -127,12 +127,12 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/bnext"
+        android:background="@drawable/ic_arrow_forward_black_24dp"
         android:id="@+id/btnLoss"
         android:textColor="#2b0909"
         android:layout_alignTop="@+id/prevBtn"
-        android:layout_toRightOf="@+id/delta"
-        android:layout_toEndOf="@+id/delta" />
+        android:layout_toEndOf="@+id/textView50"
+        android:layout_toRightOf="@+id/textView50" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -207,14 +207,14 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/prebtn"
+        android:background="@drawable/ic_arrow_back_black_24dp"
         android:id="@+id/prevBtn"
         android:textColor="#2b0909"
         android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/Hm"
-        android:layout_alignEnd="@+id/Hm"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/allowable"
+        android:layout_alignEnd="@+id/allowable" />
 
 
 </RelativeLayout>

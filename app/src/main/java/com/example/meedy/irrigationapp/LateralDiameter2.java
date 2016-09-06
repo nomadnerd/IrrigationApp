@@ -34,7 +34,7 @@ public class LateralDiameter2 extends AppCompatActivity{
         Dia = (EditText)findViewById(R.id.diameter);
         ftable = (TableLayout)findViewById( R.id.ftable);
         submit = (Button)findViewById(R.id.submit);
-        next = (Button)findViewById(R.id.bnext);
+        next = (Button)findViewById(R.id.next);
         previous = (Button)findViewById(R.id.previous);
 
 

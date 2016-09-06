@@ -36,7 +36,7 @@ public class Home extends AppCompatActivity
         manual = (Button)findViewById(R.id.manual);
 
         header = (TextView)findViewById(R.id.textView55);
-        copyright = (TextView)findViewById(R.id.textView61);
+        /*copyright = (TextView)findViewById(R.id.textView61);*/
 
 
         info.setOnClickListener(new View.OnClickListener() {
@@ -44,7 +44,7 @@ public class Home extends AppCompatActivity
             public void onClick(View v) {
                 AboutFragment aboutFragment = new AboutFragment();
                 FragmentManager manager = getSupportFragmentManager();
-                manager.beginTransaction().replace(R.id.relative_for_fragment, aboutFragment).commit();
+                manager.beginTransaction().replace(R.id.app_bar_navigation, aboutFragment).commit();
 
             }
         });

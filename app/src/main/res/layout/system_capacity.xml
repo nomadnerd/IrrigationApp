@@ -126,7 +126,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/prebtn"
+        android:background="@drawable/ic_arrow_back_black_24dp"
         android:id="@+id/PREBTN"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
@@ -135,13 +135,13 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/bnext"
+        android:background="@drawable/ic_arrow_forward_black_24dp"
         android:id="@+id/bnext_sys"
         android:layout_alignTop="@+id/PREBTN"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_toRightOf="@+id/AnsVol"
-        android:layout_toEndOf="@+id/AnsVol" />
+        android:layout_toEndOf="@+id/comp"
+        android:layout_toRightOf="@+id/comp" />
 
     <TextView
         android:layout_width="wrap_content"

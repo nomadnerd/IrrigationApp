@@ -103,25 +103,23 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/next"
+            android:background="@drawable/ic_arrow_forward_black_24dp"
             android:textColor="#2b0909"
             android:id="@+id/bnxt"
             android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
-            android:layout_toEndOf="@+id/area"
-            android:layout_toRightOf="@+id/area" />
+            android:layout_toEndOf="@+id/ha" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#2b0909"
             android:layout_centerVertical="true"
-            android:layout_toLeftOf="@+id/bnxt"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:id="@+id/prevBtn"
-            android:text="@string/prebtn" />
+            android:background="@drawable/ic_arrow_back_black_24dp" />
 
         <TextView
             android:layout_width="wrap_content"
