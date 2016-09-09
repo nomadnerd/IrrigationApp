@@ -25,28 +25,74 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".FrontPage"></activity>
-        <activity android:name=".Preliminary_design" />
-        <activity android:name=".MyField" />
-        <activity android:name=".sys_capacity" />
-        <activity android:name=".freq" />
-        <activity android:name=".field_drip" />
-        <activity android:name=".irr_requirement_drip" />
-        <activity android:name=".Manuals_pdf" />
-        <activity android:name=".EmittersPerPlant" />
-        <activity android:name=".SpacingEmitter" />
-        <activity android:name=".Adjusted_Pw" />
-        <activity android:name=".drip_irrFrequency" />
-        <activity android:name=".SetTime" />
-        <activity android:name=".adjusting_pw" />
-        <activity android:name=".adjusting_Ta" />
-        <activity android:name=".PressureVariation" />
-        <activity android:name=".Allowable_Variation" />
-        <activity android:name=".LateralDiameter2" />
+        <activity android:name=".FrontPage"
+                  android:label="Frontpage"
+                    ></activity>
+
+
+        <activity android:name=".Preliminary_design"
+            android:label="Preliminary"></activity>
+
+
+        <activity android:name=".MyField"
+                  android:label="Field size"></activity>
+
+        <activity android:name=".sys_capacity"
+                  android:label="Preliminary System Capacity"/>
+
+
+        <activity android:name=".freq"
+                    android:label=" Irrigation Frequency"/>
+
+
+        <activity android:name=".field_drip"
+            android:label="Field size"/>
+
+
+        <activity android:name=".irr_requirement_drip"
+                  android:label="Irrigation Requirement"/>
+
+        <activity android:name=".Manuals_pdf"
+                    android:label="FAO Manuals"/>
+
+
+        <activity android:name=".EmittersPerPlant"
+                android:label="Number of Emitters"/>
+
+        <activity android:name=".SpacingEmitter"
+                android:label="Emitter Spacing"/>
+
+        <activity android:name=".Adjusted_Pw"
+                android:label="Percentage Wetted Area"/>
+
+        <activity android:name=".drip_irrFrequency"
+                android:label=" Irrigation Frequency"/>
+
+        <activity android:name=".SetTime"
+            android:label="Set Time"/>
+
+        <activity android:name=".adjusting_pw"
+                    android:label="Adjusting Pw"/>
+
+        <activity android:name=".adjusting_Ta"
+                  android:label="Adjusting Set Time"/>
+
+        <activity android:name=".PressureVariation"
+                  android:label="Pressure Variation"/>
+
+        <activity android:name=".Allowable_Variation"
+                  android:label="Allowable Variation"/>
+
+        <activity android:name=".LateralDiameter2"
+                   android:label="Lateral Pipe Diameter"/>
         <activity
             android:name=".Home"
             android:label="@string/title_activity_navigation"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".About"
+            android:label="About"></activity>
+        <activity android:name=".Manifold"
+                  android:label="Manifold Pipe Diameter"></activity>
     </application>
 
 </manifest>
