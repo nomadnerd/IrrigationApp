@@ -187,13 +187,13 @@ public class LateralDiameter2 extends AppCompatActivity{
             Remark2.setGravity(Gravity.LEFT);
 
             String remarks;
-            if(Act_Hf>mySingleton.allowableVariation){
+            if(Act_Hf>mySingleton.allowableVariation && Act_Hf<0.01*mySingleton.allowableVariation){
                 remarks = "Reject";
 
                 Remark2.setText(remarks);
                 Remark2.setTextColor(Color.parseColor("#9E9E9E"));
                 row2.addView(Remark2);
-            }else if (Act_Hf<mySingleton.allowableVariation){
+            }else if (Act_Hf<mySingleton.allowableVariation-2.5 && Act_Hf>mySingleton.allowableVariation-2){
 
                  remarks = "Accept";
                 Remark2.setText(remarks);

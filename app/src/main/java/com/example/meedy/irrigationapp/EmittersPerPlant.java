@@ -13,7 +13,7 @@ import android.widget.Toast;
 public class EmittersPerPlant extends AppCompatActivity {
 
     TextView NoEpp, AsnE;
-    EditText areaperplant, Pw, Aw;
+    EditText Sp,Sr, Pw, Aw;
     Button computebtn, prebtn, bnext;
     MySingleton mySingleton = MySingleton.getInstance();
 
@@ -24,7 +24,7 @@ public class EmittersPerPlant extends AppCompatActivity {
 
         NoEpp = (TextView)findViewById(R.id.emtrs);
         AsnE =(TextView)findViewById(R.id.ansEmitters);
-        areaperplant = (EditText)findViewById(R.id.areaperplant);
+        Sr = (EditText)findViewById(R.id.areaperplant);
         Pw =(EditText)findViewById(R.id.Pw);
         Aw = (EditText)findViewById(R.id.Aw);
         computebtn = (Button)findViewById(R.id.Compemitter);
@@ -39,11 +39,12 @@ public class EmittersPerPlant extends AppCompatActivity {
                 try {
 
 
-                    float area = Float.parseFloat(areaperplant.getText().toString());
+                    float rowspacing = Float.parseFloat(Sr.getText().toString());
+                    float plantspacing = Float.parseFloat(Sp.getText().toString());
                     float percentage = Float.parseFloat(Pw.getText().toString());
                     float wettedArea = Float.parseFloat(Aw.getText().toString());
 
-                    float answer = (area * percentage) / (100 * wettedArea);
+                    float answer = (rowspacing*plantspacing * percentage) / (100 * wettedArea);
                     answer = (new Float(Math.ceil(answer)));
                     mySingleton.EmitterPerPlant = answer;
                     AsnE.setText(Float.toString(answer));
