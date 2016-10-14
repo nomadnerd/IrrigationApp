@@ -13,7 +13,7 @@ import android.widget.TextView;
  */
 public class Allowable_Variation extends AppCompatActivity{
 
-    TextView ha, hm, delta, plants,emitter,vol;
+    TextView ha, hm, delta, plants,emitter,vol, manifold, system;
     Button comp, pre ,bnext;
     MySingleton mySingleton = MySingleton.getInstance();
 
@@ -31,12 +31,18 @@ public class Allowable_Variation extends AppCompatActivity{
         plants = (TextView)findViewById(R.id.plants);
         emitter = (TextView)findViewById(R.id.emitters);
         vol = (TextView)findViewById(R.id.vol);
+        manifold = (TextView)findViewById(R.id.flow);
+        system = (TextView)findViewById(R.id.sys);
 
 
 
         comp = (Button)findViewById(R.id.compbtn);
         bnext = (Button)findViewById(R.id.btnLoss);
         pre = (Button)findViewById(R.id.prevBtn);
+
+
+
+
 
         ha.setText(Float.toString(mySingleton.head));
         hm.setText(Float.toString(mySingleton.miniHead));
@@ -45,12 +51,25 @@ public class Allowable_Variation extends AppCompatActivity{
         float plant = Math.round(mySingleton.length/mySingleton.Sp);
         plants.setText(Float.toString(plant));
 
-        float emittersperplant = Math.round(mySingleton.length / mySingleton.Sp)*mySingleton.newEmitterSpacing;
+        float emittersperplant = Math.round(mySingleton.length / mySingleton.Sp)*mySingleton.newEmitterSpacing*2;
         emitter.setText(Float.toString(emittersperplant));
 
         float volume = Math.round(mySingleton.length / mySingleton.Sp)*mySingleton.newEmitterSpacing*mySingleton.adj_lph;
 
         vol.setText(Float.toString(volume));
+
+         /*Number of laterals*/
+
+        float NL = (mySingleton.length/mySingleton.Sr)*2;
+        float flowpermanifolf= (NL*emittersperplant*mySingleton.adj_lph)/1000;
+        mySingleton.manifoldoutlet=NL;
+
+        manifold.setText((int) flowpermanifolf);
+
+        float systemcapacity = flowpermanifolf*2;
+        system.setText((int) (systemcapacity));
+        mySingleton.drip_systemcapacity = systemcapacity;
+
 
         mySingleton.volume = ((mySingleton.length/mySingleton.Sp)*mySingleton.newEmitterSpacing*mySingleton.adj_lph);
         mySingleton.outlet = (int) ((mySingleton.length/mySingleton.Sp)*mySingleton.newEmitterSpacing);

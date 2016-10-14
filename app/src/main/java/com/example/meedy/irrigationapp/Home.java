@@ -12,14 +12,13 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class Home extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
-    Button info, description,manual;
+/*
+    Button info, description,manual;*/
     TextView header, copyright;
 
     @Override
@@ -29,14 +28,14 @@ public class Home extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        info = (Button)findViewById(R.id.INFObtn);
+       /* info = (Button)findViewById(R.id.INFObtn);
         description = (Button)findViewById(R.id.desBtn);
-        manual = (Button)findViewById(R.id.manual);
+        manual = (Button)findViewById(R.id.manual);*/
 
         header = (TextView)findViewById(R.id.textView55);
         /*copyright = (TextView)findViewById(R.id.textView61);*/
 
-
+/*
         info.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -59,7 +58,7 @@ public class Home extends AppCompatActivity
                 Intent J = new Intent(Home.this, Manuals_pdf.class);
                 startActivity(J);
             }
-        });
+        });*/
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -124,6 +123,8 @@ public class Home extends AppCompatActivity
 
             Intent J = new Intent(Home.this, FrontPage.class);
             startActivity(J);
+
+
         } else if (id == R.id.open) {
 
         }  else if (id == R.id.nav_share) {
@@ -138,6 +139,16 @@ public class Home extends AppCompatActivity
             if(intent.resolveActivity(getPackageManager()) !=null){
                 startActivity(intent);
             }
+        }else if (id == R.id.manual){
+            Intent J = new Intent(Home.this, Manuals_pdf.class);
+            startActivity(J);
+        }else if (id==R.id.Description){
+            Toast.makeText(Home.this, "description button was clicked", Toast.LENGTH_SHORT).show();
+
+        }else if(id==R.id.info){
+            Intent J = new Intent(Home.this, About.class);
+            startActivity(J);
+
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

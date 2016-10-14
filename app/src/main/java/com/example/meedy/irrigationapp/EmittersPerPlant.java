@@ -22,9 +22,10 @@ public class EmittersPerPlant extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.emitter_per_plant);
 
-        NoEpp = (TextView)findViewById(R.id.emtrs);
+        /*NoEpp = (TextView)findViewById(R.id.emtrs);*/
         AsnE =(TextView)findViewById(R.id.ansEmitters);
-        Sr = (EditText)findViewById(R.id.areaperplant);
+        Sr = (EditText)findViewById(R.id.Sr);
+        Sp = (EditText)findViewById(R.id.areaperplant);
         Pw =(EditText)findViewById(R.id.Pw);
         Aw = (EditText)findViewById(R.id.Aw);
         computebtn = (Button)findViewById(R.id.Compemitter);

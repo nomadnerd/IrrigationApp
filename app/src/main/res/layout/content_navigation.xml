@@ -23,7 +23,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
-    <Button
+    <!--<Button
         android:layout_width="150dp"
         android:layout_height="100dp"
         android:background="@drawable/ic_info_outline_black_24dp1"
@@ -42,7 +42,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
-  <!--  <TextView
+  &lt;!&ndash;  <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/copyryt"
@@ -50,7 +50,7 @@
         android:id="@+id/textView61"
         android:layout_marginBottom="123dp"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />-->
+        android:layout_centerHorizontal="true" />&ndash;&gt;
 
     <Button
         android:layout_width="150dp"
@@ -61,6 +61,6 @@
         android:layout_below="@+id/INFObtn"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
-
+-->
 
 </RelativeLayout>

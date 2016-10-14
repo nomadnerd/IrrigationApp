@@ -45,7 +45,7 @@ public class field_drip extends AppCompatActivity {
                     float width = Float.parseFloat(wid.getText().toString());
 
                     mySingleton.length = length;
-
+                    mySingleton.width  =width;
                     form_FieldArea Area = new form_FieldArea();
 
                     Area.setLength(length);

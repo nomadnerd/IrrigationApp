@@ -28,6 +28,11 @@ public class MySingleton {
     public float allowableVariation;
     public float newEmitterSpacing;
     public float frequency;
+    public float width;
+    public float drip_systemcapacity;
+    public float manifoldoutlet;
+
+
     public float net_irr_pertree;
     public float ReadilyMoisture;
     public float factor;

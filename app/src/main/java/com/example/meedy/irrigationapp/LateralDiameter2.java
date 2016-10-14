@@ -24,18 +24,18 @@ public class LateralDiameter2 extends AppCompatActivity{
 
     @Override
 
-    public void onCreate(Bundle savedInstanceState){
+    public void onCreate(Bundle savedInstanceState) {
 
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.lateral_diameter);
 
 
-        Dia = (EditText)findViewById(R.id.diameter);
-        ftable = (TableLayout)findViewById( R.id.ftable);
-        submit = (Button)findViewById(R.id.submit);
-        next = (Button)findViewById(R.id.next);
-        previous = (Button)findViewById(R.id.previous);
+        Dia = (EditText) findViewById(R.id.diameter);
+        ftable = (TableLayout) findViewById(R.id.ftable);
+        submit = (Button) findViewById(R.id.submit);
+        next = (Button) findViewById(R.id.next);
+        previous = (Button) findViewById(R.id.previous);
 
 
         next.setOnClickListener(new View.OnClickListener() {
@@ -56,40 +56,45 @@ public class LateralDiameter2 extends AppCompatActivity{
         });
 
 
-        submit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String mystring = Dia.getText().toString();
-                int size = mystring.split("\\,", -1).length;
-                float [] diameter = new float[size];
 
-                float [] ArrayHf = new float[size];
-                int i =0;
-
-                for (String item: mystring.split("\\,", -1)){
+            submit.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
 
 
-                     if(i<size) {
-                         diameter[i] = Float.parseFloat(item);
+                    String mystring = Dia.getText().toString();
+                    int size = mystring.split("\\,", -1).length;
+                    float[] diameter = new float[size];
+
+                    float[] ArrayHf = new float[size];
+                    int i = 0;
+
+                    for (String item : mystring.split("\\,", -1)) {
 
 
-                         ArrayHf[i] = HeadLoss_HF(mySingleton.volume, mySingleton.length, diameter[i]);
+                        if (i < size) {
+                            diameter[i] = Float.parseFloat(item);
 
-                         i++;
-                     } else {
-                         break;
-                     }
 
+                            ArrayHf[i] = HeadLoss_HF(mySingleton.volume, mySingleton.width, diameter[i]);
+
+                            i++;
+                        } else {
+                            break;
+                        }
+
+
+                    }
+
+                    createTable(diameter, ArrayHf);
 
                 }
-
-                createTable(diameter, ArrayHf);
+            });
 
 
             }
-        });
 
-    }
+
 
     public void createTable(float[] diameter, float[] Ahf){
 

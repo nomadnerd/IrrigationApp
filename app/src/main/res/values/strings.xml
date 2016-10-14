@@ -3,11 +3,11 @@
     <string name="action_settings">Settings</string>
     <string name="pre">Preliminary Design</string>
     <string name="dnt">net depth</string>
-    <string name="fc">AM</string>
+    <string name="fc">Available Moisture mm/m</string>
     <string name="ha">ha</string>
     <string name="KR">Crop Factor Kr</string>
-    <string name="rz">RZD</string>
-    <string name="dep">MAD</string>
+    <string name="rz">RZD in meters</string>
+    <string name="dep">MAD in %</string>
     <string name="comp">Compute</string>
     <string name="ans">Answer</string>
     <string name="ns">Next Step</string>
@@ -55,7 +55,7 @@
     <string name="bcomp">Compute</string>
     <string name="gr">Gross depth</string>
     <string name="eff">Efficiency</string>
-    <string name="adj">Adjusted Percentage Pw</string>
+    <string name="adj">Adjusted Percentage Pw in %</string>
     <string name="pressure">Adjust Set Time</string>
     <string name="copyryt">Copyright \u00a9 2016, Ahmed Hassan</string>
     <string name="W">wetted Area</string>
@@ -101,7 +101,7 @@
     <string name="head">Pressure Head, Ha in Metres</string>
     <string name="miniH">Min Head</string>
     <string name="allowable"> Allowable Variation</string>
-    <string name="Phead">Pressre Head</string>
+    <string name="Phead">Pressure Head</string>
     <string name="Hm">Hm</string>
     <string name="selecting">Select the appropriate diameter</string>
     <string name="dia">Enter the candidate diameters</string>
@@ -124,7 +124,11 @@
     </string>
     <string name="turnoverRate">m<sup>3</sup>/hour:</string>
     <string-array name="effciency">
-        <item>0.8</item>
+
+        <item>0.95</item>
+        <item>0.90</item>
+        <item>0.85</item>
+        <item>0.80</item>
         <item>0.75</item>
         <item>0.70</item>
         <item>0.65</item>
