@@ -10,9 +10,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-/**
- * Created by meedy on 8/7/2016.
- */
+
 public class PressureVariation extends AppCompatActivity {
     TextView qa,emitters, hm, qm, qa2, qm2;
     EditText eu,cv,exp,Ha;
@@ -64,7 +62,7 @@ public class PressureVariation extends AppCompatActivity {
                     float uniform = Float.parseFloat(eu.getText().toString());
                     float variation = Float.parseFloat(cv.getText().toString());
 
-                    float minDis = (float) ((uniform * mySingleton.adj_lph) / ((100 * (1 - (1.27 / (Math.sqrt(mySingleton.new_num_Emitter)) * variation)))));
+                    float minDis = (float) ((uniform * mySingleton.adj_lph) / ((100 * (1 - (1.27 * variation/ (Math.sqrt(mySingleton.new_num_Emitter)) )))));
 
                     Log.d("minDis", "" + minDis);
 
@@ -93,10 +91,27 @@ public class PressureVariation extends AppCompatActivity {
                     float expo = Float.parseFloat(exp.getText().toString());
                     float head = Float.parseFloat(Ha.getText().toString());
                     mySingleton.head = head;
-                    float minHead = (float) (head * Math.pow((mySingleton.miniDischarge / mySingleton.adj_lph), 1 / expo));
-                    hm.setText(Float.toString(minHead));
 
-                    mySingleton.miniHead = minHead;
+
+                    if(mySingleton.setTime1<11.5) {
+
+                        float minHead = (float) (head * Math.pow((mySingleton.miniDischarge / mySingleton.adj_lph), 1 / expo));
+                        hm.setText(Float.toString(minHead));
+
+                        mySingleton.miniHead = minHead;
+                    }else {
+
+                        float newOperatingPressure = (float) (head*Math.pow((mySingleton.adj_lph/mySingleton.intial_discharge), 1/expo));
+
+                        mySingleton.newHead = newOperatingPressure;
+
+                        float minHead = (float) (newOperatingPressure * Math.pow((mySingleton.miniDischarge / mySingleton.adj_lph), 1 / expo));
+                        hm.setText(Float.toString(minHead));
+
+                        mySingleton.miniHead = minHead;
+
+
+                    }
 
                 }catch (Exception e){
 

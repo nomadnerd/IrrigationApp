@@ -65,6 +65,8 @@ public class netdepth_drip extends Fragment implements AdapterView.OnItemSelecte
                     float ans = (float) (Math.round((crop_factor * crop)*1000)/1000.0);
                     mySingleton.netdepth_drip = ans;
                     Dans.setText(Float.toString(ans));
+
+                    mySingleton.ET_drip = crop_factor;
                 }catch (Exception e){
 
                     Toast.makeText(getContext(), "Fill the field(s) above", Toast.LENGTH_SHORT).show();

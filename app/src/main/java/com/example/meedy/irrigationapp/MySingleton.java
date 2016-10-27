@@ -31,6 +31,10 @@ public class MySingleton {
     public float width;
     public float drip_systemcapacity;
     public float manifoldoutlet;
+    public float ET_drip;
+    public float intial_discharge;
+    public float setTime1;
+    public float newHead;
 
 
     public float net_irr_pertree;

@@ -37,7 +37,7 @@ public class SetTime extends AppCompatActivity {
         adjTa.setVisibility(View.INVISIBLE);
 
 
-        gross.setText(Float.toString(mySingleton.grossdepth * mySingleton.Sr * mySingleton.Sp));
+        gross.setText(Float.toString(mySingleton.grossdepth * mySingleton.Sr * mySingleton.Sp*mySingleton.frequency));
 
         //numofemitters.setText(Float.toString(mySingleton.EmitterPerPlant));
 
@@ -48,9 +48,16 @@ public class SetTime extends AppCompatActivity {
                 try {
                     float Qdisc = Float.parseFloat(discharge.getText().toString());
                     float num = Float.parseFloat(numofemitters.getText().toString());
-                    float ans = (mySingleton.grossdepth * mySingleton.Sr * mySingleton.Sp) / (Qdisc * num);
+                    float ans = (mySingleton.grossdepth * mySingleton.Sr * mySingleton.Sp*mySingleton.frequency) / (Qdisc * num);
                     //ans = (new Float(Math.round(ans)));
                     time.setText(Float.toString(ans));
+
+                    mySingleton.setTime1=ans;
+
+                    //Setting mysingleton of intial discharge
+
+                    mySingleton.intial_discharge = Qdisc;
+
 
                  if(ans>=11.0){
 

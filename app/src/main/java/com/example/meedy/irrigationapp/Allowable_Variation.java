@@ -13,7 +13,7 @@ import android.widget.TextView;
  */
 public class Allowable_Variation extends AppCompatActivity{
 
-    TextView ha, hm, delta, plants,emitter,vol, manifold, system;
+    TextView ha, hm, delta, plants,emitter,vol, flow, system;
     Button comp, pre ,bnext;
     MySingleton mySingleton = MySingleton.getInstance();
 
@@ -31,7 +31,7 @@ public class Allowable_Variation extends AppCompatActivity{
         plants = (TextView)findViewById(R.id.plants);
         emitter = (TextView)findViewById(R.id.emitters);
         vol = (TextView)findViewById(R.id.vol);
-        manifold = (TextView)findViewById(R.id.flow);
+        flow = (TextView)findViewById(R.id.flow);
         system = (TextView)findViewById(R.id.sys);
 
 
@@ -43,8 +43,17 @@ public class Allowable_Variation extends AppCompatActivity{
 
 
 
+        if(mySingleton.setTime1<11.5) {
+            ha.setText(Float.toString(mySingleton.head));
+        }else {
 
-        ha.setText(Float.toString(mySingleton.head));
+            ha.setText(Float.toString(mySingleton.newHead));
+        }
+
+
+
+
+
         hm.setText(Float.toString(mySingleton.miniHead));
 
 
@@ -61,13 +70,13 @@ public class Allowable_Variation extends AppCompatActivity{
          /*Number of laterals*/
 
         float NL = (mySingleton.length/mySingleton.Sr)*2;
-        float flowpermanifolf= (NL*emittersperplant*mySingleton.adj_lph)/1000;
+        float flowpermanifold= (NL*emittersperplant*mySingleton.adj_lph)/1000;
         mySingleton.manifoldoutlet=NL;
 
-        manifold.setText((int) flowpermanifolf);
+        flow.setText(Float.toString(flowpermanifold));
 
-        float systemcapacity = flowpermanifolf*2;
-        system.setText((int) (systemcapacity));
+        float systemcapacity = flowpermanifold*2;
+        system.setText(Float.toString(systemcapacity));
         mySingleton.drip_systemcapacity = systemcapacity;
 
 
@@ -79,11 +88,20 @@ public class Allowable_Variation extends AppCompatActivity{
             @Override
             public void onClick(View v) {
 
-                float deltaHs = (float) (2.5 * (mySingleton.head - mySingleton.miniHead));
-                delta.setText(Float.toString(deltaHs));
-                mySingleton.allowableVariation = deltaHs;
+                if (mySingleton.setTime1 < 11.5) {
+
+                    float deltaHs = (float) (2.5 * (mySingleton.head - mySingleton.miniHead));
+                    delta.setText(Float.toString(deltaHs));
+                    mySingleton.allowableVariation = deltaHs;
 
 
+                }else {
+
+                    float deltaHs = (float) (2.5 * (mySingleton.newHead - mySingleton.miniHead));
+                    delta.setText(Float.toString(deltaHs));
+                    mySingleton.allowableVariation = deltaHs;
+
+                }
             }
         });
 

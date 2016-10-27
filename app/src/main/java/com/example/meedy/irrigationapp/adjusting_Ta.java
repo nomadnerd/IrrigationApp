@@ -34,7 +34,7 @@ public class adjusting_Ta extends AppCompatActivity{
         next = (Button)findViewById(R.id.next);
 
 
-        gross2.setText(Float.toString(mySingleton.grossdepth * mySingleton.Sr * mySingleton.Sp));
+        gross2.setText(Float.toString(mySingleton.grossdepth * mySingleton.Sr * mySingleton.Sp*mySingleton.frequency));
 
 
         comp.setOnClickListener(new View.OnClickListener() {
@@ -46,9 +46,10 @@ public class adjusting_Ta extends AppCompatActivity{
                     float emitters = Float.parseFloat(emt.getText().toString());
                     float tim = Float.parseFloat(time.getText().toString());
 
-                    float ans = mySingleton.grossdepth * mySingleton.Sr * mySingleton.Sp / (emitters * tim);
+                    float ans = (mySingleton.grossdepth * mySingleton.Sr * mySingleton.Sp*mySingleton.frequency )/ (emitters * tim);
 
                     Adjusted_discharge.setText(Float.toString(ans));
+
                     mySingleton.adj_lph = ans;
 
                 } catch (Exception e) {
