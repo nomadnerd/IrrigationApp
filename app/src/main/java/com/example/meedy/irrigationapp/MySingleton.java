@@ -35,6 +35,8 @@ public class MySingleton {
     public float intial_discharge;
     public float setTime1;
     public float newHead;
+    public float laterl;
+    public float emittersperLateral;
 
 
     public float net_irr_pertree;

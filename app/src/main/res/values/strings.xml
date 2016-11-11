@@ -146,6 +146,15 @@
         <item>0.95</item>
     </string-array>
 
+    <string-array name="position">
+
+        <item>center</item>
+        <item>side</item>
+
+
+
+    </string-array>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_d_field">D_field</string>

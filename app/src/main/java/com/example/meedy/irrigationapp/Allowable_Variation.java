@@ -3,19 +3,26 @@ package com.example.meedy.irrigationapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 /**
  * Created by meedy on 8/7/2016.
  */
-public class Allowable_Variation extends AppCompatActivity{
+public class Allowable_Variation extends AppCompatActivity implements AdapterView.OnItemClickListener, AdapterView.OnItemSelectedListener {
 
-    TextView ha, hm, delta, plants,emitter,vol, flow, system;
+    TextView ha, hm, delta, plants,emitter,vol, flow, system, laterals;
     Button comp, pre ,bnext;
+    String place;
+    EditText cycle;
     MySingleton mySingleton = MySingleton.getInstance();
+
 
 
     @Override
@@ -33,12 +40,16 @@ public class Allowable_Variation extends AppCompatActivity{
         vol = (TextView)findViewById(R.id.vol);
         flow = (TextView)findViewById(R.id.flow);
         system = (TextView)findViewById(R.id.sys);
+        laterals = (TextView)findViewById(R.id.lat);
 
+        cycle =(EditText)findViewById(R.id.cycle);
 
 
         comp = (Button)findViewById(R.id.compbtn);
         bnext = (Button)findViewById(R.id.btnLoss);
         pre = (Button)findViewById(R.id.prevBtn);
+
+
 
 
 
@@ -51,33 +62,74 @@ public class Allowable_Variation extends AppCompatActivity{
         }
 
 
+        /*irrigation cycle*/
 
 
 
         hm.setText(Float.toString(mySingleton.miniHead));
 
 
-        float plant = Math.round(mySingleton.length/mySingleton.Sp);
+        cycle.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                float AssumedCycle = Float.parseFloat(cycle.getText().toString());
+
+                float lateral = Math.round(mySingleton.length/(mySingleton.Sr*AssumedCycle))*2;
+                laterals.setText(Float.toString(lateral));
+
+                mySingleton.laterl=lateral;
+
+
+
+
+                float volume = mySingleton.emittersperLateral*mySingleton.adj_lph;
+
+
+                float flowpermanifold = (volume*mySingleton.laterl)/1000;
+
+                flow.setText(Float.toString(flowpermanifold));
+
+                vol.setText(Float.toString(volume));
+
+                float systemcapacity = flowpermanifold;
+
+                system.setText(Float.toString(systemcapacity));
+                mySingleton.drip_systemcapacity = systemcapacity;
+
+            }
+        });
+
+
+
+
+        float plant = Math.round(mySingleton.width/mySingleton.Sp);
         plants.setText(Float.toString(plant));
 
-        float emittersperplant = Math.round(mySingleton.length / mySingleton.Sp)*mySingleton.newEmitterSpacing*2;
-        emitter.setText(Float.toString(emittersperplant));
+        float emittersperLateral = Math.round(mySingleton.width /mySingleton.newEmitterSpacing);
+        emitter.setText(Float.toString(emittersperLateral));
+        mySingleton.emittersperLateral=emittersperLateral;
 
-        float volume = Math.round(mySingleton.length / mySingleton.Sp)*mySingleton.newEmitterSpacing*mySingleton.adj_lph;
 
-        vol.setText(Float.toString(volume));
 
          /*Number of laterals*/
 
-        float NL = (mySingleton.length/mySingleton.Sr)*2;
-        float flowpermanifold= (NL*emittersperplant*mySingleton.adj_lph)/1000;
+        /*float NL = (mySingleton.length/mySingleton.Sr)*2;
+        float flowpermanifold= (NL*emittersperLateral*mySingleton.adj_lph)/1000;
         mySingleton.manifoldoutlet=NL;
 
-        flow.setText(Float.toString(flowpermanifold));
+*/
 
-        float systemcapacity = flowpermanifold*2;
-        system.setText(Float.toString(systemcapacity));
-        mySingleton.drip_systemcapacity = systemcapacity;
+
 
 
         mySingleton.volume = ((mySingleton.length/mySingleton.Sp)*mySingleton.newEmitterSpacing*mySingleton.adj_lph);
@@ -91,6 +143,9 @@ public class Allowable_Variation extends AppCompatActivity{
                 if (mySingleton.setTime1 < 11.5) {
 
                     float deltaHs = (float) (2.5 * (mySingleton.head - mySingleton.miniHead));
+
+                    deltaHs = (new Float(Math.ceil(deltaHs)));
+
                     delta.setText(Float.toString(deltaHs));
                     mySingleton.allowableVariation = deltaHs;
 
@@ -98,6 +153,8 @@ public class Allowable_Variation extends AppCompatActivity{
                 }else {
 
                     float deltaHs = (float) (2.5 * (mySingleton.newHead - mySingleton.miniHead));
+
+                    deltaHs = (new Float(Math.ceil(deltaHs)));
                     delta.setText(Float.toString(deltaHs));
                     mySingleton.allowableVariation = deltaHs;
 
@@ -128,4 +185,21 @@ public class Allowable_Variation extends AppCompatActivity{
 
     }
 
+
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        String item = parent.getItemAtPosition(position).toString();
+        place = String.valueOf(Float.parseFloat(item));
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+    }
 }

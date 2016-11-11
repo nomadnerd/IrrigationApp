@@ -46,7 +46,8 @@ public class GrossDepth extends Fragment implements AdapterView.OnItemSelectedLi
         depth = (TextView) view.findViewById(R.id.depthnet);
         percentage = (Spinner) view.findViewById(R.id.irrEfficiency);
 
-        ArrayAdapter adapter = ArrayAdapter.createFromResource(getContext(), R.array.effciency, android.R.layout.simple_spinner_item);
+        ArrayAdapter adapter = ArrayAdapter.createFromResource(getContext(),
+                R.array.effciency, android.R.layout.simple_spinner_item);
         percentage.setAdapter(adapter);
         percentage.setOnItemSelectedListener(this);
 

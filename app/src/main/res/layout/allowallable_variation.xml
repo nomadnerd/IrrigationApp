@@ -116,11 +116,11 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/selecting"
+        android:text="Considering One Block"
         android:textColor="#2b0909"
         android:id="@+id/textView52"
         android:layout_marginTop="42dp"
-        android:layout_below="@+id/allowable"
+        android:layout_below="@+id/fr1"
         android:layout_alignRight="@+id/vol"
         android:layout_alignEnd="@+id/vol" />
 
@@ -252,9 +252,10 @@
         android:textColor="#2b0909"
         android:text="System Capacity"
         android:id="@+id/sys_capacity"
-        android:layout_centerVertical="true"
+        android:layout_below="@+id/flowpermanifold"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="51dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -262,7 +263,7 @@
         android:textColor="#2b0909"
         android:text="sys"
         android:id="@+id/sys"
-        android:layout_alignTop="@+id/textView67"
+        android:layout_alignTop="@+id/sys_capacity"
         android:layout_alignRight="@+id/flow"
         android:layout_alignEnd="@+id/flow" />
 
@@ -272,9 +273,48 @@
         android:text="@string/turnoverRate"
         android:textColor="#2b0909"
         android:id="@+id/textView67"
-        android:layout_centerVertical="true"
+        android:layout_alignTop="@+id/sys"
         android:layout_alignRight="@+id/btnLoss"
         android:layout_alignEnd="@+id/btnLoss" />
+
+
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/fr1"
+        android:layout_below="@+id/allowable"
+        android:layout_alignRight="@+id/textView66"
+        android:layout_alignEnd="@+id/textView66" >
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cycle"
+        android:hint="irrigation cycle"
+        android:inputType="number"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No. Of laterals per row"
+        android:textColor="#2b0909"
+        android:id="@+id/textView65"
+        android:layout_below="@+id/flowpermanifold"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="laterals"
+        android:textColor="#2b0909"
+        android:id="@+id/lat"
+        android:layout_alignTop="@+id/textView65"
+        android:layout_toRightOf="@+id/textView50"
+        android:layout_toEndOf="@+id/textView50" />
 
 
 </RelativeLayout>
