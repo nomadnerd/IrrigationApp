@@ -192,13 +192,15 @@ public class LateralDiameter2 extends AppCompatActivity{
             Remark2.setGravity(Gravity.LEFT);
 
             String remarks;
-            if(Act_Hf>mySingleton.allowableVariation && Act_Hf<0.01*mySingleton.allowableVariation){
+            if(Act_Hf>mySingleton.allowableVariation){
                 remarks = "Reject";
 
                 Remark2.setText(remarks);
                 Remark2.setTextColor(Color.parseColor("#9E9E9E"));
                 row2.addView(Remark2);
-            }else if (Act_Hf<mySingleton.allowableVariation-2.5 && Act_Hf>mySingleton.allowableVariation-2){
+
+
+            }else if (Act_Hf<=(mySingleton.allowableVariation*0.4)){
 
                  remarks = "Accept";
                 Remark2.setText(remarks);
@@ -206,6 +208,13 @@ public class LateralDiameter2 extends AppCompatActivity{
                 row2.addView(Remark2);
 
             }else{
+
+                /*remarks = "Over Designed";
+                Remark2.setText(remarks);
+                Remark2.setTextColor(Color.parseColor("#9E9E9E"));
+                row2.addView(Remark2);*/
+
+
 
             }
 
@@ -240,7 +249,7 @@ public class LateralDiameter2 extends AppCompatActivity{
 
         double c = (volume/150);
         float a= (float) Math.pow((c),1.852);
-        float  b = (float) Math.pow(diameter, -4.58);
+        float  b = (float) Math.pow(diameter, -4.87);
         float hf = (float) (Math.round((3163 * length * a * b)*100)/100.0);
 
 

@@ -37,6 +37,10 @@ public class MySingleton {
     public float newHead;
     public float laterl;
     public float emittersperLateral;
+    public float manifoldHead;
+    public float mainlinedHead;
+    public float MainOutlet;
+
 
 
     public float net_irr_pertree;

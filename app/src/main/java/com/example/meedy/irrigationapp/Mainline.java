@@ -1,10 +1,8 @@
 package com.example.meedy.irrigationapp;
 
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
@@ -13,8 +11,11 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
+/**
+ * Created by meedy on 11/13/2016.
+ */
+public class Mainline extends AppCompatActivity {
 
-public class Manifold  extends AppCompatActivity{
 
     EditText Dia;
     TableLayout ftable;
@@ -40,8 +41,8 @@ public class Manifold  extends AppCompatActivity{
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent J = new Intent(Manifold.this, Mainline.class);
-                startActivity(J);
+               /* Intent J = new Intent(LateralDiameter2.this, Manifold.class);
+                startActivity(J);*/
             }
         });
 
@@ -49,8 +50,8 @@ public class Manifold  extends AppCompatActivity{
             @Override
             public void onClick(View v) {
 
-                Intent J = new Intent(Manifold.this, Allowable_Variation.class);
-                startActivity(J);
+              /*  Intent J = new Intent(LateralDiameter2.this, Allowable_Variation.class);
+                startActivity(J);*/
             }
         });
 
@@ -73,8 +74,6 @@ public class Manifold  extends AppCompatActivity{
 
 
                         ArrayHf[i] = HeadLoss_HF((mySingleton.drip_systemcapacity*1000), (mySingleton.length/mySingleton.MainOutlet), diameter[i]);
-
-                        Log.v("system", mySingleton.drip_systemcapacity + "" );
 
                         i++;
                     } else {
@@ -170,7 +169,7 @@ public class Manifold  extends AppCompatActivity{
 
 
             TextView Fn2 = new TextView(this);
-            float factor =ChristiansenF(mySingleton.laterl);
+            float factor =ChristiansenF(mySingleton.MainOutlet);
             Fn2.setText(Float.toString(factor));
             Fn2.setTextColor(Color.parseColor("#9E9E9E"));
             Fn2.setGravity(Gravity.CENTER);
@@ -188,15 +187,13 @@ public class Manifold  extends AppCompatActivity{
             Remark2.setGravity(Gravity.LEFT);
 
             String remarks;
-
-
-            if(Act_Hf>mySingleton.manifoldHead){
+            if(Act_Hf>mySingleton.mainlinedHead){
                 remarks = "Reject";
 
                 Remark2.setText(remarks);
                 Remark2.setTextColor(Color.parseColor("#9E9E9E"));
                 row2.addView(Remark2);
-            }else if (Act_Hf<(mySingleton.manifoldHead)){
+            }else if (Act_Hf<(mySingleton.mainlinedHead)){
 
                 remarks = "Accept";
                 Remark2.setText(remarks);
@@ -233,20 +230,17 @@ public class Manifold  extends AppCompatActivity{
 
     }
 
-    public  float HeadLoss_HF(float volume, float length, float diameter){
+    public  float HeadLoss_HF(float volume, float length, float diameter) {
 
 
-        double c = (volume/150);
-        float a= (float) Math.pow((c),1.852);
-        float  b = (float) Math.pow(diameter, -4.58);
-        float hf = (float) (Math.round((3163 * length * a * b)*100)/100.0);
+        double c = (volume / 150);
+        float a = (float) Math.pow((c), 1.852);
+        float b = (float) Math.pow(diameter, -4.58);
+        float hf = (float) (Math.round((3163 * length * a * b) * 100) / 100.0);
 
 
-        return  hf;
-
+        return hf;
     }
 
-}
 
-
-
+    }

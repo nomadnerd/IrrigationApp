@@ -89,11 +89,13 @@ public class Allowable_Variation extends AppCompatActivity implements AdapterVie
 
                 mySingleton.laterl=lateral;
 
+                mySingleton.MainOutlet= AssumedCycle;
+
 
 
 
                 float volume = mySingleton.emittersperLateral*mySingleton.adj_lph;
-
+                mySingleton.volume = volume;
 
                 float flowpermanifold = (volume*mySingleton.laterl)/1000;
 
@@ -132,8 +134,14 @@ public class Allowable_Variation extends AppCompatActivity implements AdapterVie
 
 
 
+/*
         mySingleton.volume = ((mySingleton.length/mySingleton.Sp)*mySingleton.newEmitterSpacing*mySingleton.adj_lph);
+*/
         mySingleton.outlet = (int) ((mySingleton.length/mySingleton.Sp)*mySingleton.newEmitterSpacing);
+
+
+
+
 
         Log.v("first outlrt",mySingleton.outlet+ "" );
         comp.setOnClickListener(new View.OnClickListener() {
@@ -148,6 +156,14 @@ public class Allowable_Variation extends AppCompatActivity implements AdapterVie
 
                     delta.setText(Float.toString(deltaHs));
                     mySingleton.allowableVariation = deltaHs;
+
+                    //setting range for manifold and mainline
+
+                    float formanifold = (float) (0.2*deltaHs);
+                    mySingleton.manifoldHead=formanifold;
+
+                    float formainline = (float) (0.4*deltaHs);
+                    mySingleton.mainlinedHead=formainline;
 
 
                 }else {
