@@ -1,5 +1,6 @@
 package com.example.meedy.irrigationapp;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -28,7 +29,7 @@ public class Mainline extends AppCompatActivity {
 
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.manifold);
+        setContentView(R.layout.mainline);
 
 
         Dia = (EditText)findViewById(R.id.diameter);
@@ -41,8 +42,8 @@ public class Mainline extends AppCompatActivity {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               /* Intent J = new Intent(LateralDiameter2.this, Manifold.class);
-                startActivity(J);*/
+                Intent J = new Intent(Mainline.this, Total_Dynamic_Head.class);
+                startActivity(J);
             }
         });
 
@@ -50,8 +51,8 @@ public class Mainline extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-              /*  Intent J = new Intent(LateralDiameter2.this, Allowable_Variation.class);
-                startActivity(J);*/
+                Intent J = new Intent(Mainline.this, Manifold.class);
+                startActivity(J);
             }
         });
 
@@ -187,13 +188,13 @@ public class Mainline extends AppCompatActivity {
             Remark2.setGravity(Gravity.LEFT);
 
             String remarks;
-            if(Act_Hf>mySingleton.mainlinedHead){
+            if(Act_Hf>mySingleton.allowableVariation){
                 remarks = "Reject";
 
                 Remark2.setText(remarks);
                 Remark2.setTextColor(Color.parseColor("#9E9E9E"));
                 row2.addView(Remark2);
-            }else if (Act_Hf<(mySingleton.mainlinedHead)){
+            }else if (Act_Hf<(mySingleton.allowableVariation*0.2)){
 
                 remarks = "Accept";
                 Remark2.setText(remarks);
@@ -201,6 +202,11 @@ public class Mainline extends AppCompatActivity {
                 row2.addView(Remark2);
 
             }else{
+
+                remarks = "Accept";
+                Remark2.setText(remarks);
+                Remark2.setTextColor(Color.parseColor("#9E9E9E"));
+                row2.addView(Remark2);
 
             }
 

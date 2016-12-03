@@ -58,7 +58,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/Aw"
         android:inputType="numberDecimal"
-        android:hint="wetteg area per emitter, Aw"/>
+        android:hint="wetted area per emitter, Aw"/>
 
 </android.support.design.widget.TextInputLayout>
 

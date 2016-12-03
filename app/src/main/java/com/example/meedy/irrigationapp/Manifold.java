@@ -190,13 +190,13 @@ public class Manifold  extends AppCompatActivity{
             String remarks;
 
 
-            if(Act_Hf>mySingleton.manifoldHead){
+            if(Act_Hf>mySingleton.allowableVariation){
                 remarks = "Reject";
 
                 Remark2.setText(remarks);
                 Remark2.setTextColor(Color.parseColor("#9E9E9E"));
                 row2.addView(Remark2);
-            }else if (Act_Hf<(mySingleton.manifoldHead)){
+            }else if (Act_Hf<(mySingleton.allowableVariation*0.4)){
 
                 remarks = "Accept";
                 Remark2.setText(remarks);
@@ -204,6 +204,11 @@ public class Manifold  extends AppCompatActivity{
                 row2.addView(Remark2);
 
             }else{
+
+                remarks = "Accept";
+                Remark2.setText(remarks);
+                Remark2.setTextColor(Color.parseColor("#9E9E9E"));
+                row2.addView(Remark2);
 
             }
 

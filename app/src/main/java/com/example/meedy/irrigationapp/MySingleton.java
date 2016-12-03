@@ -40,6 +40,11 @@ public class MySingleton {
     public float manifoldHead;
     public float mainlinedHead;
     public float MainOutlet;
+    public float subtotal;
+    public float fitting;
+    public float lthead;
+    public float total_dynaic_head;
+    public float new_dnet_sprinkler;
 
 
 

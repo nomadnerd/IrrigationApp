@@ -52,7 +52,7 @@ public class GrossDepth extends Fragment implements AdapterView.OnItemSelectedLi
         percentage.setOnItemSelectedListener(this);
 
 
-       depth.setText(Float.toString(mySingleton.fdnet));
+       depth.setText(Float.toString(mySingleton.new_dnet_sprinkler));
 
 
         cop.setOnClickListener(new View.OnClickListener() {
@@ -63,7 +63,7 @@ public class GrossDepth extends Fragment implements AdapterView.OnItemSelectedLi
 
                     float eff = effeciency;
                     //Toast.makeText(getContext(), "Selected clicks: " +percentage.getSelectedItem().toString() , Toast.LENGTH_LONG).show();
-                    float ans = mySingleton.fdnet / eff;
+                    float ans = mySingleton.new_dnet_sprinkler / eff;
                     mySingleton.grossdepth = ans;
                     grossAs.setText(Float.toString(ans));
 

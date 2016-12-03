@@ -63,7 +63,7 @@ public class Pdesignfragment1 extends Fragment {
                 netdepth.setAvaiblemoisture(fam);
                 netdepth.setRootzonedepth(frzd);
 
-                float answer = netdepth.ndepth() / 10000;
+                float answer = netdepth.ndepth() / 100;
                 ans.setText(Float.toString(answer));
 
                 MySingleton mySingleton = MySingleton.getInstance();

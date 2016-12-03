@@ -63,6 +63,11 @@ public class frequency extends Fragment {
                     mySingleton.irrigationFrequency = ans;
                     fetANS.setText(Float.toString(ans));
 
+                    // set new dnet with the floored frequency
+
+                    float new_dnet = ans*fwu;
+                    mySingleton.new_dnet_sprinkler=new_dnet;
+
                 } catch (Exception e) {
 
                     Toast.makeText(getContext(), "Fill the field(s) above", Toast.LENGTH_SHORT).show();

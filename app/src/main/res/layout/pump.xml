@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Discharge"
+        android:textSize="20sp"
+        android:id="@+id/textView77"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="41dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mainvol"
+        android:textSize="20sp"
+        android:id="@+id/vol_main"
+        android:layout_alignTop="@+id/textView77"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/turnoverRate"
+        android:textSize="20sp"
+        android:id="@+id/textView80"
+        android:layout_alignTop="@+id/vol_main"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="45dp"
+        android:layout_marginEnd="45dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total Head"
+        android:textSize="20sp"
+        android:id="@+id/textView81"
+        android:layout_below="@+id/textView77"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TDH"
+        android:id="@+id/TDH"
+        android:textSize="20sp"
+        android:layout_below="@+id/vol_main"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Meters"
+        android:textSize="20sp"
+        android:id="@+id/textView83"
+        android:layout_below="@+id/textView80"
+        android:layout_alignLeft="@+id/textView80"
+        android:layout_alignStart="@+id/textView80" />
+
+
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/fr1"
+        android:layout_below="@+id/textView81"
+        android:layout_toStartOf="@+id/TDH"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/derate"
+        android:hint="Derating %"
+        android:inputType="numberDecimal"
+        />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="compute"
+        android:id="@+id/compBtn"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/buttonPRE"
+        android:layout_alignEnd="@+id/buttonPRE" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Power"
+        android:textSize="20sp"
+        android:id="@+id/textView79"
+        android:layout_below="@+id/compBtn"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="power"
+        android:textSize="20sp"
+        android:id="@+id/power"
+        android:layout_below="@+id/compBtn"
+        android:layout_alignRight="@+id/TDH"
+        android:layout_alignEnd="@+id/TDH" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="kW"
+        android:textSize="20sp"
+        android:id="@+id/textView84"
+        android:layout_below="@+id/compBtn"
+        android:layout_alignRight="@+id/textView80"
+        android:layout_alignEnd="@+id/textView80" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_arrow_forward_black_24dp"
+        android:id="@+id/buttonNXT"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/textView84"
+        android:layout_alignStart="@+id/textView84" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_arrow_back_black_24dp"
+        android:id="@+id/buttonPRE"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/fr2"
+        android:layout_below="@+id/fr1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/buttonPRE"
+        android:layout_alignEnd="@+id/buttonPRE">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/PowEFF"
+        android:inputType="numberDecimal"
+        android:hint="Efficiency %"
+         />
+
+    </android.support.design.widget.TextInputLayout>
+
+</RelativeLayout>

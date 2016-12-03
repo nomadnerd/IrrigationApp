@@ -11,10 +11,9 @@
         android:textColor="#2b0909"
         android:textSize="20sp"
         android:id="@+id/Espacing"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="43dp"
         android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/NumOf"
-        android:layout_toEndOf="@+id/NumOf" />
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -89,9 +88,7 @@
         android:id="@+id/pre"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_toLeftOf="@+id/textView25"
-        android:layout_toStartOf="@+id/textView25" />
+        android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="wrap_content"
@@ -100,9 +97,7 @@
         android:id="@+id/nxt"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_toEndOf="@+id/Espacing"
-        android:layout_toRightOf="@+id/Espacing" />
+        android:layout_alignParentEnd="true" />
 
     <TextView
         android:layout_width="wrap_content"

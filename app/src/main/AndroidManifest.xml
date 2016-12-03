@@ -40,6 +40,9 @@
         <activity android:name=".sys_capacity"
                   android:label="Preliminary System Capacity"/>
 
+        <activity android:name=".pump"
+            android:label="Pump Selection"/>
+
 
         <activity android:name=".freq"
                     android:label=" Irrigation Frequency"/>
@@ -70,6 +73,9 @@
 
         <activity android:name=".SetTime"
             android:label="Set Time"/>
+        <activity android:name=".Total_Dynamic_Head"
+            android:label="Total Dynamic Head"/>
+
 
         <activity android:name=".adjusting_pw"
                     android:label="Adjusting Pw"/>

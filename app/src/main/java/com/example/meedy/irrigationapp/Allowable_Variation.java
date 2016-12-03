@@ -82,6 +82,8 @@ public class Allowable_Variation extends AppCompatActivity implements AdapterVie
 
             @Override
             public void afterTextChanged(Editable s) {
+
+                try{
                 float AssumedCycle = Float.parseFloat(cycle.getText().toString());
 
                 float lateral = Math.round(mySingleton.length/(mySingleton.Sr*AssumedCycle))*2;
@@ -108,7 +110,12 @@ public class Allowable_Variation extends AppCompatActivity implements AdapterVie
                 system.setText(Float.toString(systemcapacity));
                 mySingleton.drip_systemcapacity = systemcapacity;
 
+            }catch (NumberFormatException e){
+
+                }
+
             }
+
         });
 
 
@@ -157,12 +164,15 @@ public class Allowable_Variation extends AppCompatActivity implements AdapterVie
                     delta.setText(Float.toString(deltaHs));
                     mySingleton.allowableVariation = deltaHs;
 
+                    float lathead = (float) (0.4*deltaHs);
+                    mySingleton.lthead = lathead;
+
                     //setting range for manifold and mainline
 
-                    float formanifold = (float) (0.2*deltaHs);
+                    float formanifold = (float) (0.4*deltaHs);
                     mySingleton.manifoldHead=formanifold;
 
-                    float formainline = (float) (0.4*deltaHs);
+                    float formainline = (float) (0.2*deltaHs);
                     mySingleton.mainlinedHead=formainline;
 
 
@@ -173,6 +183,17 @@ public class Allowable_Variation extends AppCompatActivity implements AdapterVie
                     deltaHs = (new Float(Math.ceil(deltaHs)));
                     delta.setText(Float.toString(deltaHs));
                     mySingleton.allowableVariation = deltaHs;
+
+                    float lathead = (float) (0.4*deltaHs);
+                    mySingleton.lthead = lathead;
+
+                    //setting range for manifold and mainline
+
+                    float formanifold = (float) (0.4*deltaHs);
+                    mySingleton.manifoldHead=formanifold;
+
+                    float formainline = (float) (0.2*deltaHs);
+                    mySingleton.mainlinedHead=formainline;
 
                 }
             }
