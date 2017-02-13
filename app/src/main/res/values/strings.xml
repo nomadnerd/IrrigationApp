@@ -38,7 +38,7 @@
     <string name="ldb">Lit data</string>
     <string name="litdata">Design with Lit data</string>
     <string name="am2">AM</string>
-    <string name="rzd">RZD</string>
+    <string name="sc">Soil Category</string>
     <string name="ems">emitters</string>
     <string name="NumOf">No. of emitters</string>
     <string name="NEP">Emitters Per Plant</string>

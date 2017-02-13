@@ -45,6 +45,9 @@ public class MySingleton {
     public float lthead;
     public float total_dynaic_head;
     public float new_dnet_sprinkler;
+    public float avMoisture;
+    public float rzd;
+    public float lit_dnet;
 
 
 

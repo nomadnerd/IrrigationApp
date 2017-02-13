@@ -47,7 +47,11 @@ public class frequency extends Fragment {
         fetdnt = (TextView)view.findViewById(R.id.dnet);
         fetANS = (TextView)view.findViewById(R.id.Answer);
 
-        fetdnt.setText(Float.toString(mySingleton.fdnet));
+        if(mySingleton.fdnet!=0) {
+            fetdnt.setText(Float.toString(mySingleton.fdnet));
+        }else {
+            fetdnt.setText(Float.toString(mySingleton.lit_dnet));
+        }
 
 
         copt.setOnClickListener(new View.OnClickListener() {

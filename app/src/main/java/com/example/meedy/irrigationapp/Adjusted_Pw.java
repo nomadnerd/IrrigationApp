@@ -14,6 +14,9 @@ import android.widget.Toast;
 
 public class Adjusted_Pw extends AppCompatActivity {
 
+
+    //Instantiating the widget
+
     TextView adj_pw, answer;
     TextView Wettedwidth;
     TextView numofemitters;
@@ -24,7 +27,7 @@ public class Adjusted_Pw extends AppCompatActivity {
 
     MySingleton mySingleton = MySingleton.getInstance();
 
-
+    //connecting the UI to back-end
     @Override
     protected void onCreate (Bundle saveInstanceStae){
         super.onCreate(saveInstanceStae);
