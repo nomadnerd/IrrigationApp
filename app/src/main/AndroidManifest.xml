@@ -91,6 +91,8 @@
 
         <activity android:name=".LateralDiameter2"
                    android:label="Lateral Pipe Diameter"/>
+        <activity android:name=".Sprinkler_selection"
+                  android:label="@string/select"/>
         <activity
             android:name=".Home"
             android:label="@string/title_activity_navigation"

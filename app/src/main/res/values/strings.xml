@@ -115,6 +115,8 @@
     <string name="dischperlateral">Discharge per lateral</string>
     <string name="Dis">Enter Discharge per Lateral</string>
     <string name="delta"><![CDATA[&Delta;]]></string>
+    <string name="select">Sprinkler Selection</string>
+    <string name="rate">Enter infiltration rate</string>
     <string name="info">About</string>
     <string name="about">
         The irrigation design application is a tool that is meant to simplify the design procedures of

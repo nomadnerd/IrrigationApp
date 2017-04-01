@@ -3,7 +3,6 @@ package com.example.meedy.irrigationapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -76,10 +75,8 @@ public class sys_capacity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Toast toast = Toast.makeText(sys_capacity.this, "next step is not ready", Toast.LENGTH_LONG);
-                toast.setGravity(Gravity.CENTER, 0, 0);
-                toast.show();
-
+                Intent j = new Intent(sys_capacity.this, Sprinkler_selection.class);
+                startActivity(j);
             }
         });
 

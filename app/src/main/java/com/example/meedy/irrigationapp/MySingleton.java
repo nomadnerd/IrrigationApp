@@ -48,6 +48,7 @@ public class MySingleton {
     public float avMoisture;
     public float rzd;
     public float lit_dnet;
+    public float rate;
 
 
 
