@@ -117,7 +117,7 @@ public class Pdesignfragment2 extends Fragment {
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                float mad = Float.parseFloat(MaD.getText().toString());
+                float mad = (Float.parseFloat(MaD.getText().toString()))/100;
                 float netdepth = mad*mySingleton.rzd*mySingleton.avMoisture;
                 tx5.setText(Float.toString(netdepth));
                 mySingleton.lit_dnet=netdepth;

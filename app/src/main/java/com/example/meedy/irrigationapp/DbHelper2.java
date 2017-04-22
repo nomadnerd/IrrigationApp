@@ -28,10 +28,10 @@ public class DbHelper2 extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
 
-        String CREATE_TABLE = "CREATE TABLE " + TABLE_NAME + "( "
+        String CREATE_TABLE = "CREATE TABLE  " + TABLE_NAME + "( "
                 + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + COLUMN_CROP + " TEXT, "
-                + COLUMN_MAX_RZD + " INTEGER" + " )";
+                + COLUMN_MAX_RZD + " INTEGER " + " )";
         db.execSQL(CREATE_TABLE);
 
     }

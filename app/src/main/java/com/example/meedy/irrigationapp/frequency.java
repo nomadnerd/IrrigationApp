@@ -21,6 +21,7 @@ public class frequency extends Fragment {
     Button copt;
     EditText  fetwu;
     MySingleton mySingleton = MySingleton.getInstance();
+    float depthnet;
 
 
 
@@ -49,19 +50,26 @@ public class frequency extends Fragment {
 
         if(mySingleton.fdnet!=0) {
             fetdnt.setText(Float.toString(mySingleton.fdnet));
+
         }else {
             fetdnt.setText(Float.toString(mySingleton.lit_dnet));
         }
 
 
         copt.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
+                if(mySingleton.fdnet!=0){
+                    depthnet= mySingleton.fdnet;
+                } else {
+                   depthnet= mySingleton.lit_dnet;
+                }
 
                 try {
 
                     float fwu = Float.parseFloat(fetwu.getText().toString());
-                    float ans = mySingleton.fdnet / fwu;
+                    float ans = depthnet / fwu;
 
                     ans = (new Float(Math.floor(ans)));
                     mySingleton.irrigationFrequency = ans;
