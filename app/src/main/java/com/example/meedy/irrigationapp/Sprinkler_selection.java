@@ -9,10 +9,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TableLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static com.example.meedy.irrigationapp.R.layout.set_time;
 
 /**
  * Created by meedy on 4/1/2017.
@@ -20,11 +23,13 @@ import java.util.List;
 
 public class Sprinkler_selection extends AppCompatActivity {
     TableLayout tableLayout;
+    TextView dgross;
     EditText Dia;
-    Button submit, next, previous;
+    Button submit, filterbtn, next, previous;
     sprinklerDB myDb;
     MySingleton mySingleton = MySingleton.getInstance();
     create_table selectSpTable;
+    ArrayList<List<String>> Table;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,27 +40,52 @@ public class Sprinkler_selection extends AppCompatActivity {
 
         Dia = (EditText) findViewById(R.id.diameter);
         submit = (Button) findViewById(R.id.submit);
+        filterbtn = (Button) findViewById(R.id.FilterBtn);
         next = (Button) findViewById(R.id.next);
         previous = (Button) findViewById(R.id.previous);
+        dgross = (TextView) findViewById(R.id.dg_numeric);
 
         myDb = new sprinklerDB(this);
 
-        // setting litsener fr buttons
+        dgross.setText(Float.toString(mySingleton.grossdepth));
 
-            submit.setOnClickListener(new View.OnClickListener() {
+       // filterbtn.setVisibility(View.INVISIBLE);
+
+        /*if (Table.size()>0) {
+            filterbtn.setVisibility(View.VISIBLE);
+        }*/
+
+
+            filterbtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-
-                    float rate = Float.parseFloat(Dia.getText().toString());
-
-                    ArrayList<List<String>> Table = myDb.SelectRatebyDiameter(rate);
-
-                    Log.d("Table", Table.toString());
-                    sprinkler(Table);
-
-
+                     //filter();
+                    String[] headerText = {"NZ SIZE", "PRESSURE", "DISCHARGE", "DIA  ", "RATE  ", "SPACING", "SET TIME"};
+                    sprinkler(filter(), headerText);
                 }
             });
+
+        // setting litsener fr buttons
+
+        submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                float rate = Float.parseFloat(Dia.getText().toString());
+
+                Table = myDb.SelectRatebyDiameter(rate);
+
+                //Set_time(mySingleton.grossdepth);
+                //filter();
+                String[] headerText = {"NZ SIZE", "PRESSURE", "DISCHARGE", "DIA  ", "RATE  ", "SPACING"};
+                sprinkler(Table,headerText);
+
+                //Log.d("Table", Table.toString());
+
+
+
+            }
+        });
 
         next.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,65 +105,93 @@ public class Sprinkler_selection extends AppCompatActivity {
         });
     }
 
-    public void sprinkler(ArrayList<List<String>> Table) {
+    public void sprinkler(ArrayList<List<String>> Table,String[] headerText) {
         myDb = new sprinklerDB(this);
         //myBD3.createTable();
         // spacing 9*12
 
         TableLayout Tl = (TableLayout) findViewById(R.id.ftable);
-        String[] headerText = {"NZ SIZE", "PRESSURE", "DISCHARGE", "DIA  ", "RATE  ", "SPACING"};
-        selectSpTable = new create_table(Table, headerText, Tl,this) ;
+
+        selectSpTable = new create_table(Table, headerText, Tl, this);
         selectSpTable.buildTable();
 
 
-        /*TableRow rowHeader = new TableRow(this);
-        TableLayout Tl = (TableLayout) findViewById(R.id.ftable);
 
-        rowHeader.setBackgroundColor(Color.parseColor("#c0c0c0"));
-        TableRow.LayoutParams lp2 = new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT);
-        rowHeader.setLayoutParams(lp2);
+    }
 
-        String[] headerText = {"NZ SIZE", "PRESSURE", "DISCHARGE", "DIA  ", "RATE  ", "SPACING"};
-        for (String c : headerText) {
+    public void Set_time(float dgross) {
 
-            TextView tv = new TextView(this);
-            tv.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT,
-                    TableRow.LayoutParams.WRAP_CONTENT));
-            tv.setGravity(Gravity.CENTER);
-            tv.setTextSize(14);
-            tv.setPadding(5, 5, 5, 5);
-            tv.setText(c);
-            rowHeader.addView(tv);
+        float set_time;
+
+
+        int i;
+
+        for (i = 0; i < Table.size(); i++) {
+
+            int x;
+
+            for (x = 0; x < Table.get(i).size(); x++) {
+                if (x == 5) {
+                    float inf_rate = Float.parseFloat(Table.get(i).get(x));
+
+                    set_time = dgross / inf_rate;
+
+
+                    Table.get(i).add(7, Float.toString(set_time));
+
+
+                }
+
+
+            }
 
 
         }
-        Tl.addView(rowHeader);
 
-        // getting data
-
-
-        // = myBD3.getData();
-        Log.d("Table", Table.toString());
-        for (List<String> val : Table) {
-            TableRow row = new TableRow(this);
-            TableRow.LayoutParams lp = new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT);
-            row.setLayoutParams(lp);
-            int index = 0;
-            for (String item : val) {
-
-                if (index != 0) {
-                    TextView tv = new TextView(this);
-                    tv.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT,
-                            TableRow.LayoutParams.WRAP_CONTENT));
-                    tv.setGravity(Gravity.CENTER);
-                    tv.setTextSize(16);
-                    tv.setPadding(5, 5, 5, 5);
-                    tv.setText(item);
-                    row.addView(tv);
-                }
-                index++;
-            }
-            Tl.addView(row);
-        }*/
     }
-}
+
+    public ArrayList filter() {
+        ArrayList emAryylist = new ArrayList();
+        Log.d("table"," " +Table.get(1).get(5));
+        int i;
+
+        for (i = 0; i < Table.size(); i++) {
+
+            int x;
+
+            int size =  Table.get(i).size();
+
+            int cur =0;
+            for (x = 1; x <size; x++) {
+
+                Log.d("setTime "+ Float.toString(set_time) + " table size " +  size ,"");
+
+                if (x == 5) {
+                    float set_time = mySingleton.grossdepth/Float.parseFloat(Table.get(i).get(x));
+
+
+                    if (set_time<11) {
+
+                        Table.get(i).add(size, Float.toString(set_time));
+                        emAryylist.add(cur, Table.get(i));
+                        cur++;
+                    }
+
+
+
+
+                }
+
+
+                }
+
+            }
+            return emAryylist;
+
+        }
+        //Log.d("ddd", String.valueOf(emAryylist.size()));
+
+        }
+
+
+
