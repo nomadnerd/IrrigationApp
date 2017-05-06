@@ -60,8 +60,16 @@ public class Sprinkler_selection extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
                      //filter();
-                    String[] headerText = {"NZ SIZE", "PRESSURE", "DISCHARGE", "DIA  ", "RATE  ", "SPACING", "SET TIME"};
-                    sprinkler(filter(), headerText);
+                    try {
+
+
+                        String[] headerText = {"NZ SIZE", "PRESSURE", "DISCHARGE", "DIA  ", "RATE  ", "SPACING", "SET TIME"};
+                        sprinkler(filter(), headerText);
+                    }catch (Exception e){
+
+                        Toast.makeText(Sprinkler_selection.this, "Fill the field(s) above", Toast.LENGTH_SHORT).show();
+
+                    }
                 }
             });
 
@@ -70,15 +78,24 @@ public class Sprinkler_selection extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                 try {
 
-                float rate = Float.parseFloat(Dia.getText().toString());
 
-                Table = myDb.SelectRatebyDiameter(rate);
+                     float rate = Float.parseFloat(Dia.getText().toString());
 
-                //Set_time(mySingleton.grossdepth);
-                //filter();
-                String[] headerText = {"NZ SIZE", "PRESSURE", "DISCHARGE", "DIA  ", "RATE  ", "SPACING"};
-                sprinkler(Table,headerText);
+                     Table = myDb.SelectRatebyDiameter(rate);
+
+                     //Set_time(mySingleton.grossdepth);
+                     //filter();
+                     String[] headerText = {"NZ SIZE", "PRESSURE", "DISCHARGE", "DIA  ", "RATE  ", "SPACING"};
+                     sprinkler(Table, headerText);
+
+                 }catch (Exception e){
+
+                     Toast.makeText(Sprinkler_selection.this, "Fill the field(s) above", Toast.LENGTH_SHORT).show();
+
+                 }
+
 
                 //Log.d("Table", Table.toString());
 
