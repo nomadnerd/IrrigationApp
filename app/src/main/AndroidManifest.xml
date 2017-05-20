@@ -103,6 +103,7 @@
                   android:label="Manifold Pipe Diameter"></activity>
         <activity android:name=".Mainline"
                   android:label="Mainline Pipe Diameter"></activity>
+        <activity android:name=".Layout_selection" />
     </application>
 
 </manifest>

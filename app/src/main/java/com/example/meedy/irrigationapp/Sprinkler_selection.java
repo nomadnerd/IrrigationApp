@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -29,6 +28,8 @@ public class Sprinkler_selection extends AppCompatActivity {
     sprinklerDB myDb;
     MySingleton mySingleton = MySingleton.getInstance();
     create_table selectSpTable;
+    String[] headerText2 = {"NZ SIZE", "PRESSURE", "DISCHARGE", "DIA  ", "RATE  ", "SPACING", "SET TIME"};
+    ArrayList<List<String>> FiteredTable;
     ArrayList<List<String>> Table;
 
     @Override
@@ -63,8 +64,13 @@ public class Sprinkler_selection extends AppCompatActivity {
                     try {
 
 
-                        String[] headerText = {"NZ SIZE", "PRESSURE", "DISCHARGE", "DIA  ", "RATE  ", "SPACING", "SET TIME"};
-                        sprinkler(filter(), headerText);
+
+                        FiteredTable = filter();
+                        mySingleton.FilteredData = FiteredTable;
+                        sprinkler(FiteredTable, headerText2);
+
+
+
                     }catch (Exception e){
 
                         Toast.makeText(Sprinkler_selection.this, "Fill the field(s) above", Toast.LENGTH_SHORT).show();
@@ -107,9 +113,16 @@ public class Sprinkler_selection extends AppCompatActivity {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast toast = Toast.makeText(Sprinkler_selection.this, "next step is not ready", Toast.LENGTH_LONG);
+
+                String[] headerText = {"NZ SIZE", "PRESSURE", "DISCHARGE", "DIA  ", "RATE  ", "SPACING"};
+                Intent j = new Intent(Sprinkler_selection.this, Layout_selection.class);
+                j.putExtra("Table", FiteredTable );
+                startActivity(j);
+
+
+                /*Toast toast = Toast.makeText(Sprinkler_selection.this, "next step is not ready", Toast.LENGTH_LONG);
                 toast.setGravity(Gravity.CENTER, 0, 0);
-                toast.show();
+                toast.show();*/
 
             }
         });
@@ -136,36 +149,6 @@ public class Sprinkler_selection extends AppCompatActivity {
 
     }
 
-    public void Set_time(float dgross) {
-
-        float set_time;
-
-
-        int i;
-
-        for (i = 0; i < Table.size(); i++) {
-
-            int x;
-
-            for (x = 0; x < Table.get(i).size(); x++) {
-                if (x == 5) {
-                    float inf_rate = Float.parseFloat(Table.get(i).get(x));
-
-                    set_time = dgross / inf_rate;
-
-
-                    Table.get(i).add(7, Float.toString(set_time));
-
-
-                }
-
-
-            }
-
-
-        }
-
-    }
 
     public ArrayList filter() {
         ArrayList emAryylist = new ArrayList();

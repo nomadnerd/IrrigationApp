@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/textView86"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="42dp"
+        android:text="Lateral Positions" />
+
+    <TextView
+        android:id="@+id/lateralPositon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/textView86"
+        android:layout_marginEnd="96dp"
+        android:layout_marginRight="96dp"
+        android:text="LP" />
+
+    <TextView
+        android:id="@+id/textView88"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView86"
+        android:layout_marginTop="37dp"
+        android:text="Number of sprinklers per lateral " />
+
+    <TextView
+        android:id="@+id/numOfSprinklers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView88"
+        android:layout_alignEnd="@+id/lateralPositon"
+        android:layout_alignRight="@+id/lateralPositon"
+        android:text="Ns" />
+
+    <TextView
+        android:id="@+id/textView90"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/Nc"
+        android:layout_marginTop="21dp"
+        android:text="Sprinkler Discharge" />
+
+    <TextView
+        android:id="@+id/sprinklerDischarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/numOfSprinklers"
+        android:layout_alignStart="@+id/numOfSprinklers"
+        android:layout_alignTop="@+id/textView90"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp"
+        android:text="Qs" />
+
+    <Button
+        android:id="@+id/compBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:text="@string/comp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/textView92"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/compBtn"
+        android:layout_marginTop="62dp"
+        android:text="System Capacity" />
+
+    <TextView
+        android:id="@+id/SystemCapacity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textView92"
+        android:layout_marginEnd="44dp"
+        android:layout_marginRight="44dp"
+        android:layout_toLeftOf="@+id/sprinklerDischarge"
+        android:layout_toStartOf="@+id/sprinklerDischarge"
+        android:text="Q" />
+
+    <TextView
+        android:id="@+id/textView94"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/SystemCapacity"
+        android:layout_alignLeft="@+id/sprinklerDischarge"
+        android:layout_alignStart="@+id/sprinklerDischarge"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:text="TextView" />
+
+    <Button
+        android:id="@+id/pre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:text="@string/prebtn" />
+
+    <Button
+        android:id="@+id/next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/pre"
+        android:layout_toEndOf="@+id/sprinklerDischarge"
+        android:layout_toRightOf="@+id/sprinklerDischarge"
+        android:text="@string/next" />
+
+    <EditText
+        android:id="@+id/Nc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView88"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Number of sprinkler per shift"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+</RelativeLayout>

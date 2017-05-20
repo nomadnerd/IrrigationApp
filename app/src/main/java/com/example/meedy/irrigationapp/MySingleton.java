@@ -1,6 +1,9 @@
 package com.example.meedy.irrigationapp;
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MySingleton {
     private static MySingleton mySingleton = null;
 
@@ -48,7 +51,15 @@ public class MySingleton {
     public float avMoisture;
     public float rzd;
     public float lit_dnet;
-    public float rate;
+    public float sprinklerlength;
+    public float sprinklerwidth;
+
+ public float getEmitterPerPlant() {
+  return EmitterPerPlant;
+ }
+
+ public float rate;
+    public ArrayList<List<String>> FilteredData;
 
 
 

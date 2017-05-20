@@ -14,6 +14,7 @@ public class MyField extends AppCompatActivity {
     CheckBox Reg, Irr;
     TextView len, wid, area, answe;
     Button nxt, prebtn, compute;
+    MySingleton mySingleton = MySingleton.getInstance();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -41,6 +42,10 @@ public class MyField extends AppCompatActivity {
 
                     float length = Float.parseFloat(len.getText().toString());
                     float width = Float.parseFloat(wid.getText().toString());
+
+                    mySingleton.sprinklerlength = length;
+                    mySingleton.sprinklerwidth = width;
+
 
                     form_FieldArea Area = new form_FieldArea();
 
