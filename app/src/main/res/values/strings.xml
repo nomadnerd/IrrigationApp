@@ -117,6 +117,7 @@
     <string name="delta"><![CDATA[&Delta;]]></string>
     <string name="select">Sprinkler Selection</string>
     <string name="rate">Enter infiltration rate</string>
+    <string name="spDiameter">Available diameters[mm]: 63, 76, 102, 127 </string>
     <string name="info">About</string>
     <string name="about">
         The irrigation design application is a tool that is meant to simplify the design procedures of

@@ -8,11 +8,12 @@
         android:id="@+id/textView86"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
+        android:layout_marginTop="17dp"
+        android:text="Lateral Positions"
+        android:textColor="#2b0909"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="42dp"
-        android:text="Lateral Positions" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:id="@+id/lateralPositon"
@@ -21,6 +22,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignTop="@+id/textView86"
+        android:textColor="#2b0909"
         android:layout_marginEnd="96dp"
         android:layout_marginRight="96dp"
         android:text="LP" />
@@ -29,11 +31,12 @@
         android:id="@+id/textView88"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
+        android:layout_marginTop="24dp"
+        android:text="Number of sprinklers per lateral "
         android:layout_below="@+id/textView86"
-        android:layout_marginTop="37dp"
-        android:text="Number of sprinklers per lateral " />
+        android:textColor="#2b0909"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:id="@+id/numOfSprinklers"
@@ -42,6 +45,7 @@
         android:layout_alignBottom="@+id/textView88"
         android:layout_alignEnd="@+id/lateralPositon"
         android:layout_alignRight="@+id/lateralPositon"
+        android:textColor="#2b0909"
         android:text="Ns" />
 
     <TextView
@@ -50,6 +54,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:textColor="#2b0909"
         android:layout_below="@+id/Nc"
         android:layout_marginTop="21dp"
         android:text="Sprinkler Discharge" />
@@ -62,6 +67,7 @@
         android:layout_alignStart="@+id/numOfSprinklers"
         android:layout_alignTop="@+id/textView90"
         android:layout_marginLeft="12dp"
+        android:textColor="#2b0909"
         android:layout_marginStart="12dp"
         android:text="Qs" />
 
@@ -69,22 +75,25 @@
         android:id="@+id/compBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
         android:text="@string/comp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
+        android:textColor="#2b0909"
+        android:layout_below="@+id/textView90"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="18dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <TextView
         android:id="@+id/textView92"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
+        android:layout_marginTop="14dp"
+        android:text="System Capacity"
+        android:textColor="#2b0909"
         android:layout_below="@+id/compBtn"
-        android:layout_marginTop="62dp"
-        android:text="System Capacity" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:id="@+id/SystemCapacity"
@@ -92,6 +101,7 @@
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/textView92"
         android:layout_marginEnd="44dp"
+        android:textColor="#2b0909"
         android:layout_marginRight="44dp"
         android:layout_toLeftOf="@+id/sprinklerDischarge"
         android:layout_toStartOf="@+id/sprinklerDischarge"
@@ -106,7 +116,8 @@
         android:layout_alignStart="@+id/sprinklerDischarge"
         android:layout_marginLeft="16dp"
         android:layout_marginStart="16dp"
-        android:text="TextView" />
+        android:textColor="#2b0909"
+        android:text="@string/turnoverRate" />
 
     <Button
         android:id="@+id/pre"
@@ -115,7 +126,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:text="@string/prebtn" />
+        android:background="@drawable/ic_arrow_back_black_24dp"/>
 
     <Button
         android:id="@+id/next"
@@ -124,7 +135,8 @@
         android:layout_alignTop="@+id/pre"
         android:layout_toEndOf="@+id/sprinklerDischarge"
         android:layout_toRightOf="@+id/sprinklerDischarge"
-        android:text="@string/next" />
+        android:background="@drawable/ic_arrow_forward_black_24dp"
+      />
 
     <EditText
         android:id="@+id/Nc"
@@ -132,10 +144,150 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:textColor="#2b0909"
         android:layout_below="@+id/textView88"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="Number of sprinkler per shift"
+        android:inputType="numberDecimal"
+        android:hint="Number of laterals per shift"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:id="@+id/textView110"
+        android:textColor="#2b0909"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/textView88"
+        android:layout_alignRight="@+id/textView88"
+        android:layout_below="@+id/textView92"
+        android:layout_marginTop="18dp"
+        android:text="Selected Sprinkler" />
+
+    <TextView
+        android:id="@+id/textView111"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:textColor="#2b0909"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView110"
+        android:layout_marginTop="11dp"
+        android:text="Nozzle size" />
+
+    <TextView
+        android:id="@+id/Nzl"
+        android:textColor="#2b0909"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView111"
+        android:layout_alignEnd="@+id/textView110"
+        android:layout_alignRight="@+id/textView110"
+        android:text="Nz " />
+
+    <TextView
+        android:id="@+id/textView113"
+        android:textColor="#2b0909"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView111"
+        android:layout_marginTop="10dp"
+        android:text="Spacing" />
+
+    <TextView
+        android:id="@+id/sp"
+        android:textColor="#2b0909"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/Nzl"
+        android:layout_alignStart="@+id/Nzl"
+        android:layout_alignTop="@+id/textView113"
+        android:text="sp " />
+
+    <TextView
+        android:id="@+id/textView115"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Discharge"
+        android:textColor="#2b0909"
+        android:layout_below="@+id/textView113"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/dis"
+        android:textColor="#2b0909"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView115"
+        android:layout_alignEnd="@+id/sp"
+        android:layout_alignRight="@+id/sp"
+        android:text="dis  " />
+
+    <TextView
+        android:id="@+id/textView117"
+        android:textColor="#2b0909"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView115"
+        android:layout_marginTop="10dp"
+        android:text="@string/settime" />
+
+    <TextView
+        android:id="@+id/hrs"
+        android:textColor="#2b0909"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/dis"
+        android:layout_alignStart="@+id/dis"
+        android:layout_alignTop="@+id/textView117"
+        android:text="hours" />
+
+    <TextView
+        android:id="@+id/textView119"
+        android:textColor="#2b0909"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/sprinklerDischarge"
+        android:layout_alignStart="@+id/sprinklerDischarge"
+        android:layout_alignTop="@+id/Nzl"
+        android:text="@string/mm" />
+
+    <TextView
+        android:id="@+id/textView120"
+        android:textColor="#2b0909"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/textView119"
+        android:layout_alignRight="@+id/textView119"
+        android:layout_alignTop="@+id/sp"
+        android:text="@string/metres" />
+
+    <TextView
+        android:id="@+id/textView121"
+        android:textColor="#2b0909"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/turnoverRate"
+        android:layout_alignBaseline="@+id/dis"
+        android:layout_alignBottom="@+id/dis"
+        android:layout_toRightOf="@+id/numOfSprinklers"
+        android:layout_toEndOf="@+id/numOfSprinklers" />
+
+    <TextView
+        android:id="@+id/textView122"
+        android:textColor="#2b0909"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="hours"
+        android:layout_alignBaseline="@+id/hrs"
+        android:layout_alignBottom="@+id/hrs"
+        android:layout_toRightOf="@+id/textView120"
+        android:layout_toEndOf="@+id/textView120" />
+
+
 </RelativeLayout>

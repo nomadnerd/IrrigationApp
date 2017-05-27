@@ -53,6 +53,8 @@ public class MySingleton {
     public float lit_dnet;
     public float sprinklerlength;
     public float sprinklerwidth;
+    public List<List<String>> finalFilterSingleton;
+    public float No_Of_sprinler;
 
  public float getEmitterPerPlant() {
   return EmitterPerPlant;

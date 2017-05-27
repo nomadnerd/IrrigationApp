@@ -1,5 +1,6 @@
 package com.example.meedy.irrigationapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -19,7 +20,7 @@ import java.util.List;
 public class Layout_selection extends AppCompatActivity {
 
     TableLayout tableLayout;
-    TextView lateralPosition, NumOfSprinkler, SprinklerDischarge, SystemCapacity;
+    TextView lateralPosition, NumOfSprinkler, SprinklerDischarge, SystemCapacity, Nozzle_size, dischSp, spacingSp, setTime;
     EditText NumOfLateralPerShift;
     Button Compute, Next, previous;
 
@@ -43,6 +44,11 @@ public class Layout_selection extends AppCompatActivity {
         NumOfSprinkler = (TextView)findViewById(R.id.numOfSprinklers);
         SprinklerDischarge = (TextView)findViewById(R.id.sprinklerDischarge);
         SystemCapacity = (TextView)findViewById(R.id.SystemCapacity);
+        Nozzle_size = (TextView)findViewById(R.id.Nzl);
+        dischSp = (TextView)findViewById(R.id.dis);
+        spacingSp = (TextView)findViewById(R.id.sp);
+        setTime = (TextView)findViewById(R.id.hrs);
+
 
         NumOfLateralPerShift = (EditText)findViewById(R.id.Nc);
 
@@ -81,6 +87,7 @@ public class Layout_selection extends AppCompatActivity {
 
             }
 
+                mySingleton.finalFilterSingleton = finalFilter;
 
 
             String spW[] = finalFilter.get(0).get(6).split("\\*", 0);
@@ -94,6 +101,27 @@ public class Layout_selection extends AppCompatActivity {
         SprinklerDischarge.setText(Float.toString(spDischarge));
         NumOfSprinkler.setText(Float.toString(NumberofSprinklerPerlat));
 
+        Nozzle_size.setText(finalFilter.get(0).get(1));
+        dischSp.setText(finalFilter.get(0).get(3));
+        spacingSp.setText(finalFilter.get(0).get(6));
+        setTime.setText(finalFilter.get(0).get(7));
+
+
+        Next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent J  = new Intent(Layout_selection.this, Lateral_Selection_Sprinkler.class);
+                startActivity(J);
+            }
+        });
+        previous.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent J  = new Intent(Layout_selection.this, Sprinkler_selection.class);
+                startActivity(J);
+
+            }
+        });
 
 
 
@@ -112,6 +140,8 @@ public class Layout_selection extends AppCompatActivity {
         });
 
 
+
+            mySingleton.No_Of_sprinler= NumberofSprinklerPerlat;
 
             Log.d("spw", spW[0].toString() );
 
