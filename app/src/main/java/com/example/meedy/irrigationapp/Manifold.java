@@ -185,6 +185,8 @@ public class Manifold  extends AppCompatActivity{
             ActualHf2.setGravity(Gravity.CENTER);
             row2.addView(ActualHf2);
             ActualHf2.isClickable();
+            row2.setBackgroundResource(R.drawable.selector);
+            row2.setClickable(true);
 
             row2.setOnClickListener(new View.OnClickListener() {
                 @Override

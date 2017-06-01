@@ -187,6 +187,8 @@ public class Mainline extends AppCompatActivity {
             row2.addView(ActualHf2);
 
             ActualHf2.isClickable();
+            row2.setBackgroundResource(R.drawable.selector);
+            row2.setClickable(true);
 
             row2.setOnClickListener(new View.OnClickListener() {
                 @Override

@@ -235,6 +235,9 @@ public class Sp_Mainline extends AppCompatActivity {
 
             ActualHf2.isClickable();
 
+            row2.setBackgroundResource(R.drawable.selector);
+            row2.setClickable(true);
+
             row2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
