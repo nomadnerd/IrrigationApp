@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
@@ -21,6 +22,7 @@ public class Mainline extends AppCompatActivity {
     EditText Dia;
     TableLayout ftable;
     Button submit, next,previous;
+    TableRow selectedTR;
     MySingleton mySingleton = MySingleton.getInstance();
 
     @Override
@@ -183,6 +185,33 @@ public class Mainline extends AppCompatActivity {
             ActualHf2.setTextColor(Color.parseColor("#9E9E9E"));
             ActualHf2.setGravity(Gravity.CENTER);
             row2.addView(ActualHf2);
+
+            ActualHf2.isClickable();
+
+            row2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    TableRow row = (TableRow)view;
+                    TextView actu_Hf, diam;
+                    String string_ActHf, string_Diam;
+
+                    actu_Hf = (TextView) row.getChildAt(3);
+                    //diam = (TextView) row.getChildAt(3);
+
+                    string_ActHf = actu_Hf.getText().toString();
+                    //string_Diam = diam.getText().toString();
+                    selectedTR = (TableRow)view;
+                    Log.d("diameeeeee", string_ActHf.toString());
+
+                    mySingleton.drip_main_head = Float.parseFloat(string_ActHf);
+
+                }
+            });
+
+
+
+
 
             TextView Remark2 = new TextView(this);
             Remark2.setGravity(Gravity.LEFT);

@@ -55,6 +55,15 @@ public class MySingleton {
     public float sprinklerwidth;
     public List<List<String>> finalFilterSingleton;
     public float No_Of_sprinler;
+    public float Lateral_Per_Shift;
+    public float main_head_sprinkler;
+    public float lat_head_sprinkler;
+    public float sprinkler_tdh;
+    public  float sp_final_volume;
+    public float drip_lat_head;
+    public float drip_manifold_head;
+    public float drip_main_head;
+
 
  public float getEmitterPerPlant() {
   return EmitterPerPlant;

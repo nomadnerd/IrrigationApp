@@ -78,6 +78,7 @@
     <string name="lateraldia">Available diameter(mm) 12,16,20,25,32,40</string>
     <string name="manifold">Available diameter(mm) 30, 65, 75, 90, 110</string>
     <string name="mainline">Available diameter(mm) 110, 125, 140</string>
+    <string name="mainline2">Available diameter(mm) 110, 125, 140, 200, 250</string>
     <string name="space">Emitter Spacing</string>
     <string name="DBtnPL">distance between plants in m</string>
     <string name="vol">Capacity</string>

@@ -132,8 +132,11 @@ public class Layout_selection extends AppCompatActivity {
 
 
                 float NoLateralPerShift = Float.parseFloat(NumOfLateralPerShift.getText().toString());
-                float system_capacity = spDischarge*NoLateralPerShift*NumberofSprinklerPerlat;
-                SystemCapacity.setText(Float.toString(system_capacity));
+
+                mySingleton.Lateral_Per_Shift = NoLateralPerShift;
+                float system_capacity_sprinkler = spDischarge*NoLateralPerShift*NumberofSprinklerPerlat;
+                mySingleton.sp_final_volume = system_capacity_sprinkler;
+                SystemCapacity.setText(Float.toString(system_capacity_sprinkler));
 
 
             }

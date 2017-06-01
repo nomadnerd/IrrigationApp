@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/fr1"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/suctionlift"
+            android:inputType="numberDecimal"
+            android:hint="Suction Lift"/>
+    </android.support.design.widget.TextInputLayout>
+
+
+    <TextView
+        android:id="@+id/controlhead"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:hint="Control Head"
+        android:inputType="numberDecimal"
+        android:text="Raiser"
+        android:layout_above="@+id/compbutton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="14dp" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mainline"
+        android:textSize="20sp"
+        android:id="@+id/mainline"
+        android:layout_above="@+id/manifold"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="HeadMl"
+        android:textSize="20sp"
+        android:id="@+id/headmain"
+        android:layout_above="@+id/headmanifold"
+        android:layout_alignLeft="@+id/fitting"
+        android:layout_alignStart="@+id/fitting" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Manifold"
+        android:textSize="20sp"
+        android:id="@+id/manifold"
+        android:layout_above="@+id/laterals"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="HeadMan"
+        android:textSize="20sp"
+        android:id="@+id/headmanifold"
+        android:layout_above="@+id/laterals"
+        android:layout_alignLeft="@+id/headmain"
+        android:layout_alignStart="@+id/headmain" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Laterals"
+        android:textSize="20sp"
+        android:id="@+id/laterals"
+        android:layout_alignBottom="@+id/textView70"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Headlat"
+        android:textSize="20sp"
+        android:id="@+id/headlateral"
+        android:layout_above="@+id/pressure"
+        android:layout_alignLeft="@+id/pressure"
+        android:layout_alignStart="@+id/pressure" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Op. Pressure"
+        android:textSize="20sp"
+        android:id="@+id/op_pressure"
+        android:layout_above="@+id/controlhead"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pressure"
+        android:textSize="20sp"
+        android:id="@+id/pressure"
+        android:layout_above="@+id/controlhead"
+        android:layout_alignLeft="@+id/headmanifold"
+        android:layout_alignStart="@+id/headmanifold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="meters"
+        android:id="@+id/textView68"
+        android:layout_alignBaseline="@+id/headmain"
+        android:layout_alignBottom="@+id/headmain"
+        android:layout_alignRight="@+id/textView74"
+        android:layout_alignEnd="@+id/textView74" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="meters"
+        android:id="@+id/textView69"
+        android:layout_alignBottom="@+id/headmanifold"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignLeft="@+id/NxtBtn"
+        android:layout_alignStart="@+id/NxtBtn" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="meters"
+        android:id="@+id/textView70"
+        android:layout_alignBaseline="@+id/headlateral"
+        android:layout_alignBottom="@+id/headlateral"
+        android:layout_toEndOf="@+id/textView74"
+        android:layout_alignLeft="@+id/textView74"
+        android:layout_alignStart="@+id/textView74" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="meters"
+        android:id="@+id/textView71"
+        android:layout_alignBottom="@+id/pressure"
+        android:layout_alignLeft="@+id/textView70"
+        android:layout_alignStart="@+id/textView70" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="compute"
+        android:id="@+id/compbutton"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/manifold"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sub Total"
+        android:textSize="20sp"
+        android:id="@+id/textView72"
+        android:layout_below="@+id/compbutton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="subtotal"
+        android:textSize="20sp"
+        android:id="@+id/subtotal"
+        android:layout_alignTop="@+id/textView72"
+        android:layout_alignLeft="@+id/headlateral"
+        android:layout_alignStart="@+id/headlateral" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Meters"
+        android:id="@+id/textView74"
+        android:layout_alignTop="@+id/subtotal"
+        android:layout_toRightOf="@+id/pressure"
+        android:layout_toEndOf="@+id/pressure"
+        android:layout_marginLeft="58dp"
+        android:layout_marginStart="58dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fitting"
+        android:id="@+id/textView73"
+        android:textSize="20sp"
+        android:layout_below="@+id/textView72"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="fitting"
+        android:textSize="20sp"
+        android:id="@+id/fitting"
+        android:layout_below="@+id/subtotal"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Meters"
+        android:id="@+id/textView76"
+        android:layout_below="@+id/subtotal"
+        android:layout_toLeftOf="@+id/textView71"
+        android:layout_toStartOf="@+id/textView71" />
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/fr3"
+        android:layout_below="@+id/textView73"
+        android:layout_toEndOf="@+id/textView73"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/diff_ele"
+            android:inputType="numberDecimal"
+            android:hint="Difference in elevation"
+            />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="COMPUTE"
+        android:id="@+id/computeBtn"
+        android:layout_below="@+id/fr3"
+        android:layout_toEndOf="@+id/textView72"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total Dynamic Head"
+        android:id="@+id/textView75"
+        android:layout_below="@+id/computeBtn"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TDH"
+        android:id="@+id/tdh"
+        android:layout_below="@+id/computeBtn"
+        android:layout_alignLeft="@+id/subtotal"
+        android:layout_alignStart="@+id/subtotal" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Meters"
+        android:id="@+id/textView78"
+        android:layout_below="@+id/computeBtn"
+        android:layout_alignLeft="@+id/textView74"
+        android:layout_alignStart="@+id/textView74" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_arrow_back_black_24dp"
+        android:id="@+id/preBtn"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_arrow_forward_black_24dp"
+        android:id="@+id/NxtBtn"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:id="@+id/Raiser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="raiser"
+        android:textSize="20sp"
+        android:layout_alignBaseline="@+id/controlhead"
+        android:layout_alignBottom="@+id/controlhead"
+        android:layout_alignLeft="@+id/pressure"
+        android:layout_alignStart="@+id/pressure" />
+
+    <TextView
+        android:id="@+id/textView89"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="10sp"
+        android:text="meters"
+        android:layout_alignBottom="@+id/controlhead"
+        android:layout_alignLeft="@+id/textView71"
+        android:layout_alignStart="@+id/textView71" />
+
+
+</RelativeLayout>

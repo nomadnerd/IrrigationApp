@@ -13,22 +13,17 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
- * Created by meedy on 5/21/2017.
+ * Created by meedy on 6/1/2017.
  */
 
-public class Lateral_Selection_Sprinkler extends AppCompatActivity {
-
+public class Sp_Mainline extends AppCompatActivity {
 
     EditText Dia;
     TableLayout ftable;
     Button submit, next,previous;
     MySingleton mySingleton = MySingleton.getInstance();
     TableRow selectedTR;
-    List<String> HeadArray = new ArrayList<String>();
 
     @Override
 
@@ -36,10 +31,10 @@ public class Lateral_Selection_Sprinkler extends AppCompatActivity {
 
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.lateral_selection_sprinkler);
+        setContentView(R.layout.sp_mainline);
 
 
-        Dia = (EditText) findViewById(R.id.diameter_sp);
+        Dia = (EditText) findViewById(R.id.diameter_main);
         ftable = (TableLayout) findViewById(R.id.ftable);
         submit = (Button) findViewById(R.id.submit);
         next = (Button) findViewById(R.id.next);
@@ -53,10 +48,10 @@ public class Lateral_Selection_Sprinkler extends AppCompatActivity {
 
 
 
-       next.setOnClickListener(new View.OnClickListener() {
+        next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent J = new Intent(Lateral_Selection_Sprinkler.this, Sp_Mainline.class);
+                Intent J = new Intent(Sp_Mainline.this, TDH_Sprinkler.class);
                 startActivity(J);
             }
         });
@@ -65,7 +60,7 @@ public class Lateral_Selection_Sprinkler extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent J = new Intent(Lateral_Selection_Sprinkler.this, Layout_selection.class);
+                Intent J = new Intent(Sp_Mainline.this, Lateral_Selection_Sprinkler.class);
                 startActivity(J);
             }
         });
@@ -98,10 +93,10 @@ public class Lateral_Selection_Sprinkler extends AppCompatActivity {
                         Log.d("vol", Float.toString(lateral_capacity));
 
                         //Assuming the mainline will pass at the center
-                        float lateral_length = mySingleton.sprinklerwidth/2;
+                        float lateral_length = mySingleton.sprinklerlength/2;
                         Log.d("vol", Float.toString(lateral_length));
 
-                        ArrayHf[i] = HeadLoss_HF(lateral_capacity, lateral_length, diameter[i]);
+                        ArrayHf[i] = HeadLoss_HF(lateral_capacity*mySingleton.Lateral_Per_Shift, lateral_length, diameter[i]);
 
                         Log.d("Hf Array", String.valueOf(ArrayHf[0]));
                         Log.d("diameter", String.valueOf(diameter[i]));
@@ -114,7 +109,9 @@ public class Lateral_Selection_Sprinkler extends AppCompatActivity {
 
                 }
 
-                createTable(diameter, ArrayHf);
+               createTable(diameter, ArrayHf);
+
+
 
             }
         });
@@ -133,11 +130,20 @@ public class Lateral_Selection_Sprinkler extends AppCompatActivity {
         row.setLayoutParams(lp);
 
 
-        TextView Dia = new TextView(this);
+
+
+
+        final TextView Dia = new TextView(this);
         TextView Hf = new TextView(this);
         TextView Fn = new TextView(this);
-        TextView ActualHf = new TextView(this);
+        final TextView ActualHf = new TextView(this);
         TextView Remark = new TextView(this);
+
+        //is clickable
+        ActualHf.isClickable();
+        Dia.isClickable();
+
+
 
         //This generates the caption row
         Dia.setText("Diameter");
@@ -174,6 +180,7 @@ public class Lateral_Selection_Sprinkler extends AppCompatActivity {
 
         double allowalable_var_sprinkler_lateral = Float.parseFloat(mySingleton.finalFilterSingleton.get(0).get(2))*0.02;
 
+
         for (int i =0; i<diameter.length; i++) {
 
             TableRow row2= new TableRow(this);
@@ -206,7 +213,7 @@ public class Lateral_Selection_Sprinkler extends AppCompatActivity {
 
 
             TextView Fn2 = new TextView(this);
-            float factor =ChristiansenF(mySingleton.No_Of_sprinler);
+            float factor =ChristiansenF(mySingleton.Lateral_Per_Shift);
             Fn2.setText(Float.toString(factor));
             ActualHf.setPadding(3, 5, 5, 5);
             Fn2.setTextColor(Color.parseColor("#9E9E9E"));
@@ -219,18 +226,20 @@ public class Lateral_Selection_Sprinkler extends AppCompatActivity {
 
             TextView ActualHf2 = new TextView(this);
             float Act_Hf = (float) (Math.round((factor*Head)*100)/100.0);
+
             ActualHf2.setText(Float.toString(Act_Hf));
             ActualHf.setPadding(3, 5, 5, 5);
             ActualHf2.setTextColor(Color.parseColor("#9E9E9E"));
             ActualHf2.setGravity(Gravity.CENTER);
             row2.addView(ActualHf2);
+
             ActualHf2.isClickable();
 
             row2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
 
-                    TableRow row = (TableRow) view;
+                    TableRow row = (TableRow)view;
                     TextView actu_Hf, diam;
                     String string_ActHf, string_Diam;
 
@@ -239,30 +248,25 @@ public class Lateral_Selection_Sprinkler extends AppCompatActivity {
 
                     string_ActHf = actu_Hf.getText().toString();
                     //string_Diam = diam.getText().toString();
-                    selectedTR = (TableRow) view;
+                    selectedTR = (TableRow)view;
                     Log.d("diameeeeee", string_ActHf.toString());
 
-                    mySingleton.lat_head_sprinkler = Float.parseFloat(string_ActHf);
+                    mySingleton.main_head_sprinkler = Float.parseFloat(string_ActHf);
 
                 }
             });
 
 
-                    Log.d("actualHf", Float.toString(Act_Hf));
 
 
-
-
-
-
-
+            Log.d("actualHf", Float.toString(Act_Hf));
 
             TextView Remark2 = new TextView(this);
             Remark2.setGravity(Gravity.LEFT);
             Remark.setPadding(0,3,3,0);
 
             String remarks;
-            if(Act_Hf>allowalable_var_sprinkler_lateral){
+            if(Act_Hf>=allowalable_var_sprinkler_lateral*0.4){
                 remarks = "Reject";
 
                 Remark2.setText(remarks);
@@ -270,11 +274,8 @@ public class Lateral_Selection_Sprinkler extends AppCompatActivity {
                 row2.addView(Remark2);
 
 
-            }else if (Act_Hf<=allowalable_var_sprinkler_lateral*0.2){
+            }else if (Act_Hf<=allowalable_var_sprinkler_lateral*0.4){
 
-                /*float head_diff = (float) ((allowalable_var_sprinkler_lateral*0.2)-Act_Hf);
-                HeadArray.add();
-                */
                 remarks = "Accept";
                 Remark2.setText(remarks);
                 Remark2.setTextColor(Color.parseColor("#9E9E9E"));
@@ -335,5 +336,3 @@ public class Lateral_Selection_Sprinkler extends AppCompatActivity {
 
     }
 }
-
-

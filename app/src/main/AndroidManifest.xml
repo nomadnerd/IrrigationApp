@@ -108,6 +108,12 @@
             android:label=" System Layout"/>
         <activity android:name=".Lateral_Selection_Sprinkler"
             android:label="Selection of Laterals"/>
+        <activity android:name=".Sp_Mainline"
+            android:label="Mainline Daimeter"/>
+        <activity android:name=".TDH_Sprinkler"
+            android:label="Total Dynamic Head"/>
+        <activity android:name=".Pump_sprinkler"
+            android:label="Pump Selection"/>
     </application>
 
 </manifest>

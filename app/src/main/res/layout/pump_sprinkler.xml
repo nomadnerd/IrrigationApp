@@ -75,13 +75,13 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true">
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/derate"
-        android:hint="Derating %"
-        android:inputType="numberDecimal"
-        />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/derate"
+            android:hint="Derating %"
+            android:inputType="numberDecimal"
+            />
 
     </android.support.design.widget.TextInputLayout>
 
@@ -154,13 +154,13 @@
         android:layout_alignRight="@+id/buttonPRE"
         android:layout_alignEnd="@+id/buttonPRE">
 
-    <EditText
-        android:layout_width="386dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/PowEFF"
-        android:inputType="numberDecimal"
-        android:hint="Efficiency %"
-         />
+        <EditText
+            android:layout_width="386dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/PowEFF"
+            android:inputType="numberDecimal"
+            android:hint="Efficiency %"
+            />
 
     </android.support.design.widget.TextInputLayout>
 

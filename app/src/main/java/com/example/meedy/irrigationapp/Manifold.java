@@ -20,6 +20,7 @@ public class Manifold  extends AppCompatActivity{
     TableLayout ftable;
     Button submit, next,previous;
     MySingleton mySingleton = MySingleton.getInstance();
+    TableRow selectedTR;
 
     @Override
 
@@ -183,6 +184,31 @@ public class Manifold  extends AppCompatActivity{
             ActualHf2.setTextColor(Color.parseColor("#9E9E9E"));
             ActualHf2.setGravity(Gravity.CENTER);
             row2.addView(ActualHf2);
+            ActualHf2.isClickable();
+
+            row2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    TableRow row = (TableRow)view;
+                    TextView actu_Hf, diam;
+                    String string_ActHf, string_Diam;
+
+                    actu_Hf = (TextView) row.getChildAt(3);
+                    //diam = (TextView) row.getChildAt(3);
+
+                    string_ActHf = actu_Hf.getText().toString();
+                    //string_Diam = diam.getText().toString();
+                    selectedTR = (TableRow)view;
+                    Log.d("diameeeeee", string_ActHf.toString());
+
+                    mySingleton.drip_manifold_head = Float.parseFloat(string_ActHf);
+
+                }
+            });
+
+
+
 
             TextView Remark2 = new TextView(this);
             Remark2.setGravity(Gravity.LEFT);
