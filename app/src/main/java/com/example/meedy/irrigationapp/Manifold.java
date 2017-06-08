@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class Manifold  extends AppCompatActivity{
@@ -59,35 +60,37 @@ public class Manifold  extends AppCompatActivity{
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String mystring = Dia.getText().toString();
-                int size = mystring.split("\\,", -1).length;
-                float [] diameter = new float[size];
+                try {
+                    String mystring = Dia.getText().toString();
+                    int size = mystring.split("\\,", -1).length;
+                    float[] diameter = new float[size];
 
-                float [] ArrayHf = new float[size];
-                int i =0;
+                    float[] ArrayHf = new float[size];
+                    int i = 0;
 
-                for (String item: mystring.split("\\,", -1)){
-
-
-                    if(i<size) {
-                        diameter[i] = Float.parseFloat(item);
+                    for (String item : mystring.split("\\,", -1)) {
 
 
-                        ArrayHf[i] = HeadLoss_HF((mySingleton.drip_systemcapacity*1000), (mySingleton.length/mySingleton.MainOutlet), diameter[i]);
+                        if (i < size) {
+                            diameter[i] = Float.parseFloat(item);
 
-                        Log.v("system", mySingleton.drip_systemcapacity + "" );
 
-                        i++;
-                    } else {
-                        break;
+                            ArrayHf[i] = HeadLoss_HF((mySingleton.drip_systemcapacity * 1000), (mySingleton.length / mySingleton.MainOutlet), diameter[i]);
+
+                            Log.v("system", mySingleton.drip_systemcapacity + "");
+
+                            i++;
+                        } else {
+                            break;
+                        }
+
+
                     }
 
-
+                    createTable(diameter, ArrayHf);
+                }catch (Exception e) {
+                    Toast.makeText(Manifold.this, "Enter the diameters separated by comma", Toast.LENGTH_SHORT).show();
                 }
-
-                createTable(diameter, ArrayHf);
-
-
             }
         });
 

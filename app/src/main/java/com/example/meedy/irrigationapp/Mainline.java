@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * Created by meedy on 11/13/2016.
@@ -62,6 +63,7 @@ public class Mainline extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                try{
                 String mystring = Dia.getText().toString();
                 int size = mystring.split("\\,", -1).length;
                 float [] diameter = new float[size];
@@ -89,7 +91,10 @@ public class Mainline extends AppCompatActivity {
                 createTable(diameter, ArrayHf);
 
 
-            }
+            }catch (Exception e) {
+                    Toast.makeText(Mainline.this, "Enter the diameters separated by comma", Toast.LENGTH_SHORT).show();
+                }
+                }
         });
 
     }

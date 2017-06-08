@@ -12,8 +12,7 @@ import android.widget.EditText;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
-
-
+import android.widget.Toast;
 
 
 public class LateralDiameter2 extends AppCompatActivity{
@@ -63,33 +62,38 @@ public class LateralDiameter2 extends AppCompatActivity{
                 @Override
                 public void onClick(View v) {
 
-
-                    String mystring = Dia.getText().toString();
-                    int size = mystring.split("\\,", -1).length;
-                    float[] diameter = new float[size];
-
-                    float[] ArrayHf = new float[size];
-                    int i = 0;
-
-                    for (String item : mystring.split("\\,", -1)) {
+                    try {
 
 
-                        if (i < size) {
-                            diameter[i] = Float.parseFloat(item);
+                        String mystring = Dia.getText().toString();
+                        int size = mystring.split("\\,", -1).length;
+                        float[] diameter = new float[size];
+
+                        float[] ArrayHf = new float[size];
+                        int i = 0;
+
+                        for (String item : mystring.split("\\,", -1)) {
 
 
-                            ArrayHf[i] = HeadLoss_HF(mySingleton.volume, mySingleton.width, diameter[i]);
+                            if (i < size) {
+                                diameter[i] = Float.parseFloat(item);
 
-                            i++;
-                        } else {
-                            break;
+
+                                ArrayHf[i] = HeadLoss_HF(mySingleton.volume, mySingleton.width, diameter[i]);
+
+                                i++;
+                            } else {
+                                break;
+                            }
+
+
                         }
 
+                        createTable(diameter, ArrayHf);
+                    } catch (Exception e) {
+                        Toast.makeText(LateralDiameter2.this, "Enter the diameters separated by comma", Toast.LENGTH_SHORT).show();
 
                     }
-
-                    createTable(diameter, ArrayHf);
-
                 }
             });
 

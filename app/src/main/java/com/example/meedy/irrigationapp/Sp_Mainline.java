@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * Created by meedy on 6/1/2017.
@@ -70,48 +71,49 @@ public class Sp_Mainline extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                try {
 
 
-                String mystring = Dia.getText().toString();
-                int size = mystring.split("\\,", -1).length;
-                float[] diameter = new float[size];
+                    String mystring = Dia.getText().toString();
+                    int size = mystring.split("\\,", -1).length;
+                    float[] diameter = new float[size];
 
-                float[] ArrayHf = new float[size];
-                int i = 0;
-
-
+                    float[] ArrayHf = new float[size];
+                    int i = 0;
 
 
-                for (String item : mystring.split("\\,", -1)) {
+                    for (String item : mystring.split("\\,", -1)) {
 
 
-                    if (i < size) {
-                        diameter[i] = Float.parseFloat(item);
+                        if (i < size) {
+                            diameter[i] = Float.parseFloat(item);
 
 
-                        float lateral_capacity = (Float.parseFloat(mySingleton.finalFilterSingleton.get(0).get(3))*mySingleton.No_Of_sprinler)*1000;
-                        Log.d("vol", Float.toString(lateral_capacity));
+                            float lateral_capacity = (Float.parseFloat(mySingleton.finalFilterSingleton.get(0).get(3)) * mySingleton.No_Of_sprinler) * 1000;
+                            Log.d("vol", Float.toString(lateral_capacity));
 
-                        //Assuming the mainline will pass at the center
-                        float lateral_length = mySingleton.sprinklerlength/2;
-                        Log.d("vol", Float.toString(lateral_length));
+                            //Assuming the mainline will pass at the center
+                            float lateral_length = mySingleton.sprinklerlength / 2;
+                            Log.d("vol", Float.toString(lateral_length));
 
-                        ArrayHf[i] = HeadLoss_HF(lateral_capacity*mySingleton.Lateral_Per_Shift, lateral_length, diameter[i]);
+                            ArrayHf[i] = HeadLoss_HF(lateral_capacity * mySingleton.Lateral_Per_Shift, lateral_length, diameter[i]);
 
-                        Log.d("Hf Array", String.valueOf(ArrayHf[0]));
-                        Log.d("diameter", String.valueOf(diameter[i]));
+                            Log.d("Hf Array", String.valueOf(ArrayHf[0]));
+                            Log.d("diameter", String.valueOf(diameter[i]));
 
-                        i++;
-                    } else {
-                        break;
+                            i++;
+                        } else {
+                            break;
+                        }
+
+
                     }
 
+                    createTable(diameter, ArrayHf);
 
+                }catch (Exception e){
+                    Toast.makeText(Sp_Mainline.this, "Enter the diameters separated by comma", Toast.LENGTH_SHORT).show();
                 }
-
-               createTable(diameter, ArrayHf);
-
-
 
             }
         });

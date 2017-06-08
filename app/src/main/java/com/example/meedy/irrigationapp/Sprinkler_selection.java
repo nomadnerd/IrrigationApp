@@ -113,16 +113,20 @@ public class Sprinkler_selection extends AppCompatActivity {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                try {
 
-                String[] headerText = {"NZ SIZE", "PRESSURE", "DISCHARGE", "DIA  ", "RATE  ", "SPACING"};
-                Intent j = new Intent(Sprinkler_selection.this, Layout_selection.class);
-                j.putExtra("Table", FiteredTable );
-                startActivity(j);
+                    String[] headerText = {"NZ SIZE", "PRESSURE", "DISCHARGE", "DIA  ", "RATE  ", "SPACING"};
+                    Intent j = new Intent(Sprinkler_selection.this, Layout_selection.class);
+                    j.putExtra("Table", FiteredTable);
+                    startActivity(j);
 
 
                 /*Toast toast = Toast.makeText(Sprinkler_selection.this, "next step is not ready", Toast.LENGTH_LONG);
                 toast.setGravity(Gravity.CENTER, 0, 0);
                 toast.show();*/
+                }catch (Exception e){
+                    Toast.makeText(Sprinkler_selection.this, "No data", Toast.LENGTH_SHORT).show();
+                }
 
             }
         });
