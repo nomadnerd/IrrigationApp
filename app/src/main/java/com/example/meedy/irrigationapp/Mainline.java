@@ -225,7 +225,7 @@ public class Mainline extends AppCompatActivity {
                 Remark2.setText(remarks);
                 Remark2.setTextColor(Color.parseColor("#9E9E9E"));
                 row2.addView(Remark2);
-            }else if (Act_Hf<(mySingleton.allowableVariation*0.2)){
+            }else if (Act_Hf<(mySingleton.allowableVariation)){
 
                 remarks = "Accept";
                 Remark2.setText(remarks);

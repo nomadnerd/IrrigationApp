@@ -234,7 +234,7 @@ public class LateralDiameter2 extends AppCompatActivity{
                 row2.addView(Remark2);
 
 
-            }else if (Act_Hf<=(mySingleton.allowableVariation*0.4)){
+            }else if (Act_Hf<(mySingleton.allowableVariation)){
 
                  remarks = "Accept";
                 Remark2.setText(remarks);

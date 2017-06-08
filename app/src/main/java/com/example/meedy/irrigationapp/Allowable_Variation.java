@@ -99,7 +99,7 @@ public class Allowable_Variation extends AppCompatActivity implements AdapterVie
                 float volume = mySingleton.emittersperLateral*mySingleton.adj_lph;
                 mySingleton.volume = volume;
 
-                float flowpermanifold = (volume*mySingleton.laterl)/1000;
+                float flowpermanifold = (float) (Math.round(((volume*mySingleton.laterl)/1000)*1000)/1000.0);
 
                 flow.setText(Float.toString(flowpermanifold));
 
