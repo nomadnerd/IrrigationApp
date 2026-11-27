@@ -71,3 +71,5 @@ AquaDesign is a work in progress. Verify design inputs and outputs against appli
 
 
 Continuous integration checks run Flutter formatting analysis and unit tests on pushes to the development branch and pull requests to master.
+
+Latest CI fixes: dashboard module navigation and numeric type consistency were corrected following the first analyzer feedback. The newer CI run will verify these changes.
