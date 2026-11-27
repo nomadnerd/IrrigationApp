@@ -1,0 +1,26 @@
+name: Flutter checks
+
+on:
+  pull_request:
+    branches: [ master ]
+  push:
+    branches: [ feature/aquadesign-foundation ]
+
+concurrency:
+  group: aquadesign-flutter-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  analyze-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+      - run: flutter create --platforms=android,ios --project-name aquadesign .
+      - run: flutter --version
+      - run: flutter pub get
+      - run: flutter analyze
+      - run: flutter test
+      - run: flutter build apk --debug
