@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../core/theme/app_theme.dart';
+import '../projects/projects_screen.dart';
+import '../drip_irrigation/drip_screen.dart';
 
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({super.key});
@@ -13,7 +15,12 @@ class DashboardScreen extends StatelessWidget {
         Text('AquaDesign', style: TextStyle(
           color: AppTheme.deepNavy, fontWeight: FontWeight.w800)),
       ]),
-      actions: [IconButton(onPressed: () {}, icon: const Icon(Icons.settings_outlined))],
+      actions: [
+        IconButton(tooltip: 'Projects', onPressed: () => Navigator.push(context,
+          MaterialPageRoute(builder: (_) => const ProjectsScreen())),
+          icon: const Icon(Icons.folder_open_outlined)),
+        const SizedBox(width: 8),
+      ],
     ),
     body: SafeArea(child: ListView(
       padding: const EdgeInsets.fromLTRB(20, 12, 20, 28),
@@ -42,8 +49,10 @@ class DashboardScreen extends StatelessWidget {
         const SizedBox(height: 26),
         const _Heading('Design modules', 'Choose a calculation workspace'),
         const SizedBox(height: 12),
-        const _Module(Icons.water_drop_outlined, 'Drip irrigation',
-          'Crop water demand, emitters, irrigation frequency and laterals'),
+        _Module(Icons.water_drop_outlined, 'Drip irrigation',
+          'Crop water demand, emitters, irrigation frequency and laterals',
+          onTap: () => Navigator.push(context,
+            MaterialPageRoute(builder: (_) => const DripScreen()))),
         const _Module(Icons.grain, 'Sprinkler irrigation',
           'Sprinkler selection, spacing, layouts and pressure checks'),
         const _Module(Icons.water_outlined, 'Hydraulics & pumps',
@@ -60,7 +69,7 @@ class DashboardScreen extends StatelessWidget {
             const Text('No projects yet', style: TextStyle(
               color: AppTheme.deepNavy, fontWeight: FontWeight.w700)),
             const SizedBox(height: 4),
-            Text('Project creation and local database are next in the build.',
+            Text('Use the folder icon above to create and manage offline projects.',
               style: TextStyle(color: Colors.black54)),
           ])),
         ]))),
@@ -75,6 +84,7 @@ class DashboardScreen extends StatelessWidget {
 class _Heading extends StatelessWidget {
   const _Heading(this.title, this.subtitle);
   final String title, subtitle;
+  final VoidCallback? onTap;
   @override
   Widget build(BuildContext context) => Column(
     crossAxisAlignment: CrossAxisAlignment.start, children: [
@@ -86,13 +96,14 @@ class _Heading extends StatelessWidget {
 }
 
 class _Module extends StatelessWidget {
-  const _Module(this.icon, this.title, this.subtitle);
+  const _Module(this.icon, this.title, this.subtitle, {this.onTap});
   final IconData icon;
   final String title, subtitle;
   @override
   Widget build(BuildContext context) => Card(
     margin: const EdgeInsets.only(bottom: 10),
     child: ListTile(
+      onTap: onTap,
       contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       leading: Container(width: 44, height: 44,
         decoration: BoxDecoration(color: AppTheme.aquaTeal.withValues(alpha: 0.10),
