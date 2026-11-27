@@ -67,3 +67,6 @@ iOS signing and App Store distribution require an Apple developer setup. The cur
 ## Engineering notice
 
 AquaDesign is a work in progress. Verify design inputs and outputs against applicable standards, project-specific criteria, manufacturer data and professional engineering judgement. No unverified legacy formula should be used as an approved design method.
+
+
+Continuous integration checks run Flutter formatting analysis and unit tests on pushes to the development branch and pull requests to master.
