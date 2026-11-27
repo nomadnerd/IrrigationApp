@@ -87,7 +87,6 @@ class DashboardScreen extends StatelessWidget {
 class _Heading extends StatelessWidget {
   const _Heading(this.title, this.subtitle);
   final String title, subtitle;
-  final VoidCallback? onTap;
   @override
   Widget build(BuildContext context) => Column(
     crossAxisAlignment: CrossAxisAlignment.start, children: [
@@ -102,6 +101,7 @@ class _Module extends StatelessWidget {
   const _Module(this.icon, this.title, this.subtitle, {this.onTap});
   final IconData icon;
   final String title, subtitle;
+  final VoidCallback? onTap;
   @override
   Widget build(BuildContext context) => Card(
     margin: const EdgeInsets.only(bottom: 10),
