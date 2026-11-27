@@ -1,4 +1,4 @@
-import 'dart:math' as _math;
+import 'dart:math' as math;
 
 class SprinklerInputs {
   const SprinklerInputs({
@@ -85,7 +85,7 @@ class SprinklerCalculator {
 
   static double _pow(double base, double exponent) {
     // Dart's num.pow is supplied by dart:math.
-    return _math.pow(base, exponent).toDouble();
+    return math.pow(base, exponent).toDouble();
   }
 }
 
