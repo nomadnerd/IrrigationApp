@@ -6,6 +6,10 @@ on:
   push:
     branches: [ feature/aquadesign-foundation ]
 
+concurrency:
+  group: aquadesign-flutter-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   analyze-and-test:
     runs-on: ubuntu-latest
