@@ -73,7 +73,7 @@ class DripCalculator {
     final plants = input.areaHa * input.plantsPerHa;
     final emitterCount = plants * input.emittersPerPlant;
     final totalFlow = emitterCount * input.emitterDischargeLitresPerHour / 1000;
-    final runtime = totalFlow > 0 ? volume / totalFlow : 0;
+    final runtime = totalFlow > 0 ? volume / totalFlow : 0.0;
 
     return DripResults(
       netDepthMm: netDepth,
