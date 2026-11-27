@@ -11,8 +11,11 @@ No legacy equation should be promoted to production until its units, assumptions
 | DR-05 | Drip set time | Depth/volume conversion, area, emitter count and flow | Open |
 | DR-06 | Drip lateral diameter | Flow distribution, friction equation and head variation | Open |
 | SP-01 | Sprinkler selection | Nozzle discharge, pressure and manufacturer data | Open |
-| SP-02 | Sprinkler layout | Spacing, overlap, wind and application rate | Open |
-| SP-03 | Pressure variation | Discharge-pressure exponent and percentage convention | Open |
+| SP-02 | Sprinkler discharge adjustment | q2 = q1 × (p2/p1)^x; confirm exponent and operating range from manufacturer | Open |
+| SP-03 | Sprinkler application rate | Discharge divided by spacing area; verify units, overlap and layout basis | Open |
+| SP-04 | Sprinkler count | Rectangular field dimensions divided by spacing; define boundary offsets and edge layout | Open |
+| SP-05 | Full sprinkler layout | Spacing, overlap, wind and application rate | Open |
+| SP-06 | Pressure variation | Pressure variation across laterals and manifolds | Open |
 | HY-01 | Mainline/manifold | Friction method, coefficient and unit convention | Open |
 | HY-02 | Total dynamic head | Static lift, suction, delivery, losses and control head | Open |
 | PU-01 | Pump power | Flow units, head, efficiency and service factors | Open |
