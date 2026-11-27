@@ -65,7 +65,7 @@ class DripCalculator {
       throw ArgumentError('Check the inputs: area, interval, plant density, emitter count and discharge must be positive; efficiency must be above 0 and no more than 100%.');
     }
 
-    final dailyNet = (input.etcMmPerDay - input.effectiveRainMmPerDay).clamp(0, double.infinity);
+    final dailyNet = (input.etcMmPerDay - input.effectiveRainMmPerDay).clamp(0, double.infinity).toDouble();
     final netDepth = dailyNet * input.intervalDays;
     final grossDepth = netDepth / (input.applicationEfficiencyPercent / 100);
     // 1 mm over 1 ha = 10 m³.
