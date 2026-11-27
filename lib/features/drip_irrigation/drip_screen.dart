@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../core/theme/app_theme.dart';
 import 'drip_calculator.dart';
+import 'drip_report_service.dart';
 
 class DripScreen extends StatefulWidget {
   const DripScreen({super.key});
@@ -106,6 +107,18 @@ class _DripScreenState extends State<DripScreen> {
         _resultCard('Total emitters', _result!.emitterCount, 'emitters'),
         _resultCard('Total emitter flow', _result!.totalEmitterFlowM3PerHour, 'm³/h'),
         _resultCard('Estimated runtime', _result!.runtimeHours, 'hours'),
+        const SizedBox(height: 8),
+        SizedBox(width: double.infinity, child: OutlinedButton.icon(
+          onPressed: () => DripReportService.share(
+            inputs: DripInputs(
+              areaHa: _number('area'), etcMmPerDay: _number('etc'),
+              effectiveRainMmPerDay: _number('rain'), intervalDays: _number('interval'),
+              applicationEfficiencyPercent: _number('efficiency'), plantsPerHa: _number('plants'),
+              emittersPerPlant: _number('emitters'), emitterDischargeLitresPerHour: _number('discharge')),
+            results: _result!),
+          icon: const Icon(Icons.picture_as_pdf_outlined),
+          label: const Text('Share PDF calculation report'),
+        )),
         const SizedBox(height: 12),
         const Text('Method and limitations',
           style: TextStyle(fontWeight: FontWeight.w700, color: AppTheme.deepNavy)),
