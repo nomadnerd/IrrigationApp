@@ -75,3 +75,5 @@ Continuous integration checks run Flutter formatting analysis and unit tests on 
 Latest CI fixes: dashboard module navigation and numeric type consistency were corrected following the first analyzer feedback. The newer CI run will verify these changes.
 
 Development progress and remaining release gates are tracked in docs/DEVELOPMENT_STATUS.md.
+
+The generated Flutter smoke test has been replaced with an AquaDesign dashboard widget test; the sprinkler math library prefix lint has also been corrected. See the GitHub Actions workflow for the new validation run.
