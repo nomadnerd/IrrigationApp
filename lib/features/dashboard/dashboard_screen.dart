@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../../core/theme/app_theme.dart';
 import '../projects/projects_screen.dart';
 import '../drip_irrigation/drip_screen.dart';
+import '../sprinkler_irrigation/sprinkler_screen.dart';
 
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({super.key});
@@ -53,8 +54,10 @@ class DashboardScreen extends StatelessWidget {
           'Crop water demand, emitters, irrigation frequency and laterals',
           onTap: () => Navigator.push(context,
             MaterialPageRoute(builder: (_) => const DripScreen()))),
-        const _Module(Icons.grain, 'Sprinkler irrigation',
-          'Sprinkler selection, spacing, layouts and pressure checks'),
+        _Module(Icons.grain, 'Sprinkler irrigation',
+          'Sprinkler selection, spacing, layouts and pressure checks',
+          onTap: () => Navigator.push(context,
+            MaterialPageRoute(builder: (_) => const SprinklerScreen()))),
         const _Module(Icons.water_outlined, 'Hydraulics & pumps',
           'Pipe sizing, headloss, total dynamic head and pump duty'),
         const _Module(Icons.picture_as_pdf_outlined, 'Design reports',
