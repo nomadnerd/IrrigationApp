@@ -10,9 +10,10 @@ The original Android Java application is retained for audit and formula comparis
 
 - AquaDesign dashboard and branding
 - Local SQLite project creation, listing and deletion
+- Interactive preliminary sprinkler spacing, application-rate and layout estimate
 - Preliminary drip-irrigation field estimate
 - Metric-first inputs for the current drip workflow
-- Shareable PDF calculation report
+- Shareable PDF calculation report for drip estimates
 - Metric/imperial conversion utilities
 - Unit and calculation tests
 
